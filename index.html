@@ -219,6 +219,7 @@ details.builder[open] summary .ic{transform:rotate(90deg)}
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
 </svg>
 
+<div id="nojs" style="min-height:100vh;display:grid;place-items:center;padding:24px 16px;text-align:center"><div style="max-width:420px;display:flex;flex-direction:column;gap:12px"><div style="font:400 2.2rem/1 var(--display)">Style DNA</div><p>Это приложение работает только в браузере. В режиме просмотра файла оно не запускается.</p><p><a href="https://984s2pbyn4-create.github.io/Moda/" style="color:var(--accent);font-weight:700">Открыть Style DNA Board</a></p></div></div>
 <div id="gate" hidden>
   <form id="gateForm" autocomplete="off">
     <svg class="ic" style="width:28px;height:28px;color:var(--accent)"><use href="#i-lock"/></svg>
@@ -303,6 +304,7 @@ details.builder[open] summary .ic{transform:rotate(90deg)}
 
 <script>
 "use strict";
+document.getElementById("nojs").remove();
 /* ===== Встроенный клиент (формат файла клиента Style DNA, версия 1) ===== */
 const BUILTIN={
 v:1,id:"client-main",name:"Основной разбор",
