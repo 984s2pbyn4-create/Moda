@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Style DNA Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#EEF0EC;--paper:#F8F9F6;--ink:#2F3236;--muted:#6A6E70;--line:#D3D8D0;--accent:#6F8064;--accent-soft:#DDE4D6;--yes:#4F7A5A;--yes-bg:#E2EEE4;--no:#A04B45;--no-bg:#F4E3E1;--display:"Prata","Playfair Display",Georgia,serif;--body:"Manrope","Segoe UI",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#1C1F1E;--paper:#242827;--ink:#E6E8E3;--muted:#A3A8A2;--line:#3A403D;--accent:#A9BB9C;--accent-soft:#2F3A2E;--yes:#8CC39A;--yes-bg:#22352A;--no:#E39A93;--no-bg:#3D2624;color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:calc(28px + env(safe-area-inset-top,0px)) calc(64px + env(safe-area-inset-bottom,0px))}
+img{max-width:100%}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(38px,8vw,72px);letter-spacing:-.01em}
+h2{font-size:clamp(26px,4.4vw,36px)}
+h3{font-size:19px}
+p{margin:0;max-width:68ch}
+.eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.sec{display:flex;flex-direction:column;gap:20px}
+.sec-head{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--ink);padding-top:14px}
+.lead{font-size:17px}
+.note{font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid>*{min-width:0}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.kv{display:grid;grid-template-columns:minmax(110px,38%) 1fr;gap:6px 14px;font-size:14px;margin:0}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.hero{display:grid;gap:24px;grid-template-columns:1.3fr 1fr;align-items:end}
+.hero>*{min-width:0}
+@media (max-width:720px){.hero{grid-template-columns:1fr}}
+.dna{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--ink);border-radius:999px;padding:5px 13px;font-size:13.5px;font-weight:600}
+.chip.alt{background:var(--accent-soft);border-color:var(--accent)}
+.hero-strip{display:flex;height:150px;border-radius:4px;overflow:hidden}
+.hero-strip span{flex:1}
+.scale{display:grid;grid-template-columns:minmax(120px,30%) 1fr;gap:6px 14px;align-items:center}
+.track{position:relative;height:6px;background:var(--line);border-radius:3px}
+.track i{position:absolute;top:-5px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:2px solid var(--paper);transform:translateX(-50%)}
+.ends{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);grid-column:2}
+.scale b{font-weight:600;font-size:14px}
+.sw-row{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(112px,1fr))}
+.sw{display:flex;flex-direction:column;gap:6px;font-size:12.5px;line-height:1.3}
+.sw div{aspect-ratio:1/1;max-width:100%;border-radius:3px;border:1px solid var(--line);position:relative}
+.sw.bad div::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 47%,var(--paper) 47%,var(--paper) 53%,transparent 53%)}
+.sw small{color:var(--muted)}
+.yn{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+@media (max-width:640px){.yn{grid-template-columns:1fr}}
+.yn>div{border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.yn .y{background:var(--yes-bg)}.yn .n{background:var(--no-bg)}
+.yn h3{font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.yn .y h3{color:var(--yes)}.yn .n h3{color:var(--no)}
+.sil{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+@media (max-width:720px){.sil{grid-template-columns:repeat(2,1fr)}}
+.fig{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.fig svg{width:100%;height:auto;max-height:240px;color:var(--ink)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.tag.y{color:var(--yes)}.tag.n{color:var(--no)}
+.fig p{font-size:13px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:860px;font-size:13.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--bg)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cat td{background:var(--accent-soft);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.links{display:flex;gap:6px;flex-wrap:wrap}
+.links a{font-size:12px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:3px;padding:2px 7px;white-space:nowrap}
+.links a:hover,.links a:focus-visible{border-color:var(--accent);background:var(--accent-soft);outline:none}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.p1{background:var(--ink);color:var(--paper)}.p2{background:var(--accent-soft);color:var(--ink)}.p3{border:1px solid var(--line);color:var(--muted)}
+.tier{font-size:12px;color:var(--muted)}
+.totals{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.totals .panel b{font-family:var(--display);font-size:26px;font-weight:400;font-variant-numeric:tabular-nums}
+td.ph{width:104px;min-width:104px}
+.thumb{display:block;width:88px;aspect-ratio:3/4;border-radius:3px;overflow:hidden;background:var(--bg);border:1px solid var(--line);position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.noimg,.load{display:flex;align-items:center;justify-content:center;height:100%;font-size:11px;color:var(--muted);text-align:center;padding:4px}
+.load{width:88px;aspect-ratio:3/4;border:1px dashed var(--line);border-radius:3px;height:auto}
+.tcap{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:4px}
+.mini{font:600 11px var(--body);color:var(--accent);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.artf{display:flex;gap:4px;margin-top:4px}
+.artf input{width:96px;font:12px var(--body);padding:4px 6px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink)}
+.wbbar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px 16px;font-size:14px}
+.wbbar button{font:600 13px var(--body);background:var(--ink);color:var(--paper);border:0;border-radius:3px;padding:7px 12px;cursor:pointer}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
+.dot.ok{background:var(--yes)}.dot.bad{background:var(--no)}
+.look{display:flex;flex-direction:column;gap:10px}
+.look .dots{display:flex;gap:4px}
+.look .dots span{width:22px;height:22px;border-radius:50%;border:1px solid var(--line)}
+.rules{counter-reset:r;display:grid;gap:12px 28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:0;padding:0;list-style:none}
+.rules li{counter-increment:r;display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:baseline;min-width:0}
+.rules li::before{content:counter(r);font-family:var(--display);font-size:24px;color:var(--accent)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="sec" style="gap:16px">
+    <span class="eyebrow">Style DNA Board · персональная капсула</span>
+    <h1>Мягкая природа, собранная линия</h1>
+    <p class="lead">Нежная натуральная внешность с невысоким контрастом и стройной вертикальной фигурой. Лучше всего работают спокойные приглушённые цвета, полуструктурные формы, вещи по фигуре и одна деликатная романтичная или графичная деталь.</p>
+    <div class="dna"><span class="chip">soft natural</span><span class="chip">relaxed minimalism</span><span class="chip">soft structure</span><span class="chip alt">delicate romantic</span><span class="chip alt">quiet edge</span></div>
+  </div>
+  <div class="hero-strip" aria-label="Ключевая палитра"><span style="background:#E9E2D6"></span><span style="background:#B8AFA3"></span><span style="background:#9DAA8F"></span><span style="background:#7A7D5E"></span><span style="background:#9AB0C2"></span><span style="background:#6B5547"></span><span style="background:#4A4C50"></span></div>
+</header>
+
+<p class="note">Разбор сделан по шести домашним фото. Камера стояла выше талии и близко к телу, поэтому ноги на снимках выглядят короче, чем в жизни. Свет смешанный, поэтому цветотип определён с запасом. Рост на фото не виден. Где определение неоднозначно, приведено несколько вариантов.</p>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">01 · Анализ</span><h2>Что видно на фотографиях</h2></div>
+  <div class="grid">
+    <div class="panel"><h3>Фигура и пропорции</h3><dl class="kv">
+      <dt>Сложение</dt><dd>Стройное, лёгкий костяк, тонкие руки и запястья</dd>
+      <dt>Плечи / талия / бёдра</dt><dd>Плечи узкие или средние, примерно на одной линии с бёдрами. Талия обозначена мягко. Ближе всего к типу «прямоугольник» (H) с лёгкой женственной округлостью бёдер в профиль</dd>
+      <dt>Ноги и торс</dt><dd>По фото баланс с небольшим перевесом в сторону торса. С поправкой на ракурс, скорее всего, пропорции близки к средним. Высокая посадка гарантированно удлинит ноги</dd>
+      <dt>Вертикаль</dt><dd>Хорошая, ровная и узкая. Фигура легко «держит» длинные линии: макси, миди, брюки в пол</dd>
+      <dt>Осанка</dt><dd>В профиле плечи слегка подаются вперёд, голова чуть выдвинута. Одежда может это компенсировать: лёгкое плечо, V-вырезы, открытая шея</dd></dl></div>
+    <div class="panel"><h3>Что подчёркивать и что балансировать</h3>
+      <div class="yn" style="grid-template-columns:1fr">
+        <div class="y"><h3>Подчёркивать</h3><ul class="clean"><li>Шею и ключицы: открытые вырезы</li><li>Тонкие запястья и предплечья с тату: рукав 3/4 или подвёрнутый</li><li>Вертикаль: длинные линии, тон в тон</li><li>Талию: заправка, пояс, укороченный верх</li></ul></div>
+        <div class="n"><h3>Балансировать</h3><ul class="clean"><li>Мягкую линию талии: создавать её кроем, а не облеганием</li><li>Узкие, слегка округлые плечи: чёткая плечевая линия, лодочка, квадратный вырез</li><li>Длину ног: высокая посадка и длина брюк до пола или щиколотки</li></ul></div>
+      </div></div>
+    <div class="panel"><h3>Лицо</h3><dl class="kv">
+      <dt>Форма</dt><dd>Овал, слегка удлинённый, с широким высоким лбом и мягкой линией челюсти. Подбородок скруглённый</dd>
+      <dt>Масштаб черт</dt><dd>Средний. Глаза среднего размера, нос прямой со скруглённым кончиком, губы средней полноты с мягким контуром</dd>
+      <dt>Мягкость и графичность</dt><dd>Примерно 70% мягкости и 30% графики. Мягкие губы, кончик носа и скулы; прямые брови и ровная линия лба добавляют чёткости</dd>
+      <dt>Характер</dt><dd>Юная, естественная, спокойная, «тихая» внешность без нарочитости. Тату с цветами и тонкими линиями добавляют личную, слегка дерзкую ноту</dd></dl></div>
+    <div class="panel"><h3>Колорит и контраст</h3><dl class="kv">
+      <dt>Волосы</dt><dd>Средне-русые с пепельным, прохладным оттенком</dd>
+      <dt>Глаза</dt><dd>Зелёно-оливковые с золотистым ореолом у зрачка. Главный цветовой акцент внешности</dd>
+      <dt>Кожа</dt><dd>Светлая, с розоватостью. На щеках заметны покраснения</dd>
+      <dt>Подтон</dt><dd>Нейтральный, с уклоном в прохладу (кожа, волосы) и тёплыми нотами в глазах</dd>
+      <dt>Контраст</dt><dd>Низкий или средний</dd>
+      <dt>Варианты</dt><dd><b>Мягкое лето</b> (по коже и волосам) или <b>мягкая осень</b> (по глазам). Рабочая зона: приглушённые, мягкие, слегка сероватые цвета на стыке двух палитр</dd></dl></div>
+  </div>
+  <div class="panel"><h3>Какие направления поддерживают внешность</h3><p>Естественно работают <b>soft natural</b> и <b>скандинавский минимализм</b> (лён, трикотаж, деним, тон в тон), <b>французский casual</b> (заправленный верх, прямые джинсы, тренч, лоферы) и <b>мягкий романтизм</b> в деталях (мелкий цветочный принт, тонкие украшения, матовый сатин). С осторожностью стоит подходить к жёсткому глэму, строгому корпоративному стилю, спорт-шику с массивными объёмами и контрастному «гранжу в чёрном»: они перекрывают нежность лица.</p></div>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">02 · Style DNA</span><h2>Пять характеристик стиля</h2></div>
+  <div class="grid">
+    <div class="panel"><h3>Soft natural</h3><p>Живые ткани, мягкие линии, никакой «упакованности». Образ выглядит лёгким, а не продуманным до мелочей.</p></div>
+    <div class="panel"><h3>Relaxed minimalism</h3><p>Мало деталей, чистые формы, 2–3 цвета в комплекте. Это поддерживает невысокий контраст внешности.</p></div>
+    <div class="panel"><h3>Soft structure</h3><p>Лёгкий каркас там, где нужна линия: плечо, талия, стрелка на брюках. Структура полужёсткая, без «доспехов».</p></div>
+    <div class="panel"><h3>Delicate romantic</h3><p>Одна нежная деталь на образ: мелкий цветочный принт, вырез-каре, матовый сатин, тонкая цепочка.</p></div>
+    <div class="panel"><h3>Quiet edge</h3><p>Тату уже задают графичную ноту. Её стоит показывать: подвёрнутые рукава, кожаный ремень, замша, лоферы.</p></div>
+  </div>
+  <div class="panel" style="gap:18px"><h3>Идеальные параметры</h3>
+    <div class="scale"><b>Структурность</b><div class="track"><i style="left:45%"></i></div><div class="ends"><span>мягкие формы</span><span>жёсткий каркас</span></div></div>
+    <div class="scale"><b>Объём</b><div class="track"><i style="left:40%"></i></div><div class="ends"><span>облегание</span><span>оверсайз</span></div></div>
+    <div class="scale"><b>Масштаб деталей и принтов</b><div class="track"><i style="left:30%"></i></div><div class="ends"><span>мелкий</span><span>крупный</span></div></div>
+    <div class="scale"><b>Контраст в образе</b><div class="track"><i style="left:32%"></i></div><div class="ends"><span>тон в тон</span><span>чёрно-белый</span></div></div>
+    <div class="scale"><b>Собранность</b><div class="track"><i style="left:55%"></i></div><div class="ends"><span>небрежно</span><span>безупречно</span></div></div>
+    <div class="scale"><b>Мягкость и графичность</b><div class="track"><i style="left:35%"></i></div><div class="ends"><span>мягко</span><span>графично</span></div></div>
+    <p class="note">Формула: полуприлегающий верх, низ свободнее; одна зона объёма на образ; детали мелкие и средние; контраст между вещами мягкий, в пределах одной-двух ступеней светлоты.</p></div>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">03 · Силуэты, посадки, длины</span><h2>Где проводить линии</h2></div>
+  <div class="sil">
+    <div class="fig"><svg viewBox="0 0 120 240" role="img" aria-label="Заправленный верх и высокие прямые брюки в пол"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/><polygon points="40,40 80,40 76,96 44,96" fill="#9DAA8F"/><rect x="44" y="94" width="32" height="4" fill="#6B5547"/><polygon points="44,98 76,98 84,226 64,226 60,132 56,226 36,226" fill="#8C7F73"/></svg><span class="tag y">Да</span><p>Заправка на талии и высокие прямые брюки до пола. Ноги начинаются от талии.</p></div>
+    <div class="fig"><svg viewBox="0 0 120 240" role="img" aria-label="Укороченный кардиган до талии и юбка миди"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/><polygon points="38,40 82,40 78,98 42,98" fill="#B8AFA3"/><polygon points="44,98 76,98 86,184 34,184" fill="#7A7D5E"/><rect x="50" y="184" width="6" height="38" fill="currentColor" opacity=".6"/><rect x="64" y="184" width="6" height="38" fill="currentColor" opacity=".6"/></svg><span class="tag y">Да</span><p>Короткий верх до талии и миди до середины икры. Создаёт талию у прямого силуэта.</p></div>
+    <div class="fig"><svg viewBox="0 0 120 240" role="img" aria-label="Длинный верх и укороченные брюки 7/8"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/><polygon points="38,40 82,40 84,140 36,140" fill="#B8AFA3"/><polygon points="40,140 80,140 80,194 64,194 60,152 56,194 40,194" fill="#E9E2D6" stroke="currentColor" stroke-opacity=".3"/><rect x="48" y="194" width="6" height="30" fill="currentColor" opacity=".6"/><rect x="66" y="194" width="6" height="30" fill="currentColor" opacity=".6"/><line x1="22" y1="194" x2="98" y2="194" stroke="#A04B45" stroke-width="1.5" stroke-dasharray="3 3"/></svg><span class="tag n">Нет</span><p>Длинный верх и брюки до середины икры. Две горизонтали «съедают» длину ног.</p></div>
+    <div class="fig"><svg viewBox="0 0 120 240" role="img" aria-label="Оверсайз сверху и снизу"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/><polygon points="28,40 92,40 98,132 22,132" fill="#4A4C50"/><polygon points="26,132 94,132 100,226 20,226" fill="#4A4C50" opacity=".75"/></svg><span class="tag n">Нет</span><p>Объём сверху и снизу одновременно. Хрупкая фигура теряется в ткани.</p></div>
+  </div>
+  <div class="grid">
+    <div class="panel"><h3>Верх</h3><ul class="clean"><li>Футболки полуприлегающие, с плечевым швом на своём месте, длиной до косточки бедра. Носить с французской заправкой</li><li>Свитеры тонкие и средней толщины, до талии или чуть ниже; при длине до бедра заправлять спереди</li><li>Рубашки relaxed fit, но не oversize на 3 размера. Носить нараспашку поверх футболки или узлом на талии</li><li>Рукав 3/4 или подвёрнутый до середины предплечья: открывает запястья и тату</li></ul></div>
+    <div class="panel"><h3>Вырезы и воротники</h3><ul class="clean"><li><b>Да:</b> мягкий V, вырез-каре, лодочка, неглубокий круглый, отложной рубашечный воротник, воротник-стойка у блузы</li><li><b>Осторожно:</b> высокое горло. Только тонкая водолазка в мягком цвете, лучше в сочетании с распущенными волосами</li><li><b>Нет:</b> массивные воротники-хомуты, огромные рюши у лица, глубокий узкий V до талии</li></ul></div>
+    <div class="panel"><h3>Брюки и джинсы</h3><ul class="clean"><li>Посадка высокая: пояс на талии или на 1–2 см ниже</li><li>Фасоны: прямые (straight), wide leg, палаццо, брюки с защипами, мягкий barrel</li><li>Длина: у прямых до косточки или до верха стопы; у широких до пола с обувью</li><li>Избегать: низкой посадки, скинни в паре с длинным верхом, длины 7/8 и капри</li></ul></div>
+    <div class="panel"><h3>Юбки и платья</h3><ul class="clean"><li>Миди до середины икры: слип-юбка по косой, А-силуэт, прямая трикотажная</li><li>Платья с выраженной талией: платье-рубашка с поясом, платье на запах, трикотажное миди с поясом</li><li>Мини только с плотными колготками и закрытым верхом; не самый сильный вариант</li></ul></div>
+    <div class="panel"><h3>Верхняя одежда</h3><ul class="clean"><li>Короткая: до талии или косточки бедра (замша, бомбер, укороченный пуховик)</li><li>Длинная: прямая до середины икры (пальто, тренч). Вертикаль выдержит</li><li>Жакет: relaxed fit, с лёгкой плечевой линией, до середины бедра</li><li>Избегать длины до середины бедра в паре с объёмным низом</li></ul></div>
+    <div class="panel"><h3>Талия</h3><ul class="clean"><li>Пояс средней ширины 2–3 см, тонкий кожаный ремень</li><li>Заправка, топ до талии, кардиган на одну пуговицу</li><li>Сборки и защипы на поясе брюк и юбок</li><li>Широкий корсетный пояс слишком тяжёл для хрупкого костяка</li></ul></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">04 · Фактуры и материалы</span><h2>Матовое, живое, мягкое</h2></div>
+  <div class="yn">
+    <div class="y"><h3>Поддерживают</h3><ul class="clean"><li>Хлопковый трикотаж, футер, мягкий рубчик</li><li>Мерино, кашемир, смесовая шерсть средней толщины</li><li>Лён, вискоза с льном, хлопок-поплин</li><li>Замша и нубук, матовая мягкая кожа</li><li>Деним средней и светлой стирки</li><li>Матовый сатин, купро, вискоза с мягким блеском</li><li>Шерстяной костюмный креп и твил</li></ul></div>
+    <div class="n"><h3>Спорят с внешностью</h3><ul class="clean"><li>Глянцевый атлас и блестящая синтетика: добавляют объём и подчёркивают покраснения кожи</li><li>Лакированная и жёсткая толстая кожа</li><li>Грубая крупная вязка: «съедает» хрупкий костяк</li><li>Жёсткий плотный неопрен, стёганые объёмы</li><li>Пайетки и люрекс крупного масштаба</li><li>Очень тонкий трикотаж в облипку: проявляет каждую складку</li></ul></div>
+  </div>
+  <p class="note">Принты: мелкий цветочный (он вам явно близок, судя по тату и вещам), тонкая полоска, мелкая клетка, «гусиная лапка» в приглушённых цветах. Избегать крупной контрастной геометрии, анималистики, логомании.</p>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">05 · Цвет</span><h2>Приглушённая палитра на стыке лета и осени</h2></div>
+  <h3>База</h3><div class="sw-row" id="sw-base"></div>
+  <h3>Акценты</h3><div class="sw-row" id="sw-acc"></div>
+  <h3>Не у лица</h3><div class="sw-row" id="sw-bad"></div>
+  <div class="grid">
+    <div class="panel"><h3>Сочетания</h3><ul class="clean"><li>Овсяный + шалфей + мокко</li><li>Серо-бежевый + пыльно-голубой + деним</li><li>Графит + таупе + молочный</li><li>Олива + мокко + овсяный</li><li>Мягкий нэви + пыльная роза + серо-бежевый</li><li>Тон в тон: таупе, грейдж и овсяный в разных фактурах</li></ul></div>
+    <div class="panel"><h3>Правила цвета</h3><ul class="clean"><li>Зелёные оттенки у лица (шалфей, олива, приглушённая морская волна) усиливают цвет глаз и визуально гасят покраснения кожи</li><li>Чёрный заменять графитом, мокко и мягким нэви; если чёрный, то в низе образа</li><li>Белый заменять молочным, овсяным, слоновой костью</li><li>Розовые и красные оттенки у лица только пыльные и сероватые</li><li>Контраст в образе мягкий: светлый + средний или средний + тёмный, без резкого чёрно-белого</li></ul></div>
+    <div class="panel"><h3>Металл и фурнитура</h3><ul class="clean"><li>Розовое и мягкое жёлтое золото, как кольцо на фото</li><li>Матовое, сатинированное, тонкое</li><li>Холодное блестящее серебро допустимо в мелочах; хорошо смотрится матовое серебро</li><li>Избегать ярко-жёлтого «самоварного» блеска и массивных цепей</li></ul></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">06 · Детали и аксессуары</span><h2>Мелкий и средний масштаб</h2></div>
+  <div class="grid">
+    <div class="panel"><h3>Обувь</h3><ul class="clean"><li>Лоферы на тонкой подошве, балетки и мэри джейн</li><li>Минималистичные кеды молочного или серо-бежевого цвета</li><li>Ботильоны с миндалевидным носом и каблуком 4–5 см, замша</li><li>Зимой: сапоги-трубы до колена из матовой кожи или замши</li><li>Избегать массивных «тракторных» платформ и острого стилета</li></ul></div>
+    <div class="panel"><h3>Сумки и ремни</h3><ul class="clean"><li>Мягкая сумка через плечо среднего размера, хобо, кросс-боди</li><li>Матовая кожа или замша в коричневом, таупе, оливковом</li><li>Ремень 2–3 см с небольшой пряжкой под золото</li><li>Для прогулок с ребёнком: вместительный кросс-боди или мягкий рюкзак из нейлона в цвет палитры, а не яркий спортивный</li></ul></div>
+    <div class="panel"><h3>Украшения и очки</h3><ul class="clean"><li>Тонкие цепочки, маленькие кольца-серьги 1,5–2 см, кольца-ободки</li><li>Одно украшение-акцент среднего масштаба, без крупных статементов</li><li>Очки с мягкой формой: скруглённый квадрат, «кошачий глаз» без резких углов, черепаховая или прозрачная оправа</li><li>Тонкие часы на кожаном ремешке</li></ul></div>
+    <div class="panel"><h3>Волосы и лицо</h3><ul class="clean"><li>Высокий лоб смягчат шторка (curtain bangs) или пряди у лица</li><li>Длинные мягкие слои, волны «без укладки»</li><li>Низкий небрежный пучок или хвост с прядями у лица; гладкий тугой пучок делает лицо строже</li><li>Пепельный оттенок хорошо освежают медово-бежевые блики</li></ul></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">07 · Стоп-лист</span><h2>Что не работает и почему</h2></div>
+  <div class="grid">
+    <div class="panel"><h3>Брюки 7/8 и капри</h3><p>Горизонталь на середине икры укорачивает ногу. Брюки должны доходить до косточки или до пола.</p></div>
+    <div class="panel"><h3>Низкая посадка</h3><p>Удлиняет торс, который и так визуально длиннее ног.</p></div>
+    <div class="panel"><h3>Оверсайз сверху и снизу</h3><p>Лёгкий костяк теряется. Объём допустим только в одной зоне.</p></div>
+    <div class="panel"><h3>Облегание с головы до ног</h3><p>У прямого силуэта бодикон подчёркивает отсутствие талии, а не фигуру.</p></div>
+    <div class="panel"><h3>Чёрный и оптический белый у лица</h3><p>Слишком высокий контраст для низкоконтрастной внешности: лицо выглядит бледнее, покраснения заметнее.</p></div>
+    <div class="panel"><h3>Яркие красные, фуксия, коралл</h3><p>Отражаются на коже и усиливают розоватость щёк.</p></div>
+    <div class="panel"><h3>Глянцевый блеск</h3><p>Добавляет визуальный объём и спорит с матовой, натуральной фактурой внешности.</p></div>
+    <div class="panel"><h3>Крупные принты и массивные аксессуары</h3><p>Масштаб черт средний, а детали крупнее лица «перекрикивают» его.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">08 · Капсула</span><h2>29 вещей и где их искать</h2></div>
+  <p>Столбец «Фото» при открытии страницы ищет на Wildberries первый подходящий товар в нужном ценовом диапазоне и показывает его фото, цену и ссылку. Если Wildberries не ответит, вставьте артикул или ссылку на товар через «свой артикул»: фото появится сразу и сохранится на этом устройстве. Ссылки WB, Ozon и Lamoda открывают поиск по точному запросу.</p>
+  <div class="wbbar"><span class="dot" id="wbdot"></span><span id="wbstat">Подбираю товары на Wildberries…</span><button type="button" id="wbre">Подобрать заново</button></div>
+  <div class="totals" id="totals"></div>
+  <div class="tbl"><table>
+    <thead><tr><th>№</th><th>Фото</th><th>Вещь и цвет</th><th>Почему</th><th>Сегмент</th><th class="num">Цена, ₽</th><th>Очередь</th><th>Найти</th></tr></thead>
+    <tbody id="cap"></tbody>
+  </table></div>
+  <p class="note">Очередь покупки: <span class="pill p1">1</span> сейчас, к осени и зиме; <span class="pill p2">2</span> в течение 1–2 месяцев; <span class="pill p3">3</span> к весне или по желанию. Автоподбор берёт первый популярный товар по запросу: проверяйте состав (хлопок, шерсть, вискоза, лён от 50%) и фото на модели в полный рост, чтобы оценить посадку и длину.</p>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">09 · Образы</span><h2>Семь готовых комплектов</h2></div>
+  <div class="grid" id="looks"></div>
+</section>
+
+<section class="sec">
+  <div class="sec-head"><span class="eyebrow">10 · Шпаргалка</span><h2>Десять правил вашего стиля</h2></div>
+  <ol class="rules">
+    <li>Пояс на талии: высокая посадка всегда</li>
+    <li>Одна зона объёма на образ, остальное ближе к телу</li>
+    <li>Брюки до косточки или до пола, никаких 7/8</li>
+    <li>У лица приглушённые цвета; зелёные оттенки усиливают глаза</li>
+    <li>Вместо чёрного графит, мокко или нэви; вместо белого молочный</li>
+    <li>Шею и запястья открывать: V, каре, подвёрнутый рукав</li>
+    <li>Ткани матовые и живые: хлопок, шерсть, лён, замша</li>
+    <li>Одна нежная деталь на образ: принт, сатин или украшение</li>
+    <li>Металл тёплый и тонкий: розовое или мягкое жёлтое золото</li>
+    <li>Контраст мягкий: тон в тон или соседние оттенки</li>
+  </ol>
+</section>
+
+<p class="note">Чтобы уточнить длины и размеры, пригодятся рост и обычный размер одежды. Для точного цветотипа стоит сделать портрет без макияжа у окна в пасмурный день и приложить к лицу ткани молочного и чисто-белого цвета.</p>
+</div>
+
+<script>
+const base=[["Молочный / овсяный","#E9E2D6","вместо белого"],["Грейдж","#B8AFA3","база низа и трикотажа"],["Таупе / грибной","#8C7F73","брюки, сумки"],["Мокко / какао","#6B5547","вместо чёрного"],["Графит","#4A4C50","жакет, водолазка"],["Мягкий нэви","#3E4A5E","вместо чёрного"],["Деним средний","#6F86A0","джинсы, рубашки"]];
+const acc=[["Шалфей","#9DAA8F","у лица, к глазам"],["Олива серая","#7A7D5E","юбки, куртки"],["Пыльно-голубой","#9AB0C2","блузы, шарфы"],["Морская волна приглушённая","#6E9089","трикотаж у лица"],["Пыльная роза","#B99A9A","только серая, в мелочах"],["Карамель мягкая","#B08A68","замша, обувь"]];
+const bad=[["Чёрный у лица","#111111","контраст, бледность"],["Оптический белый","#FFFFFF","резкий"],["Фуксия","#D81F84","усиливает покраснения"],["Ярко-красный","#D3171E","усиливает покраснения"],["Коралл / оранжевый","#FF7A45","спорит с подтоном"],["Неоновый лайм","#C6F000","перекрывает лицо"]];
+function sw(id,arr,cls){document.getElementById(id).innerHTML=arr.map(([n,h,d])=>`<div class="sw ${cls||''}"><div style="background:${h}"></div><span>${n}</span><small>${d}</small></div>`).join("")}
+sw("sw-base",base);sw("sw-acc",acc);sw("sw-bad",bad,"bad");
+
+const C=[
+["Верх"],
+[1,"Футболка хлопковая полуприлегающая, молочная","Базовый светлый слой у лица без резкости белого","база",900,2000,1,"футболка женская хлопок молочная базовая"],
+[2,"Футболка хлопковая, шалфей","Усиливает зелёный цвет глаз","база",900,2000,1,"футболка женская хлопок шалфей"],
+[3,"Лонгслив в рубчик, серо-бежевый","Под заправку, для слоёв","база",1000,2500,1,"лонгслив женский рубчик бежевый"],
+[4,"Топ с квадратным вырезом, трикотаж, мокко","Открывает ключицы, расширяет плечо","база",1200,2500,2,"топ женский квадратный вырез трикотаж коричневый"],
+[5,"Водолазка тонкая, графит","Замена чёрной водолазке","база",1500,3000,1,"водолазка женская тонкая графит"],
+[6,"Джемпер мериносовый с V-вырезом, таупе","Ключевой трикотаж; V удлиняет шею","ключевая",3500,8000,1,"джемпер женский мерино v вырез бежевый"],
+[7,"Кардиган укороченный на пуговицах, шалфей","Создаёт талию у прямого силуэта","база",2500,5000,2,"кардиган женский укороченный на пуговицах зеленый шалфей"],
+[8,"Рубашка из поплина relaxed fit, голубая","Слой поверх футболки, рукав подворачивается","база",2000,4500,2,"рубашка женская поплин голубая свободная"],
+[9,"Блуза из вискозы или купро, пыльно-голубая","Мягкий блеск без глянца","база",2500,5000,3,"блуза женская вискоза голубая"],
+["Низ"],
+[10,"Джинсы прямые, высокая посадка, средне-голубые","Главная вещь капсулы","ключевая",3000,7000,1,"джинсы женские прямые высокая посадка голубые"],
+[11,"Джинсы wide leg, тёмный деним","Удлиняют ноги при длине в пол","база",3000,6500,2,"джинсы женские широкие высокая посадка темно синие"],
+[12,"Брюки широкие с защипами, таупе, шерсть-смесь","Работа и город, держат вертикаль","ключевая",3500,8000,1,"брюки женские широкие с защипами высокая посадка бежевые"],
+[13,"Брюки прямые из льна или хлопка, молочные","Лето, поездки","база",2500,5000,3,"брюки женские лен прямые молочные высокая посадка"],
+[14,"Юбка миди слип из матового сатина, олива","Деликатный романтизм","база",2000,4500,2,"юбка миди сатин женская оливковая"],
+[15,"Юбка миди трикотажная, грейдж","Мягкий комфорт на каждый день","база",2000,4500,3,"юбка миди трикотажная женская бежевая"],
+[16,"Платье миди трикотажное с поясом, мокко","Вечер, свидание","ключевая",3000,6500,2,"платье миди трикотажное с поясом коричневое"],
+["Верхняя одежда"],
+[17,"Жакет relaxed fit с лёгким плечом, графит","Структура там, где нужна","ключевая",5000,12000,2,"жакет женский свободный серый пиджак"],
+[18,"Тренч классический, stone / серо-бежевый","Вертикаль и французский casual","ключевая",7000,15000,3,"тренч женский бежевый классический"],
+[19,"Пальто прямое шерстяное миди, грейдж","Главная вещь на холодный сезон","ключевая",12000,30000,1,"пальто женское прямое шерсть миди бежевое"],
+[20,"Куртка из замши укороченная, карамель","Тихая дерзость и фактура","ключевая",5000,15000,3,"куртка женская замшевая укороченная коричневая"],
+[21,"Пуховик до середины бедра, матовый, серая олива","Зима и прогулки с ребёнком","ключевая",10000,25000,1,"пуховик женский матовый оливковый"],
+["Обувь"],
+[22,"Лоферы на тонкой подошве, коричневые","Офис и город","ключевая",4000,10000,2,"лоферы женские кожаные коричневые"],
+[23,"Кеды минималистичные, молочные","Каждый день и прогулки","база",3000,8000,1,"кеды женские кожаные молочные минималистичные"],
+[24,"Ботильоны, замша, миндалевидный нос, каблук 4–5 см","Осень, удлиняют ногу под брюками","ключевая",6000,15000,1,"ботильоны женские замша миндалевидный нос каблук"],
+[25,"Балетки или мэри джейн, мокко","Деликатный романтизм","база",2500,6000,3,"мэри джейн женские туфли коричневые"],
+["Аксессуары"],
+[26,"Сумка через плечо мягкая, кожа, коричневая","Ключевой аксессуар","ключевая",4000,12000,2,"сумка женская кожаная мягкая через плечо коричневая"],
+[27,"Ремень тонкий кожаный 2–3 см, пряжка под золото","Талия и quiet edge","база",1000,3000,1,"ремень женский кожаный тонкий золотая пряжка"],
+[28,"Серьги-кольца и тонкая цепочка, позолота","Мелкий масштаб, тёплый металл","база",1000,4000,2,"серьги кольца маленькие позолота тонкие"],
+[29,"Шарф или палантин из шерсти, пыльно-голубой","Цвет у лица зимой","база",1500,4000,1,"шарф женский шерсть голубой пыльный"]
+];
+const fmt=n=>Math.round(n).toLocaleString("ru-RU");
+const L=q=>{const e=encodeURIComponent(q);return `<div class="links"><a href="https://www.wildberries.ru/catalog/0/search.aspx?search=${e}" target="_blank" rel="noopener">WB</a><a href="https://www.ozon.ru/search/?text=${e}" target="_blank" rel="noopener">Ozon</a><a href="https://www.lamoda.ru/catalogsearch/result/?q=${e}" target="_blank" rel="noopener">Lamoda</a></div>`};
+const ITEMS={};let rows="",tMin=0,tMax=0,p1Min=0,p1Max=0;
+C.forEach(r=>{
+  if(r.length===1){rows+=`<tr class="cat"><td colspan="8">${r[0]}</td></tr>`;return}
+  const [n,name,why,tier,mn,mx,pr,q]=r;ITEMS[n]={mn,mx,q};tMin+=mn;tMax+=mx;if(pr===1){p1Min+=mn;p1Max+=mx}
+  rows+=`<tr><td class="num">${n}</td><td class="ph" id="ph${n}" data-n="${n}"><div class="load">поиск…</div></td><td><b>${name}</b></td><td>${why}</td><td class="tier">${tier}</td><td class="num">${fmt(mn)}–${fmt(mx)}</td><td><span class="pill p${pr}">${pr}</span></td><td>${L(q)}</td></tr>`;
+});
+document.getElementById("cap").innerHTML=rows;
+document.getElementById("totals").innerHTML=`<div class="panel"><span class="eyebrow">Вся капсула</span><b>${fmt(tMin)}–${fmt(tMax)} ₽</b><span class="note">29 вещей, смешанный сегмент</span></div><div class="panel"><span class="eyebrow">Очередь 1</span><b>${fmt(p1Min)}–${fmt(p1Max)} ₽</b><span class="note">минимум на осень и зиму</span></div>`;
+
+/* ---------- Фото товаров Wildberries ---------- */
+const KEY="style-dna-wb-art";
+let ART={};try{ART=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){ART={}}
+function saveArt(){try{localStorage.setItem(KEY,JSON.stringify(ART))}catch(e){}}
+const RANGES=[143,287,431,719,1007,1061,1115,1169,1313,1601,1655,1919,2045,2189,2405,2621,2837,3053,3269,3485,3701,3917,4133,4349,4565,4877,5189,5501,5813,6125,6437,6749,7061,7373,7685,7997,8309,8621,8933,9245,9557,9869,10181,10493];
+function guess(vol){for(let i=0;i<RANGES.length;i++)if(vol<=RANGES[i])return i+1;return RANGES.length+1}
+function wbImg(id,b){return `https://basket-${String(b).padStart(2,"0")}.wbbasket.ru/vol${Math.floor(id/1e5)}/part${Math.floor(id/1e3)}/${id}/images/c246x328/1.webp`}
+function cellOf(n){return document.getElementById("ph"+n)}
+function editBtn(n){const b=document.createElement("button");b.type="button";b.className="mini";b.textContent=ART[n]?"изменить":"свой артикул";b.onclick=()=>openEdit(n);return b}
+function showThumb(n,item){
+  const cell=cellOf(n);cell.innerHTML="";
+  const a=document.createElement("a");a.className="thumb";a.href=`https://www.wildberries.ru/catalog/${item.id}/detail.aspx`;a.target="_blank";a.rel="noopener";
+  const img=new Image();img.alt=item.name||("Товар "+item.id);img.loading="lazy";img.referrerPolicy="no-referrer";
+  const g=guess(Math.floor(item.id/1e5));const order=[g];for(let d=1;d<=12;d++){order.push(g+d);if(g-d>0)order.push(g-d)}
+  let i=0;img.onerror=()=>{i++;if(i<order.length){img.src=wbImg(item.id,order[i])}else{img.remove();a.insertAdjacentHTML("afterbegin",'<span class="noimg">открыть товар</span>')}};
+  img.src=wbImg(item.id,order[0]);a.appendChild(img);cell.appendChild(a);
+  const cap=document.createElement("div");cap.className="tcap";cap.textContent=item.price?fmt(item.price)+" ₽":"арт. "+item.id;cell.appendChild(cap);
+  cell.appendChild(editBtn(n));
+}
+function showEmpty(n,text){const cell=cellOf(n);cell.innerHTML=`<div class="load">${text}</div>`;cell.appendChild(editBtn(n))}
+function openEdit(n){
+  const cell=cellOf(n);if(cell.querySelector("form"))return;
+  const f=document.createElement("form");f.className="artf";
+  f.innerHTML=`<input id="art${n}" inputmode="numeric" autocomplete="off" placeholder="артикул или ссылка" aria-label="Артикул Wildberries для вещи ${n}"><button class="mini" type="submit">ок</button>`;
+  f.querySelector("input").value=ART[n]||"";
+  f.onsubmit=e=>{e.preventDefault();const raw=f.querySelector("input").value.trim();const m=raw.match(/catalog\/(\d{5,})/)||raw.match(/(\d{5,})/);
+    if(m){ART[n]=m[1];saveArt();showThumb(n,{id:+m[1]})}
+    else if(!raw){delete ART[n];saveArt();showEmpty(n,"поиск…");if(method>=0)searchOne(n).then(()=>{})}};
+  cell.appendChild(f);f.querySelector("input").focus();
+}
+function endpoints(q){const e=encodeURIComponent(q);const tail=`appType=1&curr=rub&dest=-1257786&query=${e}&resultset=catalog&sort=popular&spp=30`;
+  const v4=`https://search.wb.ru/exactmatch/ru/common/v4/search?${tail}`,v9=`https://search.wb.ru/exactmatch/ru/common/v9/search?${tail}`;
+  return [v4,v9,"https://corsproxy.io/?url="+encodeURIComponent(v4),"https://corsproxy.io/?url="+encodeURIComponent(v9)]}
+async function getJSON(u){const c=new AbortController();const t=setTimeout(()=>c.abort(),9000);try{const r=await fetch(u,{signal:c.signal,credentials:"omit"});if(!r.ok)throw new Error(r.status);return await r.json()}finally{clearTimeout(t)}}
+function priceOf(p){if(p.salePriceU)return p.salePriceU/100;const s=p.sizes&&p.sizes[0]&&p.sizes[0].price;if(s&&(s.product||s.total))return (s.product||s.total)/100;if(p.priceU)return p.priceU/100;return 0}
+function pick(ps,it){const ok=ps.filter(p=>{const v=priceOf(p);return v>=it.mn*0.6&&v<=it.mx*1.3});const p=ok[0]||ps[0];return p?{id:p.id,name:[p.brand,p.name].filter(Boolean).join(" "),price:priceOf(p)}:null}
+let method=-1;
+async function tryMethod(i,q){const j=await getJSON(endpoints(q)[i]);const ps=(j&&j.data&&j.data.products)||(j&&j.products)||[];return ps}
+async function searchOne(n){const it=ITEMS[n];try{const ps=await tryMethod(method,it.q);const p=pick(ps,it);if(p){showThumb(n,p);return true}showEmpty(n,"не найдено");return false}catch(e){showEmpty(n,"нет ответа");return false}}
+const dot=document.getElementById("wbdot"),stat=document.getElementById("wbstat");
+async function run(){
+  const ids=Object.keys(ITEMS).map(Number);
+  ids.forEach(n=>{if(ART[n])showThumb(n,{id:+ART[n]})});
+  const todo=ids.filter(n=>!ART[n]);
+  dot.className="dot";stat.textContent="Подбираю товары на Wildberries…";
+  if(!todo.length){dot.className="dot ok";stat.textContent="Все фото взяты из ваших артикулов.";return}
+  todo.forEach(n=>showEmpty(n,"поиск…"));
+  method=-1;const first=todo[0];
+  for(let i=0;i<4&&method<0;i++){try{const ps=await tryMethod(i,ITEMS[first].q);if(ps.length){method=i;const p=pick(ps,ITEMS[first]);if(p)showThumb(first,p)}}catch(e){}}
+  if(method<0){dot.className="dot bad";stat.textContent="Wildberries не отдал товары этой странице. Добавьте фото через «свой артикул»: скопируйте артикул или ссылку товара в приложении WB.";todo.forEach(n=>showEmpty(n,"нет фото"));return}
+  let found=1,done=1;
+  for(const n of todo.slice(1)){if(await searchOne(n))found++;done++;stat.textContent=`Подбираю товары: ${done} из ${todo.length}…`;await new Promise(r=>setTimeout(r,250))}
+  dot.className=found?"dot ok":"dot bad";
+  stat.textContent=`Найдено фото: ${found+ids.length-todo.length} из ${ids.length}.${method>=2?" Работает через резервный канал.":""} Нажмите «свой артикул», чтобы заменить товар.`;
+}
+document.getElementById("wbre").onclick=()=>{run()};
+run();
+
+const looks=[
+["Работа","Жакет графит, топ с квадратным вырезом, широкие брюки таупе, лоферы, тонкий ремень, сумка через плечо",["#4A4C50","#6B5547","#8C7F73"],[17,4,12,22,27,26]],
+["Город, будни","Тренч, джемпер с V-вырезом с французской заправкой, прямые джинсы, кеды, серьги-кольца",["#B8AFA3","#8C7F73","#6F86A0"],[18,6,10,23,28]],
+["Прогулка с ребёнком","Лонгслив в рубчик, кардиган шалфей, прямые джинсы, кеды, кросс-боди; зимой пуховик и шарф. Всё стирается и не мнётся",["#B8AFA3","#9DAA8F","#6F86A0"],[3,7,10,23,21,29]],
+["Выходные, кафе","Слип-юбка олива, укороченный кардиган или футболка шалфей, ботильоны, тонкая цепочка",["#7A7D5E","#9DAA8F","#B08A68"],[14,7,2,24,28]],
+["Вечер, свидание","Трикотажное платье мокко с поясом, жакет на плечи, мэри джейн, золотые серьги",["#6B5547","#4A4C50","#B99A9A"],[16,17,25,28]],
+["Поездка","Льняные брюки, футболка шалфей, рубашка-слой, кеды, мягкая сумка",["#E9E2D6","#9DAA8F","#9AB0C2"],[13,2,8,23,26]],
+["Холодный сезон","Пальто миди, водолазка графит, широкие брюки, ботильоны, шерстяной шарф пыльно-голубой",["#B8AFA3","#4A4C50","#9AB0C2"],[19,5,12,24,29]]
+];
+document.getElementById("looks").innerHTML=looks.map(([t,d,cols,ids])=>`<div class="panel look"><div class="dots">${cols.map(c=>`<span style="background:${c}"></span>`).join("")}</div><h3>${t}</h3><p>${d}</p><p class="note">Вещи №${ids.join(", №")}</p></div>`).join("");
+</script>
+</body>
+</html>
