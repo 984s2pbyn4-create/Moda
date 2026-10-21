@@ -88,6 +88,7 @@ td.ph{width:104px;min-width:104px}
 .artf{display:flex;gap:4px;margin-top:4px}
 .artf input{width:96px;font:12px var(--body);padding:4px 6px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink)}
 .wbbar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px 16px;font-size:14px}
+.buy{display:inline-block;margin-top:4px;font:700 12px var(--body);color:var(--paper);background:var(--ink);border-radius:3px;padding:3px 10px;text-decoration:none}
 .wbbar button{font:600 13px var(--body);background:var(--ink);color:var(--paper);border:0;border-radius:3px;padding:7px 12px;cursor:pointer}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
 .dot.ok{background:var(--yes)}.dot.bad{background:var(--no)}
@@ -230,14 +231,14 @@ a{color:var(--accent)}
 
 <section class="sec">
   <div class="sec-head"><span class="eyebrow">08 · Капсула</span><h2>29 вещей и где их искать</h2></div>
-  <p>Столбец «Фото» при открытии страницы ищет на Wildberries первый подходящий товар в нужном ценовом диапазоне и показывает его фото, цену и ссылку. Если Wildberries не ответит, вставьте артикул или ссылку на товар через «свой артикул»: фото появится сразу и сохранится на этом устройстве. Ссылки WB, Ozon и Lamoda открывают поиск по точному запросу.</p>
-  <div class="wbbar"><span class="dot" id="wbdot"></span><span id="wbstat">Подбираю товары на Wildberries…</span><button type="button" id="wbre">Подобрать заново</button></div>
+  <p>В столбце «Фото» показан конкретный товар из магазина бренда: нажмите на фото или «Купить», чтобы открыть его страницу. Цена указана, если магазин показал её в поиске. Ссылки WB, Ozon и Lamoda открывают поиск похожих вещей по точному запросу.</p>
+  <div class="wbbar"><span class="dot" id="wbdot"></span><span id="wbstat">Загружаю фото…</span></div>
   <div class="totals" id="totals"></div>
   <div class="tbl"><table>
     <thead><tr><th>№</th><th>Фото</th><th>Вещь и цвет</th><th>Почему</th><th>Сегмент</th><th class="num">Цена, ₽</th><th>Очередь</th><th>Найти</th></tr></thead>
     <tbody id="cap"></tbody>
   </table></div>
-  <p class="note">Очередь покупки: <span class="pill p1">1</span> сейчас, к осени и зиме; <span class="pill p2">2</span> в течение 1–2 месяцев; <span class="pill p3">3</span> к весне или по желанию. Автоподбор берёт первый популярный товар по запросу: проверяйте состав (хлопок, шерсть, вискоза, лён от 50%) и фото на модели в полный рост, чтобы оценить посадку и длину.</p>
+  <p class="note">Очередь покупки: <span class="pill p1">1</span> сейчас, к осени и зиме; <span class="pill p2">2</span> в течение 1–2 месяцев; <span class="pill p3">3</span> к весне или по желанию. Перед покупкой проверяйте состав (хлопок, шерсть, вискоза, лён от 50%) и фото на модели в полный рост, чтобы оценить посадку и длину.</p>
 </section>
 
 <section class="sec">
@@ -313,68 +314,56 @@ const ITEMS={};let rows="",tMin=0,tMax=0,p1Min=0,p1Max=0;
 C.forEach(r=>{
   if(r.length===1){rows+=`<tr class="cat"><td colspan="8">${r[0]}</td></tr>`;return}
   const [n,name,why,tier,mn,mx,pr,q]=r;ITEMS[n]={mn,mx,q};tMin+=mn;tMax+=mx;if(pr===1){p1Min+=mn;p1Max+=mx}
-  rows+=`<tr><td class="num">${n}</td><td class="ph" id="ph${n}" data-n="${n}"><div class="load">поиск…</div></td><td><b>${name}</b></td><td>${why}</td><td class="tier">${tier}</td><td class="num">${fmt(mn)}–${fmt(mx)}</td><td><span class="pill p${pr}">${pr}</span></td><td>${L(q)}</td></tr>`;
+  rows+=`<tr><td class="num">${n}</td><td class="ph" id="ph${n}" data-n="${n}"><div class="load">поиск…</div></td><td><b>${name}</b><div class="note" id="nm${n}"></div></td><td>${why}</td><td class="tier">${tier}</td><td class="num">${fmt(mn)}–${fmt(mx)}</td><td><span class="pill p${pr}">${pr}</span></td><td>${L(q)}</td></tr>`;
 });
 document.getElementById("cap").innerHTML=rows;
 document.getElementById("totals").innerHTML=`<div class="panel"><span class="eyebrow">Вся капсула</span><b>${fmt(tMin)}–${fmt(tMax)} ₽</b><span class="note">29 вещей, смешанный сегмент</span></div><div class="panel"><span class="eyebrow">Очередь 1</span><b>${fmt(p1Min)}–${fmt(p1Max)} ₽</b><span class="note">минимум на осень и зиму</span></div>`;
 
-/* ---------- Фото товаров Wildberries ---------- */
-const KEY="style-dna-wb-art";
-let ART={};try{ART=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){ART={}}
-function saveArt(){try{localStorage.setItem(KEY,JSON.stringify(ART))}catch(e){}}
-const RANGES=[143,287,431,719,1007,1061,1115,1169,1313,1601,1655,1919,2045,2189,2405,2621,2837,3053,3269,3485,3701,3917,4133,4349,4565,4877,5189,5501,5813,6125,6437,6749,7061,7373,7685,7997,8309,8621,8933,9245,9557,9869,10181,10493];
-function guess(vol){for(let i=0;i<RANGES.length;i++)if(vol<=RANGES[i])return i+1;return RANGES.length+1}
-function wbImg(id,b){return `https://basket-${String(b).padStart(2,"0")}.wbbasket.ru/vol${Math.floor(id/1e5)}/part${Math.floor(id/1e3)}/${id}/images/c246x328/1.webp`}
-function cellOf(n){return document.getElementById("ph"+n)}
-function editBtn(n){const b=document.createElement("button");b.type="button";b.className="mini";b.textContent=ART[n]?"изменить":"свой артикул";b.onclick=()=>openEdit(n);return b}
-function showThumb(n,item){
-  const cell=cellOf(n);cell.innerHTML="";
-  const a=document.createElement("a");a.className="thumb";a.href=`https://www.wildberries.ru/catalog/${item.id}/detail.aspx`;a.target="_blank";a.rel="noopener";
-  const img=new Image();img.alt=item.name||("Товар "+item.id);img.loading="lazy";img.referrerPolicy="no-referrer";
-  const g=guess(Math.floor(item.id/1e5));const order=[g];for(let d=1;d<=12;d++){order.push(g+d);if(g-d>0)order.push(g-d)}
-  let i=0;img.onerror=()=>{i++;if(i<order.length){img.src=wbImg(item.id,order[i])}else{img.remove();a.insertAdjacentHTML("afterbegin",'<span class="noimg">открыть товар</span>')}};
-  img.src=wbImg(item.id,order[0]);a.appendChild(img);cell.appendChild(a);
-  const cap=document.createElement("div");cap.className="tcap";cap.textContent=item.price?fmt(item.price)+" ₽":"арт. "+item.id;cell.appendChild(cap);
-  cell.appendChild(editBtn(n));
-}
-function showEmpty(n,text){const cell=cellOf(n);cell.innerHTML=`<div class="load">${text}</div>`;cell.appendChild(editBtn(n))}
-function openEdit(n){
-  const cell=cellOf(n);if(cell.querySelector("form"))return;
-  const f=document.createElement("form");f.className="artf";
-  f.innerHTML=`<input id="art${n}" inputmode="numeric" autocomplete="off" placeholder="артикул или ссылка" aria-label="Артикул Wildberries для вещи ${n}"><button class="mini" type="submit">ок</button>`;
-  f.querySelector("input").value=ART[n]||"";
-  f.onsubmit=e=>{e.preventDefault();const raw=f.querySelector("input").value.trim();const m=raw.match(/catalog\/(\d{5,})/)||raw.match(/(\d{5,})/);
-    if(m){ART[n]=m[1];saveArt();showThumb(n,{id:+m[1]})}
-    else if(!raw){delete ART[n];saveArt();showEmpty(n,"поиск…");if(method>=0)searchOne(n).then(()=>{})}};
-  cell.appendChild(f);f.querySelector("input").focus();
-}
-function endpoints(q){const e=encodeURIComponent(q);const tail=`appType=1&curr=rub&dest=-1257786&query=${e}&resultset=catalog&sort=popular&spp=30`;
-  const v4=`https://search.wb.ru/exactmatch/ru/common/v4/search?${tail}`,v9=`https://search.wb.ru/exactmatch/ru/common/v9/search?${tail}`;
-  return [v4,v9,"https://corsproxy.io/?url="+encodeURIComponent(v4),"https://corsproxy.io/?url="+encodeURIComponent(v9)]}
-async function getJSON(u){const c=new AbortController();const t=setTimeout(()=>c.abort(),9000);try{const r=await fetch(u,{signal:c.signal,credentials:"omit"});if(!r.ok)throw new Error(r.status);return await r.json()}finally{clearTimeout(t)}}
-function priceOf(p){if(p.salePriceU)return p.salePriceU/100;const s=p.sizes&&p.sizes[0]&&p.sizes[0].price;if(s&&(s.product||s.total))return (s.product||s.total)/100;if(p.priceU)return p.priceU/100;return 0}
-function pick(ps,it){const ok=ps.filter(p=>{const v=priceOf(p);return v>=it.mn*0.6&&v<=it.mx*1.3});const p=ok[0]||ps[0];return p?{id:p.id,name:[p.brand,p.name].filter(Boolean).join(" "),price:priceOf(p)}:null}
-let method=-1;
-async function tryMethod(i,q){const j=await getJSON(endpoints(q)[i]);const ps=(j&&j.data&&j.data.products)||(j&&j.products)||[];return ps}
-async function searchOne(n){const it=ITEMS[n];try{const ps=await tryMethod(method,it.q);const p=pick(ps,it);if(p){showThumb(n,p);return true}showEmpty(n,"не найдено");return false}catch(e){showEmpty(n,"нет ответа");return false}}
-const dot=document.getElementById("wbdot"),stat=document.getElementById("wbstat");
-async function run(){
-  const ids=Object.keys(ITEMS).map(Number);
-  ids.forEach(n=>{if(ART[n])showThumb(n,{id:+ART[n]})});
-  const todo=ids.filter(n=>!ART[n]);
-  dot.className="dot";stat.textContent="Подбираю товары на Wildberries…";
-  if(!todo.length){dot.className="dot ok";stat.textContent="Все фото взяты из ваших артикулов.";return}
-  todo.forEach(n=>showEmpty(n,"поиск…"));
-  method=-1;const first=todo[0];
-  for(let i=0;i<4&&method<0;i++){try{const ps=await tryMethod(i,ITEMS[first].q);if(ps.length){method=i;const p=pick(ps,ITEMS[first]);if(p)showThumb(first,p)}}catch(e){}}
-  if(method<0){dot.className="dot bad";stat.textContent="Wildberries не отдал товары этой странице. Добавьте фото через «свой артикул»: скопируйте артикул или ссылку товара в приложении WB.";todo.forEach(n=>showEmpty(n,"нет фото"));return}
-  let found=1,done=1;
-  for(const n of todo.slice(1)){if(await searchOne(n))found++;done++;stat.textContent=`Подбираю товары: ${done} из ${todo.length}…`;await new Promise(r=>setTimeout(r,250))}
-  dot.className=found?"dot ok":"dot bad";
-  stat.textContent=`Найдено фото: ${found+ids.length-todo.length} из ${ids.length}.${method>=2?" Работает через резервный канал.":""} Нажмите «свой артикул», чтобы заменить товар.`;
-}
-document.getElementById("wbre").onclick=()=>{run()};
-run();
+/* ---------- Фото и ссылки на товары (подбор 21.10.2026) ---------- */
+const P={
+1:{s:"SELA",t:"Футболка из мерсеризованного хлопка, молочная",u:"https://www.sela.ru/eshop/women/futbolki/SL6810010231_2/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/36/12/221236/images/989335/989335.970x0.jpg",p:2299},
+2:{s:"SELA",t:"Базовая футболка slim fit, хаки-олива",u:"https://www.sela.ru/eshop/women/futbolki/4805010242_13/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/10/27/152710/images/984442/984442.970x0.jpg",p:399},
+3:{s:"SELA",t:"Базовый лонгслив в рубчик, бежевый меланж",u:"https://www.sela.ru/eshop/women/futbolki/longsleeve/5801010210_64/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/14/24/172414/images/783867/783867.970x0.jpg",p:799},
+4:{s:"SELA",t:"Топ с V-вырезом в рубчик, коричневый",u:"https://www.sela.ru/eshop/women/tops/SL6803010223_20/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/88/97/209788/images/914974/914974.970x0.jpg",p:999},
+5:{s:"Befree",t:"Водолазка тонкой вязки с шерстью и альпака",u:"https://befree.ru/zhenskaya/product/BF2531526030/39",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2531526030/BF2531526030_39_1.jpg"},
+6:{s:"Befree",t:"Джемпер из 100% шерсти мериноса, бежевый",u:"https://befree.ru/zhenskaya/product/2431526014/36",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2431526014/2431526014_36_1.jpg"},
+7:{s:"Befree",t:"Кардиган укороченный на пуговицах, зелёный",u:"https://befree.ru/zhenskaya/product/2311400832/151",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2311400832/2311400832_151_4.jpg"},
+8:{s:"Befree",t:"Рубашка оверсайз из хлопка в тонкую полоску, голубая",u:"https://befree.ru/zhenskaya/product/BF2521418014/42",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2521418014/BF2521418014_42_1.jpg"},
+9:{s:"Zarina",t:"Блуза из вискозы с укороченным рукавом",u:"https://zarina.ru/catalog/product/zr2604012008-41/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2604012008_41_1.webp?t=1772189697",p:2199},
+10:{s:"Zarina",t:"Прямые джинсы с высокой посадкой (подборка модели)",u:"https://zarina.ru/catalog/zhenskie-priamie-golubye-dzhinsy/",i:"https://imgcdn.zarina.ru/upload/images/zr261/thumb/900_9999/zr2610092328_102_1.webp?t=1786448044",p:2999},
+11:{s:"ТВОЕ",t:"Джинсы wide leg со стрелками, тёмно-серые",u:"https://tvoe.ru/product/dzhinsy-shirokie-wide-leg-so-strelkami-temno-seryy-b8402/",i:"https://tvoe.ru/img/3420al2/product/900/1200/8/4610606146086-02.jpg"},
+12:{s:"Befree",t:"Брюки широкие костюмные с защипами, серые",u:"https://befree.ru/zhenskaya/product/2431308011/38",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2431308011/2431308011_38_2.jpg"},
+13:{s:"Zarina",t:"Льняные брюки прямого кроя",u:"https://zarina.ru/catalog/product/zr2605012108-2/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2605012108_2_1.webp?t=1776759595"},
+14:{s:"Zarina",t:"Сатиновая юбка миди с поясом на кулиске",u:"https://zarina.ru/catalog/product/zr2504013505-13/",i:"https://imgcdn.zarina.ru/upload/images/zr250/thumb/900_9999/zr2504013505_13_1.webp?t=1737556890",p:1099},
+15:{s:"LIMÉ",t:"Юбка миди из трикотажа с ангорой, светло-бежевый меланж",u:"https://lime-shop.com/ru_ru/product/14254_0413_219-svetlo_bezevyi_melanz",i:"https://a.cdn.lime-shine.com/p/7478492721cda7b23516511ee9dce00155d011401.jpeg"},
+16:{s:"ТВОЕ",t:"Трикотажное платье миди, коричневый меланж",u:"https://tvoe.ru/product/trikotazhnoe-plate-midi-s-dlinnym-rukavom-korichnevyy-melanzh-104895/",i:"https://tvoe.ru/img/3t1i5gv/product/900/1200/8/4660303687351.jpg"},
+17:{s:"Befree",t:"Двубортный жакет, серый",u:"https://befree.ru/zhenskaya/product/2121370634/35",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2121370634/2121370634_35_1.jpg"},
+18:{s:"LIMÉ",t:"Тренч с поясом, светло-бежевый",u:"https://lime-shop.com/ru_ru/product/20689_4917_296-svetlo_bezevyi",i:"https://a.cdn.lime-shine.com/p/792585517babfb14f6d7b41ed876b801a5ba02c45.jpeg"},
+19:{s:"SELA",t:"Пальто из смесовой шерсти (50% шерсть), бежевое",u:"https://www.sela.ru/eshop/women/verkhnyaya-odezhda/palto/4809011208_189/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/42/05/160542/images/737279/737279.970x0.jpg"},
+20:{s:"Befree",t:"Куртка из искусственной замши с ремешком",u:"https://befree.ru/zhenskaya/product/BF2631601029/22",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2631601029/BF2631601029_22_1.jpg"},
+21:{s:"SELA",t:"Стёганая куртка с вязаным капюшоном, тёмный хаки (демисезон; на зиму ищите пуховик того же цвета)",u:"https://www.sela.ru/eshop/women/verkhnyaya-odezhda/jackets/4809011135_328/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/73/03/160373/images/749797/749797.970x0.jpg",p:1999},
+22:{s:"SELA",t:"Лоферы из натуральной замши, коричневые",u:"https://www.sela.ru/eshop/women/obuv/baletki/SL6807205601_191/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/53/49/214953/images/959424/959424.970x0.jpg",p:6999},
+23:{s:"Befree",t:"Кеды из фактурной искусственной кожи, белые",u:"https://befree.ru/zhenskaya/product/2426680001/1",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2426680001/2426680001_1_6.jpg"},
+24:{s:"Befree",t:"Ботильоны на каблуке из натуральной замши",u:"https://befree.ru/zhenskaya/product/BF2636687005/20",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2636687005/BF2636687005_20_1.jpg"},
+25:{s:"ТВОЕ",t:"Балетки мэри джейн замшевые, коричневые",u:"https://tvoe.ru/product/baletki-meri-dzheyn-zamshevye-korichnevyy-b8558/",p:1599},
+26:{s:"Befree",t:"Сумка-багет на плечо, коричневая",u:"https://befree.ru/zhenskaya/product/BF2635457036/20",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2635457036/BF2635457036_20_12.jpg",p:3299},
+27:{s:"Zarina",t:"Ремень тонкий плетёный, коричневый",u:"https://zarina.ru/catalog/product/zr2604061401-20/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2604061401_20_1.webp?t=1772095797",p:599},
+29:{s:"Befree",t:"Шарф пушистый с шерстью, голубой",u:"https://befree.ru/zhenskaya/product/BF2645341042/42",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2645341042/BF2645341042_42_1.jpg"}
+};
+function noImg(a){const s=document.createElement("span");s.className="noimg";s.textContent="фото на сайте";a.innerHTML="";a.appendChild(s)}
+let shown=0;
+Object.keys(ITEMS).forEach(k=>{
+  const n=+k,cell=document.getElementById("ph"+n),p=P[n];
+  if(!p){cell.innerHTML='<div class="load">подходящего фото нет — смотрите поиск справа</div>';return}
+  const a=document.createElement("a");a.className="thumb";a.href=p.u;a.target="_blank";a.rel="noopener";a.title=p.t;
+  if(p.i){const img=new Image();img.alt=p.t;img.loading="lazy";img.referrerPolicy="no-referrer";img.onerror=()=>noImg(a);img.src=p.i;a.appendChild(img);shown++}else{noImg(a)}
+  cell.innerHTML="";cell.appendChild(a);
+  const cap=document.createElement("div");cap.className="tcap";cap.textContent=p.s+(p.p?" · "+fmt(p.p)+" ₽":"");cell.appendChild(cap);
+  const b=document.createElement("a");b.className="buy";b.href=p.u;b.target="_blank";b.rel="noopener";b.textContent="Купить";cell.appendChild(b);
+  const nm=document.getElementById("nm"+n);if(nm){nm.textContent="В магазине: "+p.t}
+});
+document.getElementById("wbstat").textContent=`Фото и ссылки на ${Object.keys(P).length} из 29 вещей подобраны 21 октября 2026 в магазинах SELA, Befree, Zarina, LIMÉ и ТВОЕ. Если товар закончился, пользуйтесь поиском WB, Ozon и Lamoda справа.`;
+document.getElementById("wbdot").className="dot ok";
 
 const looks=[
 ["Работа","Жакет графит, топ с квадратным вырезом, широкие брюки таупе, лоферы, тонкий ремень, сумка через плечо",["#4A4C50","#6B5547","#8C7F73"],[17,4,12,22,27,26]],
