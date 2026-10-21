@@ -3,378 +3,591 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#EFF1EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161A19" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Style DNA">
 <title>Style DNA Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
-:root{--bg:#EEF0EC;--paper:#F8F9F6;--ink:#2F3236;--muted:#6A6E70;--line:#D3D8D0;--accent:#6F8064;--accent-soft:#DDE4D6;--yes:#4F7A5A;--yes-bg:#E2EEE4;--no:#A04B45;--no-bg:#F4E3E1;--display:"Prata","Playfair Display",Georgia,serif;--body:"Manrope","Segoe UI",system-ui,sans-serif;color-scheme:light}
-@media (prefers-color-scheme:dark){:root{--bg:#1C1F1E;--paper:#242827;--ink:#E6E8E3;--muted:#A3A8A2;--line:#3A403D;--accent:#A9BB9C;--accent-soft:#2F3A2E;--yes:#8CC39A;--yes-bg:#22352A;--no:#E39A93;--no-bg:#3D2624;color-scheme:dark}}
+/* Мир: «ателье в тумане» — спокойный шалфейный фон, графит, одна фирменная антиква только для имени клиента. Режим Operate: таб-бар, списки, понятные контролы. */
+:root{
+  --bg:#EFF1EC; --surface:#FAFBF8; --surface-2:#E5E9E1; --ink:#23282A; --muted:#5C6460; --line:#D3D9CF;
+  --accent:#4F6B49; --on-accent:#F4F7F1; --accent-soft:#DCE5D5;
+  --yes:#3F6E4B; --yes-bg:#E1EEE3; --no:#9A443E; --no-bg:#F5E3E0;
+  --shadow:0 1px 2px rgba(35,40,42,.06),0 8px 24px -12px rgba(35,40,42,.18);
+  --ui:"Manrope","Segoe UI",system-ui,-apple-system,sans-serif; --display:"Prata","Playfair Display",Georgia,serif;
+  --r:10px; color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#161A19; --surface:#1E2321; --surface-2:#262C29; --ink:#E7EAE5; --muted:#A3ABA5; --line:#353C38;
+  --accent:#A8C29B; --on-accent:#15200F; --accent-soft:#2C3829;
+  --yes:#8FC59D; --yes-bg:#1F3326; --no:#E79C94; --no-bg:#3B2422;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.6); color-scheme:dark}}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:calc(28px + env(safe-area-inset-top,0px)) calc(64px + env(safe-area-inset-bottom,0px))}
+html{-webkit-text-size-adjust:100%;accent-color:var(--accent);scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--ui);caret-color:var(--accent);-webkit-tap-highlight-color:transparent}
+::selection{background:var(--accent);color:var(--on-accent)}
 img{max-width:100%}
-.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
-h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.15}
-h1{font-size:clamp(38px,8vw,72px);letter-spacing:-.01em}
-h2{font-size:clamp(26px,4.4vw,36px)}
-h3{font-size:19px}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1.2}
+h2{font:600 1.375rem/1.25 var(--ui);letter-spacing:-.01em}
+h3{font:600 1rem/1.3 var(--ui)}
 p{margin:0;max-width:68ch}
-.eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.sec{display:flex;flex-direction:column;gap:20px}
-.sec-head{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--ink);padding-top:14px}
-.lead{font-size:17px}
-.note{font-size:13px;color:var(--muted)}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.grid>*{min-width:0}
-.panel{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:18px;display:flex;flex-direction:column;gap:10px}
-.kv{display:grid;grid-template-columns:minmax(110px,38%) 1fr;gap:6px 14px;font-size:14px;margin:0}
-.kv dt{color:var(--muted)}
-.kv dd{margin:0}
-ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
-.hero{display:grid;gap:24px;grid-template-columns:1.3fr 1fr;align-items:end}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+.ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin:0 auto}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;color:var(--ink);transition:background-color .18s,border-color .18s,transform .12s}
+.btn:hover{border-color:var(--muted)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.sm{min-height:34px;padding:0 12px;font-size:13px}
+.btn.danger{color:var(--no);border-color:color-mix(in srgb,var(--no) 40%,var(--line))}
+.iconbtn{width:44px;padding:0}
+#gate{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-items:center;padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom))}
+#gate[hidden]{display:none}
+#gate form{width:min(360px,100%);display:flex;flex-direction:column;gap:14px}
+#gate .mark{font:400 2.5rem/1 var(--display);letter-spacing:-.01em}
+#gate input[type=password]{height:52px;border-radius:12px;border:1px solid var(--line);background:var(--surface);padding:0 16px;font-size:20px;letter-spacing:.3em}
+#gate input[type=password]:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+#gate .err{color:var(--no);font-size:14px;min-height:1.4em}
+#gate label.chk{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
+#gate label.chk input{width:20px;height:20px}
+#gate.shake form{animation:shake .32s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:10px;min-height:60px;padding-block:8px}
+.who{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.avatar{width:36px;height:36px;border-radius:50%;flex:none;display:grid;place-items:center;font:600 14px var(--ui);color:var(--on-accent);background:var(--accent)}
+.who select{min-width:0;max-width:100%;height:44px;border:0;background:transparent;font-weight:600;font-size:16px;padding:0 24px 0 0;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 10px) 52%,calc(100% - 5px) 52%;background-size:5px 5px;background-repeat:no-repeat;text-overflow:ellipsis;cursor:pointer}
+.bar .acts{display:flex;gap:8px;flex:none}
+@media (max-width:520px){.bar .lbl{display:none}.bar .acts .btn{width:44px;padding:0}}
+.tabs{display:flex;gap:4px;padding:4px;margin-block:0 8px;background:var(--surface-2);border-radius:999px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;min-height:38px;padding:0 16px;border:0;border-radius:999px;background:transparent;font-weight:600;font-size:14px;color:var(--muted);cursor:pointer;transition:background-color .18s,color .18s}
+.tab[aria-selected=true]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+#clients{border-bottom:1px solid var(--line);background:var(--surface)}
+#clients[hidden]{display:none}
+#clients .wrap{padding-block:20px 24px;display:grid;gap:24px;grid-template-columns:1fr 1fr}
+@media (max-width:760px){#clients .wrap{grid-template-columns:1fr}}
+#clients .wrap>*{min-width:0}
+.clist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.clist li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-top:1px solid var(--line)}
+.clist li:first-child{border-top:0}
+.clist li.cur{background:var(--accent-soft)}
+.clist .nm{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.field{display:flex;flex-direction:column;gap:6px}
+.field input[type=text]{height:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);padding:0 12px}
+.field input[type=text]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.msg{font-size:14px;min-height:1.3em}
+.msg.ok{color:var(--yes)}.msg.bad{color:var(--no)}
+.steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--muted)}
+.hero{padding-block:28px 8px;display:grid;gap:20px;grid-template-columns:1.25fr 1fr;align-items:end}
 .hero>*{min-width:0}
-@media (max-width:720px){.hero{grid-template-columns:1fr}}
-.dna{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--ink);border-radius:999px;padding:5px 13px;font-size:13.5px;font-weight:600}
-.chip.alt{background:var(--accent-soft);border-color:var(--accent)}
-.hero-strip{display:flex;height:150px;border-radius:4px;overflow:hidden}
-.hero-strip span{flex:1}
-.scale{display:grid;grid-template-columns:minmax(120px,30%) 1fr;gap:6px 14px;align-items:center}
-.track{position:relative;height:6px;background:var(--line);border-radius:3px}
-.track i{position:absolute;top:-5px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:2px solid var(--paper);transform:translateX(-50%)}
-.ends{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);grid-column:2}
-.scale b{font-weight:600;font-size:14px}
-.sw-row{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(112px,1fr))}
-.sw{display:flex;flex-direction:column;gap:6px;font-size:12.5px;line-height:1.3}
-.sw div{aspect-ratio:1/1;max-width:100%;border-radius:3px;border:1px solid var(--line);position:relative}
-.sw.bad div::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 47%,var(--paper) 47%,var(--paper) 53%,transparent 53%)}
-.sw small{color:var(--muted)}
-.yn{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+@media (max-width:760px){.hero{grid-template-columns:1fr}}
+.hero h1{font:400 clamp(2.1rem,6.5vw,3.6rem)/1.05 var(--display);letter-spacing:-.015em}
+.hero .lead{font-size:16px;margin-top:12px}
+.dna{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;min-height:30px;padding:0 12px;border:1px solid var(--ink);border-radius:999px;font-size:13px;font-weight:600}
+.chip.alt{border-color:var(--accent);background:var(--accent-soft)}
+.strip{display:flex;height:128px;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.strip span{flex:1}
+.note{font-size:13px;color:var(--muted);padding-block:8px 0}
+main{padding-block:12px 80px}
+.view{display:flex;flex-direction:column;gap:40px;padding-top:16px}
+.view[hidden]{display:none}
+.block{display:flex;flex-direction:column;gap:16px}
+.block>header{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.cols{display:grid;gap:24px 32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.cols>*{min-width:0}
+dl.kv{display:grid;grid-template-columns:minmax(104px,34%) 1fr;margin:0;font-size:14px}
+dl.kv dt,dl.kv dd{padding:10px 0;border-top:1px solid var(--line);margin:0}
+dl.kv dt{color:var(--muted);padding-right:12px}
+dl.kv dt:first-of-type,dl.kv dt:first-of-type+dd{border-top:0}
+ul.list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.yn{display:grid;gap:12px;grid-template-columns:1fr 1fr}
 @media (max-width:640px){.yn{grid-template-columns:1fr}}
-.yn>div{border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.yn>div{border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .yn .y{background:var(--yes-bg)}.yn .n{background:var(--no-bg)}
-.yn h3{font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.yn h3{font-size:13px;letter-spacing:.04em}
 .yn .y h3{color:var(--yes)}.yn .n h3{color:var(--no)}
-.sil{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+.traits,.stop{display:grid;gap:0 32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.traits>div,.stop>div{padding:14px 0;border-top:1px solid var(--line);min-width:0}
+.traits h3{font:400 1.25rem/1.2 var(--display);margin-bottom:4px}
+.stop h3{color:var(--no);margin-bottom:2px}
+.scale{display:grid;grid-template-columns:minmax(120px,30%) 1fr;gap:4px 16px;align-items:center;padding:8px 0}
+.scale b{font-weight:600;font-size:14px}
+.track{position:relative;height:6px;background:var(--surface-2);border-radius:3px}
+.track i{position:absolute;top:-6px;width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);transform:translateX(-50%)}
+.ends{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);grid-column:2}
+.sil{display:grid;gap:12px;grid-template-columns:repeat(4,1fr)}
 @media (max-width:720px){.sil{grid-template-columns:repeat(2,1fr)}}
-.fig{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.fig svg{width:100%;height:auto;max-height:240px;color:var(--ink)}
-.tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.fig svg{width:100%;height:auto;max-height:220px;color:var(--ink)}
+.tag{font-size:12px;font-weight:700;letter-spacing:.06em}
 .tag.y{color:var(--yes)}.tag.n{color:var(--no)}
 .fig p{font-size:13px}
-.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--paper)}
-table{border-collapse:collapse;width:100%;min-width:860px;font-size:13.5px}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--bg)}
-td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.cat td{background:var(--accent-soft);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-.links{display:flex;gap:6px;flex-wrap:wrap}
-.links a{font-size:12px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:3px;padding:2px 7px;white-space:nowrap}
-.links a:hover,.links a:focus-visible{border-color:var(--accent);background:var(--accent-soft);outline:none}
-.pill{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;white-space:nowrap}
-.p1{background:var(--ink);color:var(--paper)}.p2{background:var(--accent-soft);color:var(--ink)}.p3{border:1px solid var(--line);color:var(--muted)}
-.tier{font-size:12px;color:var(--muted)}
-.totals{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.totals .panel b{font-family:var(--display);font-size:26px;font-weight:400;font-variant-numeric:tabular-nums}
-td.ph{width:150px;min-width:150px}
-.thumb{display:block;width:130px;aspect-ratio:3/4;border-radius:3px;overflow:hidden;background:var(--bg);border:1px solid var(--line);position:relative}
-.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:#fff}
-.noimg,.load{display:flex;align-items:center;justify-content:center;height:100%;font-size:11px;color:var(--muted);text-align:center;padding:4px}
-.load{width:130px;aspect-ratio:3/4;border:1px dashed var(--line);border-radius:3px;height:auto}
-.tcap{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:4px}
-.mini{font:600 11px var(--body);color:var(--accent);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
-.artf{display:flex;gap:4px;margin-top:4px}
-.artf input{width:96px;font:12px var(--body);padding:4px 6px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink)}
-.wbbar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px 16px;font-size:14px}
-.buy{display:inline-block;margin-top:4px;font:700 12px var(--body);color:var(--paper);background:var(--ink);border-radius:3px;padding:3px 10px;text-decoration:none}
-.wbbar button{font:600 13px var(--body);background:var(--ink);color:var(--paper);border:0;border-radius:3px;padding:7px 12px;cursor:pointer}
-.dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
-.dot.ok{background:var(--yes)}.dot.bad{background:var(--no)}
-.look{display:flex;flex-direction:column;gap:10px}
-.look .dots{display:flex;gap:4px}
-.look .dots span{width:22px;height:22px;border-radius:50%;border:1px solid var(--line)}
-.rules{counter-reset:r;display:grid;gap:12px 28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:0;padding:0;list-style:none}
-.rules li{counter-increment:r;display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:baseline;min-width:0}
-.rules li::before{content:counter(r);font-family:var(--display);font-size:24px;color:var(--accent)}
-a{color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sw-row{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
+.sw{display:flex;flex-direction:column;gap:6px;font-size:12.5px;line-height:1.3}
+.sw div{aspect-ratio:1/1;max-width:100%;border-radius:8px;border:1px solid var(--line);position:relative}
+.sw.bad div::after{content:"";position:absolute;inset:0;border-radius:8px;background:linear-gradient(135deg,transparent 47%,var(--bg) 47%,var(--bg) 53%,transparent 53%)}
+.sw small{color:var(--muted)}
+.rules{counter-reset:r;list-style:none;margin:0;padding:0;display:grid;gap:10px 32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.rules li{counter-increment:r;display:grid;grid-template-columns:32px 1fr;align-items:baseline;min-width:0}
+.rules li::before{content:counter(r);font:400 22px var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.totals{display:flex;gap:12px;flex-wrap:wrap}
+.total{flex:1 1 200px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.total b{display:block;font:600 1.375rem/1.2 var(--ui);font-variant-numeric:tabular-nums;margin-top:2px}
+.cat-h{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em;padding:18px 0 6px}
+.items{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr))}
+.item{display:grid;grid-template-columns:112px 1fr;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;min-width:0}
+.item>*{min-width:0}
+.ph{position:relative;display:block;aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.ph .noimg{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:8px;font-size:12px;color:#5c6460;background:#E5E9E1}
+.item .top{display:flex;gap:8px;align-items:baseline;justify-content:space-between}
+.item .num{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;flex:none}
+.item h3{font-size:15px}
+.item .shop{font-size:13px;color:var(--muted);margin-top:2px}
+.item .why{font-size:13.5px;margin-top:6px}
+.meta{display:flex;gap:6px 10px;flex-wrap:wrap;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)}
+.meta .price{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600}
+.pill{display:inline-flex;align-items:center;min-height:22px;font-size:11.5px;font-weight:700;padding:0 9px;border-radius:999px;white-space:nowrap}
+.p1{background:var(--ink);color:var(--bg)}.p2{background:var(--accent-soft);color:var(--ink)}.p3{border:1px solid var(--line);color:var(--muted)}
+.links{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.lnk{display:inline-flex;align-items:center;gap:4px;min-height:32px;padding:0 10px;border-radius:999px;border:1px solid var(--line);font-size:12.5px;font-weight:600;color:var(--ink);text-decoration:none}
+.lnk:hover{border-color:var(--muted)}
+.lnk.buy{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.lnk .ic{width:14px;height:14px}
+.gen{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:600;cursor:pointer;transition:background-color .18s,border-color .18s,color .18s}
+.seg input:checked+label{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.seg input:focus-visible+label{outline:2px solid var(--accent);outline-offset:2px}
+.look{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.gen .look{background:var(--bg)}
+.look.fresh{animation:rise .28s cubic-bezier(.16,1,.3,1)}
+@keyframes rise{from{transform:translateY(6px);opacity:.4}to{transform:none;opacity:1}}
+.look .head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dots{display:flex;gap:4px;flex:none}
+.dots span{width:18px;height:18px;border-radius:50%;border:1px solid var(--line)}
+.strip-items{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x mandatory}
+.mini{flex:0 0 84px;scroll-snap-align:start;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink)}
+.mini .ph{border-radius:8px}
+.mini>span:last-child{font-size:11.5px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.looks{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+.empty{border:1px dashed var(--line);border-radius:14px;padding:18px;font-size:14px;color:var(--muted)}
+details.builder{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0 18px}
+details.builder summary{min-height:56px;display:flex;align-items:center;gap:10px;font-weight:600;cursor:pointer;list-style:none}
+details.builder summary::-webkit-details-marker{display:none}
+details.builder summary .ic{transition:transform .2s}
+details.builder[open] summary .ic{transform:rotate(90deg)}
+.picker{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));padding-bottom:4px}
+.pick{position:relative}
+.pick input{position:absolute;opacity:0}
+.pick label{display:grid;grid-template-columns:40px 1fr;gap:8px;align-items:center;padding:6px;border:1px solid var(--line);border-radius:10px;font-size:12.5px;line-height:1.25;cursor:pointer;min-height:60px}
+.pick .ph{width:40px;border-radius:6px}
+.pick input:checked+label{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.pick input:focus-visible+label{outline:2px solid var(--accent);outline-offset:2px}
+.builder .foot{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end;padding:14px 0 18px}
+.builder .foot .field{flex:1 1 220px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.5 2.5M15.2 15.2l2.5 2.5M6.3 17.7l2.5-2.5M15.2 8.8l2.5-2.5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M3 20c.8-3.5 3.6-5.5 7-5.5 1.6 0 3 .4 4.2 1.2M18 14v6M15 17h6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+</svg>
 
-<header class="hero">
-  <div class="sec" style="gap:16px">
-    <span class="eyebrow">Style DNA Board · персональная капсула</span>
-    <h1>Мягкая природа, собранная линия</h1>
-    <p class="lead">Нежная натуральная внешность с невысоким контрастом и стройной вертикальной фигурой. Лучше всего работают спокойные приглушённые цвета, полуструктурные формы, вещи по фигуре и одна деликатная романтичная или графичная деталь.</p>
-    <div class="dna"><span class="chip">soft natural</span><span class="chip">relaxed minimalism</span><span class="chip">soft structure</span><span class="chip alt">delicate romantic</span><span class="chip alt">quiet edge</span></div>
+<div id="gate" hidden>
+  <form id="gateForm" autocomplete="off">
+    <svg class="ic" style="width:28px;height:28px;color:var(--accent)"><use href="#i-lock"/></svg>
+    <div class="mark">Style DNA</div>
+    <p class="muted">Введите пароль, чтобы открыть разборы клиентов.</p>
+    <input id="gatePass" type="password" inputmode="numeric" autocomplete="current-password" aria-label="Пароль" required>
+    <label class="chk"><input id="gateRemember" type="checkbox" checked> Запомнить на этом устройстве</label>
+    <div class="err" id="gateErr" role="alert"></div>
+    <button class="btn primary" type="submit">Открыть</button>
+  </form>
+</div>
+
+<div id="app" hidden>
+<div class="bar">
+  <div class="wrap gut">
+    <div class="who">
+      <span class="avatar" id="avatar" aria-hidden="true">С</span>
+      <select id="clientSel" aria-label="Клиент"></select>
+    </div>
+    <div class="acts">
+      <button class="btn" id="btnClients" type="button" aria-expanded="false" aria-controls="clients" aria-label="Клиенты"><svg class="ic"><use href="#i-user"/></svg><span class="lbl">Клиенты</span></button>
+      <button class="btn primary" id="btnNewLook" type="button" aria-label="Новый образ"><svg class="ic"><use href="#i-spark"/></svg><span class="lbl">Новый образ</span></button>
+    </div>
   </div>
-  <div class="hero-strip" aria-label="Ключевая палитра"><span style="background:#E9E2D6"></span><span style="background:#B8AFA3"></span><span style="background:#9DAA8F"></span><span style="background:#7A7D5E"></span><span style="background:#9AB0C2"></span><span style="background:#6B5547"></span><span style="background:#4A4C50"></span></div>
+  <div class="wrap gut">
+    <div class="tabs" role="tablist" aria-label="Разделы">
+      <button class="tab" role="tab" data-tab="razbor" aria-selected="true">Разбор</button>
+      <button class="tab" role="tab" data-tab="stil" aria-selected="false">Стиль</button>
+      <button class="tab" role="tab" data-tab="kapsula" aria-selected="false">Капсула</button>
+      <button class="tab" role="tab" data-tab="obrazy" aria-selected="false">Образы</button>
+    </div>
+  </div>
+</div>
+
+<section id="clients" hidden aria-label="Клиенты">
+  <div class="wrap gut">
+    <div class="block">
+      <h2>Клиенты</h2>
+      <ul class="clist" id="clientList"></ul>
+      <div class="field">
+        <label for="renameInp" class="small muted">Имя текущего клиента</label>
+        <div class="row"><input id="renameInp" type="text" maxlength="60" style="flex:1 1 180px"><button class="btn sm" id="renameBtn" type="button">Сохранить имя</button></div>
+      </div>
+    </div>
+    <div class="block">
+      <h2>Добавить клиента</h2>
+      <ol class="steps">
+        <li>Пришлите Claude фото человека и попросите разбор «в виде файла клиента Style DNA».</li>
+        <li>Сохраните полученный файл .json в «Файлы» на iPhone или iPad.</li>
+        <li>Нажмите «Загрузить файл клиента» и выберите его.</li>
+      </ol>
+      <div class="row">
+        <input id="fileInp" type="file" accept=".json,application/json" hidden>
+        <button class="btn primary" id="importBtn" type="button"><svg class="ic"><use href="#i-up"/></svg>Загрузить файл клиента</button>
+        <button class="btn" id="exportBtn" type="button"><svg class="ic"><use href="#i-down"/></svg>Скачать файл текущего</button>
+      </div>
+      <div class="msg" id="clientMsg" role="status"></div>
+      <p class="small muted">Клиенты и сохранённые образы хранятся только в браузере этого устройства. Чтобы перенести их на другое устройство, скачайте файл клиента и загрузите его там.</p>
+    </div>
+  </div>
+</section>
+
+<header class="wrap gut" id="heroWrap">
+  <div class="hero">
+    <div>
+      <h1 id="hTitle"></h1>
+      <p class="lead" id="hLead"></p>
+      <div class="dna" id="hDna"></div>
+    </div>
+    <div class="strip" id="hStrip" aria-label="Ключевая палитра"></div>
+  </div>
+  <p class="note" id="hNote"></p>
 </header>
 
-<p class="note">Разбор сделан по шести домашним фото. Камера стояла выше талии и близко к телу, поэтому ноги на снимках выглядят короче, чем в жизни. Свет смешанный, поэтому цветотип определён с запасом. Рост на фото не виден. Где определение неоднозначно, приведено несколько вариантов.</p>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">01 · Анализ</span><h2>Что видно на фотографиях</h2></div>
-  <div class="grid">
-    <div class="panel"><h3>Фигура и пропорции</h3><dl class="kv">
-      <dt>Сложение</dt><dd>Стройное, лёгкий костяк, тонкие руки и запястья</dd>
-      <dt>Плечи / талия / бёдра</dt><dd>Плечи узкие или средние, примерно на одной линии с бёдрами. Талия обозначена мягко. Ближе всего к типу «прямоугольник» (H) с лёгкой женственной округлостью бёдер в профиль</dd>
-      <dt>Ноги и торс</dt><dd>По фото баланс с небольшим перевесом в сторону торса. С поправкой на ракурс, скорее всего, пропорции близки к средним. Высокая посадка гарантированно удлинит ноги</dd>
-      <dt>Вертикаль</dt><dd>Хорошая, ровная и узкая. Фигура легко «держит» длинные линии: макси, миди, брюки в пол</dd>
-      <dt>Осанка</dt><dd>В профиле плечи слегка подаются вперёд, голова чуть выдвинута. Одежда может это компенсировать: лёгкое плечо, V-вырезы, открытая шея</dd></dl></div>
-    <div class="panel"><h3>Что подчёркивать и что балансировать</h3>
-      <div class="yn" style="grid-template-columns:1fr">
-        <div class="y"><h3>Подчёркивать</h3><ul class="clean"><li>Шею и ключицы: открытые вырезы</li><li>Тонкие запястья и предплечья с тату: рукав 3/4 или подвёрнутый</li><li>Вертикаль: длинные линии, тон в тон</li><li>Талию: заправка, пояс, укороченный верх</li></ul></div>
-        <div class="n"><h3>Балансировать</h3><ul class="clean"><li>Мягкую линию талии: создавать её кроем, а не облеганием</li><li>Узкие, слегка округлые плечи: чёткая плечевая линия, лодочка, квадратный вырез</li><li>Длину ног: высокая посадка и длина брюк до пола или щиколотки</li></ul></div>
-      </div></div>
-    <div class="panel"><h3>Лицо</h3><dl class="kv">
-      <dt>Форма</dt><dd>Овал, слегка удлинённый, с широким высоким лбом и мягкой линией челюсти. Подбородок скруглённый</dd>
-      <dt>Масштаб черт</dt><dd>Средний. Глаза среднего размера, нос прямой со скруглённым кончиком, губы средней полноты с мягким контуром</dd>
-      <dt>Мягкость и графичность</dt><dd>Примерно 70% мягкости и 30% графики. Мягкие губы, кончик носа и скулы; прямые брови и ровная линия лба добавляют чёткости</dd>
-      <dt>Характер</dt><dd>Юная, естественная, спокойная, «тихая» внешность без нарочитости. Тату с цветами и тонкими линиями добавляют личную, слегка дерзкую ноту</dd></dl></div>
-    <div class="panel"><h3>Колорит и контраст</h3><dl class="kv">
-      <dt>Волосы</dt><dd>Средне-русые с пепельным, прохладным оттенком</dd>
-      <dt>Глаза</dt><dd>Зелёно-оливковые с золотистым ореолом у зрачка. Главный цветовой акцент внешности</dd>
-      <dt>Кожа</dt><dd>Светлая, с розоватостью. На щеках заметны покраснения</dd>
-      <dt>Подтон</dt><dd>Нейтральный, с уклоном в прохладу (кожа, волосы) и тёплыми нотами в глазах</dd>
-      <dt>Контраст</dt><dd>Низкий или средний</dd>
-      <dt>Варианты</dt><dd><b>Мягкое лето</b> (по коже и волосам) или <b>мягкая осень</b> (по глазам). Рабочая зона: приглушённые, мягкие, слегка сероватые цвета на стыке двух палитр</dd></dl></div>
-  </div>
-  <div class="panel"><h3>Какие направления поддерживают внешность</h3><p>Естественно работают <b>soft natural</b> и <b>скандинавский минимализм</b> (лён, трикотаж, деним, тон в тон), <b>французский casual</b> (заправленный верх, прямые джинсы, тренч, лоферы) и <b>мягкий романтизм</b> в деталях (мелкий цветочный принт, тонкие украшения, матовый сатин). С осторожностью стоит подходить к жёсткому глэму, строгому корпоративному стилю, спорт-шику с массивными объёмами и контрастному «гранжу в чёрном»: они перекрывают нежность лица.</p></div>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">02 · Style DNA</span><h2>Пять характеристик стиля</h2></div>
-  <div class="grid">
-    <div class="panel"><h3>Soft natural</h3><p>Живые ткани, мягкие линии, никакой «упакованности». Образ выглядит лёгким, а не продуманным до мелочей.</p></div>
-    <div class="panel"><h3>Relaxed minimalism</h3><p>Мало деталей, чистые формы, 2–3 цвета в комплекте. Это поддерживает невысокий контраст внешности.</p></div>
-    <div class="panel"><h3>Soft structure</h3><p>Лёгкий каркас там, где нужна линия: плечо, талия, стрелка на брюках. Структура полужёсткая, без «доспехов».</p></div>
-    <div class="panel"><h3>Delicate romantic</h3><p>Одна нежная деталь на образ: мелкий цветочный принт, вырез-каре, матовый сатин, тонкая цепочка.</p></div>
-    <div class="panel"><h3>Quiet edge</h3><p>Тату уже задают графичную ноту. Её стоит показывать: подвёрнутые рукава, кожаный ремень, замша, лоферы.</p></div>
-  </div>
-  <div class="panel" style="gap:18px"><h3>Идеальные параметры</h3>
-    <div class="scale"><b>Структурность</b><div class="track"><i style="left:45%"></i></div><div class="ends"><span>мягкие формы</span><span>жёсткий каркас</span></div></div>
-    <div class="scale"><b>Объём</b><div class="track"><i style="left:40%"></i></div><div class="ends"><span>облегание</span><span>оверсайз</span></div></div>
-    <div class="scale"><b>Масштаб деталей и принтов</b><div class="track"><i style="left:30%"></i></div><div class="ends"><span>мелкий</span><span>крупный</span></div></div>
-    <div class="scale"><b>Контраст в образе</b><div class="track"><i style="left:32%"></i></div><div class="ends"><span>тон в тон</span><span>чёрно-белый</span></div></div>
-    <div class="scale"><b>Собранность</b><div class="track"><i style="left:55%"></i></div><div class="ends"><span>небрежно</span><span>безупречно</span></div></div>
-    <div class="scale"><b>Мягкость и графичность</b><div class="track"><i style="left:35%"></i></div><div class="ends"><span>мягко</span><span>графично</span></div></div>
-    <p class="note">Формула: полуприлегающий верх, низ свободнее; одна зона объёма на образ; детали мелкие и средние; контраст между вещами мягкий, в пределах одной-двух ступеней светлоты.</p></div>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">03 · Силуэты, посадки, длины</span><h2>Где проводить линии</h2></div>
-  <div class="sil">
-    <div class="fig"><svg viewBox="0 0 120 240" role="img" aria-label="Заправленный верх и высокие прямые брюки в пол"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/><polygon points="40,40 80,40 76,96 44,96" fill="#9DAA8F"/><rect x="44" y="94" width="32" height="4" fill="#6B5547"/><polygon points="44,98 76,98 84,226 64,226 60,132 56,226 36,226" fill="#8C7F73"/></svg><span class="tag y">Да</span><p>Заправка на талии и высокие прямые брюки до пола. Ноги начинаются от талии.</p></div>
-    <div class="fig"><svg viewBox="0 0 120 240" role="img" aria-label="Укороченный кардиган до талии и юбка миди"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/><polygon points="38,40 82,40 78,98 42,98" fill="#B8AFA3"/><polygon points="44,98 76,98 86,184 34,184" fill="#7A7D5E"/><rect x="50" y="184" width="6" height="38" fill="currentColor" opacity=".6"/><rect x="64" y="184" width="6" height="38" fill="currentColor" opacity=".6"/></svg><span class="tag y">Да</span><p>Короткий верх до талии и миди до середины икры. Создаёт талию у прямого силуэта.</p></div>
-    <div class="fig"><svg viewBox="0 0 120 240" role="img" aria-label="Длинный верх и укороченные брюки 7/8"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/><polygon points="38,40 82,40 84,140 36,140" fill="#B8AFA3"/><polygon points="40,140 80,140 80,194 64,194 60,152 56,194 40,194" fill="#E9E2D6" stroke="currentColor" stroke-opacity=".3"/><rect x="48" y="194" width="6" height="30" fill="currentColor" opacity=".6"/><rect x="66" y="194" width="6" height="30" fill="currentColor" opacity=".6"/><line x1="22" y1="194" x2="98" y2="194" stroke="#A04B45" stroke-width="1.5" stroke-dasharray="3 3"/></svg><span class="tag n">Нет</span><p>Длинный верх и брюки до середины икры. Две горизонтали «съедают» длину ног.</p></div>
-    <div class="fig"><svg viewBox="0 0 120 240" role="img" aria-label="Оверсайз сверху и снизу"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/><polygon points="28,40 92,40 98,132 22,132" fill="#4A4C50"/><polygon points="26,132 94,132 100,226 20,226" fill="#4A4C50" opacity=".75"/></svg><span class="tag n">Нет</span><p>Объём сверху и снизу одновременно. Хрупкая фигура теряется в ткани.</p></div>
-  </div>
-  <div class="grid">
-    <div class="panel"><h3>Верх</h3><ul class="clean"><li>Футболки полуприлегающие, с плечевым швом на своём месте, длиной до косточки бедра. Носить с французской заправкой</li><li>Свитеры тонкие и средней толщины, до талии или чуть ниже; при длине до бедра заправлять спереди</li><li>Рубашки relaxed fit, но не oversize на 3 размера. Носить нараспашку поверх футболки или узлом на талии</li><li>Рукав 3/4 или подвёрнутый до середины предплечья: открывает запястья и тату</li></ul></div>
-    <div class="panel"><h3>Вырезы и воротники</h3><ul class="clean"><li><b>Да:</b> мягкий V, вырез-каре, лодочка, неглубокий круглый, отложной рубашечный воротник, воротник-стойка у блузы</li><li><b>Осторожно:</b> высокое горло. Только тонкая водолазка в мягком цвете, лучше в сочетании с распущенными волосами</li><li><b>Нет:</b> массивные воротники-хомуты, огромные рюши у лица, глубокий узкий V до талии</li></ul></div>
-    <div class="panel"><h3>Брюки и джинсы</h3><ul class="clean"><li>Посадка высокая: пояс на талии или на 1–2 см ниже</li><li>Фасоны: прямые (straight), wide leg, палаццо, брюки с защипами, мягкий barrel</li><li>Длина: у прямых до косточки или до верха стопы; у широких до пола с обувью</li><li>Избегать: низкой посадки, скинни в паре с длинным верхом, длины 7/8 и капри</li></ul></div>
-    <div class="panel"><h3>Юбки и платья</h3><ul class="clean"><li>Миди до середины икры: слип-юбка по косой, А-силуэт, прямая трикотажная</li><li>Платья с выраженной талией: платье-рубашка с поясом, платье на запах, трикотажное миди с поясом</li><li>Мини только с плотными колготками и закрытым верхом; не самый сильный вариант</li></ul></div>
-    <div class="panel"><h3>Верхняя одежда</h3><ul class="clean"><li>Короткая: до талии или косточки бедра (замша, бомбер, укороченный пуховик)</li><li>Длинная: прямая до середины икры (пальто, тренч). Вертикаль выдержит</li><li>Жакет: relaxed fit, с лёгкой плечевой линией, до середины бедра</li><li>Избегать длины до середины бедра в паре с объёмным низом</li></ul></div>
-    <div class="panel"><h3>Талия</h3><ul class="clean"><li>Пояс средней ширины 2–3 см, тонкий кожаный ремень</li><li>Заправка, топ до талии, кардиган на одну пуговицу</li><li>Сборки и защипы на поясе брюк и юбок</li><li>Широкий корсетный пояс слишком тяжёл для хрупкого костяка</li></ul></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">04 · Фактуры и материалы</span><h2>Матовое, живое, мягкое</h2></div>
-  <div class="yn">
-    <div class="y"><h3>Поддерживают</h3><ul class="clean"><li>Хлопковый трикотаж, футер, мягкий рубчик</li><li>Мерино, кашемир, смесовая шерсть средней толщины</li><li>Лён, вискоза с льном, хлопок-поплин</li><li>Замша и нубук, матовая мягкая кожа</li><li>Деним средней и светлой стирки</li><li>Матовый сатин, купро, вискоза с мягким блеском</li><li>Шерстяной костюмный креп и твил</li></ul></div>
-    <div class="n"><h3>Спорят с внешностью</h3><ul class="clean"><li>Глянцевый атлас и блестящая синтетика: добавляют объём и подчёркивают покраснения кожи</li><li>Лакированная и жёсткая толстая кожа</li><li>Грубая крупная вязка: «съедает» хрупкий костяк</li><li>Жёсткий плотный неопрен, стёганые объёмы</li><li>Пайетки и люрекс крупного масштаба</li><li>Очень тонкий трикотаж в облипку: проявляет каждую складку</li></ul></div>
-  </div>
-  <p class="note">Принты: мелкий цветочный (он вам явно близок, судя по тату и вещам), тонкая полоска, мелкая клетка, «гусиная лапка» в приглушённых цветах. Избегать крупной контрастной геометрии, анималистики, логомании.</p>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">05 · Цвет</span><h2>Приглушённая палитра на стыке лета и осени</h2></div>
-  <h3>База</h3><div class="sw-row" id="sw-base"></div>
-  <h3>Акценты</h3><div class="sw-row" id="sw-acc"></div>
-  <h3>Не у лица</h3><div class="sw-row" id="sw-bad"></div>
-  <div class="grid">
-    <div class="panel"><h3>Сочетания</h3><ul class="clean"><li>Овсяный + шалфей + мокко</li><li>Серо-бежевый + пыльно-голубой + деним</li><li>Графит + таупе + молочный</li><li>Олива + мокко + овсяный</li><li>Мягкий нэви + пыльная роза + серо-бежевый</li><li>Тон в тон: таупе, грейдж и овсяный в разных фактурах</li></ul></div>
-    <div class="panel"><h3>Правила цвета</h3><ul class="clean"><li>Зелёные оттенки у лица (шалфей, олива, приглушённая морская волна) усиливают цвет глаз и визуально гасят покраснения кожи</li><li>Чёрный заменять графитом, мокко и мягким нэви; если чёрный, то в низе образа</li><li>Белый заменять молочным, овсяным, слоновой костью</li><li>Розовые и красные оттенки у лица только пыльные и сероватые</li><li>Контраст в образе мягкий: светлый + средний или средний + тёмный, без резкого чёрно-белого</li></ul></div>
-    <div class="panel"><h3>Металл и фурнитура</h3><ul class="clean"><li>Розовое и мягкое жёлтое золото, как кольцо на фото</li><li>Матовое, сатинированное, тонкое</li><li>Холодное блестящее серебро допустимо в мелочах; хорошо смотрится матовое серебро</li><li>Избегать ярко-жёлтого «самоварного» блеска и массивных цепей</li></ul></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">06 · Детали и аксессуары</span><h2>Мелкий и средний масштаб</h2></div>
-  <div class="grid">
-    <div class="panel"><h3>Обувь</h3><ul class="clean"><li>Лоферы на тонкой подошве, балетки и мэри джейн</li><li>Минималистичные кеды молочного или серо-бежевого цвета</li><li>Ботильоны с миндалевидным носом и каблуком 4–5 см, замша</li><li>Зимой: сапоги-трубы до колена из матовой кожи или замши</li><li>Избегать массивных «тракторных» платформ и острого стилета</li></ul></div>
-    <div class="panel"><h3>Сумки и ремни</h3><ul class="clean"><li>Мягкая сумка через плечо среднего размера, хобо, кросс-боди</li><li>Матовая кожа или замша в коричневом, таупе, оливковом</li><li>Ремень 2–3 см с небольшой пряжкой под золото</li><li>Для прогулок с ребёнком: вместительный кросс-боди или мягкий рюкзак из нейлона в цвет палитры, а не яркий спортивный</li></ul></div>
-    <div class="panel"><h3>Украшения и очки</h3><ul class="clean"><li>Тонкие цепочки, маленькие кольца-серьги 1,5–2 см, кольца-ободки</li><li>Одно украшение-акцент среднего масштаба, без крупных статементов</li><li>Очки с мягкой формой: скруглённый квадрат, «кошачий глаз» без резких углов, черепаховая или прозрачная оправа</li><li>Тонкие часы на кожаном ремешке</li></ul></div>
-    <div class="panel"><h3>Волосы и лицо</h3><ul class="clean"><li>Высокий лоб смягчат шторка (curtain bangs) или пряди у лица</li><li>Длинные мягкие слои, волны «без укладки»</li><li>Низкий небрежный пучок или хвост с прядями у лица; гладкий тугой пучок делает лицо строже</li><li>Пепельный оттенок хорошо освежают медово-бежевые блики</li></ul></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">07 · Стоп-лист</span><h2>Что не работает и почему</h2></div>
-  <div class="grid">
-    <div class="panel"><h3>Брюки 7/8 и капри</h3><p>Горизонталь на середине икры укорачивает ногу. Брюки должны доходить до косточки или до пола.</p></div>
-    <div class="panel"><h3>Низкая посадка</h3><p>Удлиняет торс, который и так визуально длиннее ног.</p></div>
-    <div class="panel"><h3>Оверсайз сверху и снизу</h3><p>Лёгкий костяк теряется. Объём допустим только в одной зоне.</p></div>
-    <div class="panel"><h3>Облегание с головы до ног</h3><p>У прямого силуэта бодикон подчёркивает отсутствие талии, а не фигуру.</p></div>
-    <div class="panel"><h3>Чёрный и оптический белый у лица</h3><p>Слишком высокий контраст для низкоконтрастной внешности: лицо выглядит бледнее, покраснения заметнее.</p></div>
-    <div class="panel"><h3>Яркие красные, фуксия, коралл</h3><p>Отражаются на коже и усиливают розоватость щёк.</p></div>
-    <div class="panel"><h3>Глянцевый блеск</h3><p>Добавляет визуальный объём и спорит с матовой, натуральной фактурой внешности.</p></div>
-    <div class="panel"><h3>Крупные принты и массивные аксессуары</h3><p>Масштаб черт средний, а детали крупнее лица «перекрикивают» его.</p></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">08 · Капсула</span><h2>29 вещей и где их искать</h2></div>
-  <p>В столбце «Фото» показан конкретный товар из магазина бренда: нажмите на фото или «Купить», чтобы открыть его страницу. Цена указана, если магазин показал её в поиске. Ссылки WB, Ozon и Lamoda открывают поиск похожих вещей по точному запросу.</p>
-  <div class="wbbar"><span class="dot" id="wbdot"></span><span id="wbstat">Загружаю фото…</span></div>
-  <div class="totals" id="totals"></div>
-  <div class="tbl"><table>
-    <thead><tr><th>№</th><th>Фото</th><th>Вещь и цвет</th><th>Почему</th><th>Сегмент</th><th class="num">Цена, ₽</th><th>Очередь</th><th>Найти</th></tr></thead>
-    <tbody id="cap"></tbody>
-  </table></div>
-  <p class="note">Очередь покупки: <span class="pill p1">1</span> сейчас, к осени и зиме; <span class="pill p2">2</span> в течение 1–2 месяцев; <span class="pill p3">3</span> к весне или по желанию. Перед покупкой проверяйте состав (хлопок, шерсть, вискоза, лён от 50%) и фото на модели в полный рост, чтобы оценить посадку и длину.</p>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">09 · Образы</span><h2>Семь готовых комплектов</h2></div>
-  <div class="grid" id="looks"></div>
-</section>
-
-<section class="sec">
-  <div class="sec-head"><span class="eyebrow">10 · Шпаргалка</span><h2>Десять правил вашего стиля</h2></div>
-  <ol class="rules">
-    <li>Пояс на талии: высокая посадка всегда</li>
-    <li>Одна зона объёма на образ, остальное ближе к телу</li>
-    <li>Брюки до косточки или до пола, никаких 7/8</li>
-    <li>У лица приглушённые цвета; зелёные оттенки усиливают глаза</li>
-    <li>Вместо чёрного графит, мокко или нэви; вместо белого молочный</li>
-    <li>Шею и запястья открывать: V, каре, подвёрнутый рукав</li>
-    <li>Ткани матовые и живые: хлопок, шерсть, лён, замша</li>
-    <li>Одна нежная деталь на образ: принт, сатин или украшение</li>
-    <li>Металл тёплый и тонкий: розовое или мягкое жёлтое золото</li>
-    <li>Контраст мягкий: тон в тон или соседние оттенки</li>
-  </ol>
-</section>
-
-<p class="note">Чтобы уточнить длины и размеры, пригодятся рост и обычный размер одежды. Для точного цветотипа стоит сделать портрет без макияжа у окна в пасмурный день и приложить к лицу ткани молочного и чисто-белого цвета.</p>
+<main class="wrap gut">
+  <div class="view" id="v-razbor" role="tabpanel"></div>
+  <div class="view" id="v-stil" role="tabpanel" hidden></div>
+  <div class="view" id="v-kapsula" role="tabpanel" hidden></div>
+  <div class="view" id="v-obrazy" role="tabpanel" hidden></div>
+</main>
 </div>
 
 <script>
-const base=[["Молочный / овсяный","#E9E2D6","вместо белого"],["Грейдж","#B8AFA3","база низа и трикотажа"],["Таупе / грибной","#8C7F73","брюки, сумки"],["Мокко / какао","#6B5547","вместо чёрного"],["Графит","#4A4C50","жакет, водолазка"],["Мягкий нэви","#3E4A5E","вместо чёрного"],["Деним средний","#6F86A0","джинсы, рубашки"]];
-const acc=[["Шалфей","#9DAA8F","у лица, к глазам"],["Олива серая","#7A7D5E","юбки, куртки"],["Пыльно-голубой","#9AB0C2","блузы, шарфы"],["Морская волна приглушённая","#6E9089","трикотаж у лица"],["Пыльная роза","#B99A9A","только серая, в мелочах"],["Карамель мягкая","#B08A68","замша, обувь"]];
-const bad=[["Чёрный у лица","#111111","контраст, бледность"],["Оптический белый","#FFFFFF","резкий"],["Фуксия","#D81F84","усиливает покраснения"],["Ярко-красный","#D3171E","усиливает покраснения"],["Коралл / оранжевый","#FF7A45","спорит с подтоном"],["Неоновый лайм","#C6F000","перекрывает лицо"]];
-function sw(id,arr,cls){document.getElementById(id).innerHTML=arr.map(([n,h,d])=>`<div class="sw ${cls||''}"><div style="background:${h}"></div><span>${n}</span><small>${d}</small></div>`).join("")}
-sw("sw-base",base);sw("sw-acc",acc);sw("sw-bad",bad,"bad");
-
-const C=[
-["Верх"],
-[1,"Футболка хлопковая полуприлегающая, молочная","Базовый светлый слой у лица без резкости белого","база",900,2000,1,"футболка женская хлопок молочная базовая"],
-[2,"Футболка хлопковая, шалфей","Усиливает зелёный цвет глаз","база",900,2000,1,"футболка женская хлопок шалфей"],
-[3,"Лонгслив в рубчик, серо-бежевый","Под заправку, для слоёв","база",1000,2500,1,"лонгслив женский рубчик бежевый"],
-[4,"Топ с квадратным вырезом, трикотаж, мокко","Открывает ключицы, расширяет плечо","база",1200,2500,2,"топ женский квадратный вырез трикотаж коричневый"],
-[5,"Водолазка тонкая, графит","Замена чёрной водолазке","база",1500,3000,1,"водолазка женская тонкая графит"],
-[6,"Джемпер мериносовый с V-вырезом, таупе","Ключевой трикотаж; V удлиняет шею","ключевая",3500,8000,1,"джемпер женский мерино v вырез бежевый"],
-[7,"Кардиган укороченный на пуговицах, шалфей","Создаёт талию у прямого силуэта","база",2500,5000,2,"кардиган женский укороченный на пуговицах зеленый шалфей"],
-[8,"Рубашка из поплина relaxed fit, голубая","Слой поверх футболки, рукав подворачивается","база",2000,4500,2,"рубашка женская поплин голубая свободная"],
-[9,"Блуза из вискозы или купро, пыльно-голубая","Мягкий блеск без глянца","база",2500,5000,3,"блуза женская вискоза голубая"],
-["Низ"],
-[10,"Джинсы прямые, высокая посадка, средне-голубые","Главная вещь капсулы","ключевая",3000,7000,1,"джинсы женские прямые высокая посадка голубые"],
-[11,"Джинсы wide leg, тёмный деним","Удлиняют ноги при длине в пол","база",3000,6500,2,"джинсы женские широкие высокая посадка темно синие"],
-[12,"Брюки широкие с защипами, таупе, шерсть-смесь","Работа и город, держат вертикаль","ключевая",3500,8000,1,"брюки женские широкие с защипами высокая посадка бежевые"],
-[13,"Брюки прямые из льна или хлопка, молочные","Лето, поездки","база",2500,5000,3,"брюки женские лен прямые молочные высокая посадка"],
-[14,"Юбка миди слип из матового сатина, олива","Деликатный романтизм","база",2000,4500,2,"юбка миди сатин женская оливковая"],
-[15,"Юбка миди трикотажная, грейдж","Мягкий комфорт на каждый день","база",2000,4500,3,"юбка миди трикотажная женская бежевая"],
-[16,"Платье миди трикотажное с поясом, мокко","Вечер, свидание","ключевая",3000,6500,2,"платье миди трикотажное с поясом коричневое"],
-["Верхняя одежда"],
-[17,"Жакет relaxed fit с лёгким плечом, графит","Структура там, где нужна","ключевая",5000,12000,2,"жакет женский свободный серый пиджак"],
-[18,"Тренч классический, stone / серо-бежевый","Вертикаль и французский casual","ключевая",7000,15000,3,"тренч женский бежевый классический"],
-[19,"Пальто прямое шерстяное миди, грейдж","Главная вещь на холодный сезон","ключевая",12000,30000,1,"пальто женское прямое шерсть миди бежевое"],
-[20,"Куртка из замши укороченная, карамель","Тихая дерзость и фактура","ключевая",5000,15000,3,"куртка женская замшевая укороченная коричневая"],
-[21,"Пуховик до середины бедра, матовый, серая олива","Зима и прогулки с ребёнком","ключевая",10000,25000,1,"пуховик женский матовый оливковый"],
-["Обувь"],
-[22,"Лоферы на тонкой подошве, коричневые","Офис и город","ключевая",4000,10000,2,"лоферы женские кожаные коричневые"],
-[23,"Кеды минималистичные, молочные","Каждый день и прогулки","база",3000,8000,1,"кеды женские кожаные молочные минималистичные"],
-[24,"Ботильоны, замша, миндалевидный нос, каблук 4–5 см","Осень, удлиняют ногу под брюками","ключевая",6000,15000,1,"ботильоны женские замша миндалевидный нос каблук"],
-[25,"Балетки или мэри джейн, мокко","Деликатный романтизм","база",2500,6000,3,"мэри джейн женские туфли коричневые"],
-["Аксессуары"],
-[26,"Сумка через плечо мягкая, кожа, коричневая","Ключевой аксессуар","ключевая",4000,12000,2,"сумка женская кожаная мягкая через плечо коричневая"],
-[27,"Ремень тонкий кожаный 2–3 см, пряжка под золото","Талия и quiet edge","база",1000,3000,1,"ремень женский кожаный тонкий золотая пряжка"],
-[28,"Серьги-кольца и тонкая цепочка, позолота","Мелкий масштаб, тёплый металл","база",1000,4000,2,"серьги кольца маленькие позолота тонкие"],
-[29,"Шарф или палантин из шерсти, пыльно-голубой","Цвет у лица зимой","база",1500,4000,1,"шарф женский шерсть голубой пыльный"]
-];
-const fmt=n=>Math.round(n).toLocaleString("ru-RU");
-const L=q=>{const e=encodeURIComponent(q);return `<div class="links"><a href="https://www.wildberries.ru/catalog/0/search.aspx?search=${e}" target="_blank" rel="noopener">WB</a><a href="https://www.ozon.ru/search/?text=${e}" target="_blank" rel="noopener">Ozon</a><a href="https://www.lamoda.ru/catalogsearch/result/?q=${e}" target="_blank" rel="noopener">Lamoda</a></div>`};
-const ITEMS={};let rows="",tMin=0,tMax=0,p1Min=0,p1Max=0;
-C.forEach(r=>{
-  if(r.length===1){rows+=`<tr class="cat"><td colspan="8">${r[0]}</td></tr>`;return}
-  const [n,name,why,tier,mn,mx,pr,q]=r;ITEMS[n]={mn,mx,q};tMin+=mn;tMax+=mx;if(pr===1){p1Min+=mn;p1Max+=mx}
-  rows+=`<tr><td class="num">${n}</td><td class="ph" id="ph${n}" data-n="${n}"><div class="load">поиск…</div></td><td><b>${name}</b><div class="note" id="nm${n}"></div></td><td>${why}</td><td class="tier">${tier}</td><td class="num">${fmt(mn)}–${fmt(mx)}</td><td><span class="pill p${pr}">${pr}</span></td><td>${L(q)}</td></tr>`;
-});
-document.getElementById("cap").innerHTML=rows;
-document.getElementById("totals").innerHTML=`<div class="panel"><span class="eyebrow">Вся капсула</span><b>${fmt(tMin)}–${fmt(tMax)} ₽</b><span class="note">29 вещей, смешанный сегмент</span></div><div class="panel"><span class="eyebrow">Очередь 1</span><b>${fmt(p1Min)}–${fmt(p1Max)} ₽</b><span class="note">минимум на осень и зиму</span></div>`;
-
-/* ---------- Фото и ссылки на товары (подбор 21.10.2026) ---------- */
-const P={
-1:{s:"SELA",t:"Футболка из мерсеризованного хлопка, молочная",u:"https://www.sela.ru/eshop/women/futbolki/SL6810010231_2/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/36/12/221236/images/989335/989335.970x0.jpg",p:2299},
-2:{s:"SELA",t:"Базовая футболка slim fit, хаки-олива",u:"https://www.sela.ru/eshop/women/futbolki/4805010242_13/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/10/27/152710/images/984442/984442.970x0.jpg",p:399},
-3:{s:"SELA",t:"Базовый лонгслив в рубчик, бежевый меланж",u:"https://www.sela.ru/eshop/women/futbolki/longsleeve/5801010210_64/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/14/24/172414/images/783867/783867.970x0.jpg",p:799},
-4:{s:"SELA",t:"Топ с V-вырезом в рубчик, коричневый",u:"https://www.sela.ru/eshop/women/tops/SL6803010223_20/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/88/97/209788/images/914974/914974.970x0.jpg",p:999},
-5:{s:"Befree",t:"Водолазка тонкой вязки с шерстью и альпака",u:"https://befree.ru/zhenskaya/product/BF2531526030/39",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2531526030/BF2531526030_39_1.jpg"},
-6:{s:"Befree",t:"Джемпер из 100% шерсти мериноса, бежевый",u:"https://befree.ru/zhenskaya/product/2431526014/36",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2431526014/2431526014_36_1.jpg"},
-7:{s:"Befree",t:"Кардиган укороченный на пуговицах, зелёный",u:"https://befree.ru/zhenskaya/product/2311400832/151",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2311400832/2311400832_151_4.jpg"},
-8:{s:"Befree",t:"Рубашка оверсайз из хлопка в тонкую полоску, голубая",u:"https://befree.ru/zhenskaya/product/BF2521418014/42",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2521418014/BF2521418014_42_1.jpg"},
-9:{s:"Zarina",t:"Блуза из вискозы с укороченным рукавом",u:"https://zarina.ru/catalog/product/zr2604012008-41/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2604012008_41_1.webp?t=1772189697",p:2199},
-10:{s:"Zarina",t:"Прямые джинсы с высокой посадкой (подборка модели)",u:"https://zarina.ru/catalog/zhenskie-priamie-golubye-dzhinsy/",i:"https://imgcdn.zarina.ru/upload/images/zr261/thumb/900_9999/zr2610092328_102_1.webp?t=1786448044",p:2999},
-11:{s:"ТВОЕ",t:"Джинсы wide leg со стрелками, тёмно-серые",u:"https://tvoe.ru/product/dzhinsy-shirokie-wide-leg-so-strelkami-temno-seryy-b8402/",i:"https://tvoe.ru/img/3420al2/product/900/1200/8/4610606146086-02.jpg"},
-12:{s:"Befree",t:"Брюки широкие костюмные с защипами, серые",u:"https://befree.ru/zhenskaya/product/2431308011/38",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2431308011/2431308011_38_2.jpg"},
-13:{s:"Zarina",t:"Льняные брюки прямого кроя",u:"https://zarina.ru/catalog/product/zr2605012108-2/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2605012108_2_1.webp?t=1776759595"},
-14:{s:"Zarina",t:"Сатиновая юбка миди с поясом на кулиске",u:"https://zarina.ru/catalog/product/zr2504013505-13/",i:"https://imgcdn.zarina.ru/upload/images/zr250/thumb/900_9999/zr2504013505_13_1.webp?t=1737556890",p:1099},
-15:{s:"LIMÉ",t:"Юбка миди из трикотажа с ангорой, светло-бежевый меланж",u:"https://lime-shop.com/ru_ru/product/14254_0413_219-svetlo_bezevyi_melanz",i:"https://a.cdn.lime-shine.com/p/7478492721cda7b23516511ee9dce00155d011401.jpeg"},
-16:{s:"ТВОЕ",t:"Трикотажное платье миди, коричневый меланж",u:"https://tvoe.ru/product/trikotazhnoe-plate-midi-s-dlinnym-rukavom-korichnevyy-melanzh-104895/",i:"https://tvoe.ru/img/3t1i5gv/product/900/1200/8/4660303687351.jpg"},
-17:{s:"Befree",t:"Двубортный жакет, серый",u:"https://befree.ru/zhenskaya/product/2121370634/35",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2121370634/2121370634_35_1.jpg"},
-18:{s:"LIMÉ",t:"Тренч с поясом, светло-бежевый",u:"https://lime-shop.com/ru_ru/product/20689_4917_296-svetlo_bezevyi",i:"https://a.cdn.lime-shine.com/p/792585517babfb14f6d7b41ed876b801a5ba02c45.jpeg"},
-19:{s:"SELA",t:"Пальто из смесовой шерсти (50% шерсть), бежевое",u:"https://www.sela.ru/eshop/women/verkhnyaya-odezhda/palto/4809011208_189/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/42/05/160542/images/737279/737279.970x0.jpg"},
-20:{s:"Befree",t:"Куртка из искусственной замши с ремешком",u:"https://befree.ru/zhenskaya/product/BF2631601029/22",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2631601029/BF2631601029_22_1.jpg"},
-21:{s:"SELA",t:"Стёганая куртка с вязаным капюшоном, тёмный хаки (демисезон; на зиму ищите пуховик того же цвета)",u:"https://www.sela.ru/eshop/women/verkhnyaya-odezhda/jackets/4809011135_328/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/73/03/160373/images/749797/749797.970x0.jpg",p:1999},
-22:{s:"SELA",t:"Лоферы из натуральной замши, коричневые",u:"https://www.sela.ru/eshop/women/obuv/baletki/SL6807205601_191/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/53/49/214953/images/959424/959424.970x0.jpg",p:6999},
-23:{s:"Befree",t:"Кеды из фактурной искусственной кожи, белые",u:"https://befree.ru/zhenskaya/product/2426680001/1",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2426680001/2426680001_1_6.jpg"},
-24:{s:"Befree",t:"Ботильоны на каблуке из натуральной замши",u:"https://befree.ru/zhenskaya/product/BF2636687005/20",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2636687005/BF2636687005_20_1.jpg"},
-25:{s:"ТВОЕ",t:"Балетки мэри джейн замшевые, коричневые",u:"https://tvoe.ru/product/baletki-meri-dzheyn-zamshevye-korichnevyy-b8558/",p:1599},
-26:{s:"Befree",t:"Сумка-багет на плечо, коричневая",u:"https://befree.ru/zhenskaya/product/BF2635457036/20",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2635457036/BF2635457036_20_12.jpg",p:3299},
-27:{s:"Zarina",t:"Ремень тонкий плетёный, коричневый",u:"https://zarina.ru/catalog/product/zr2604061401-20/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2604061401_20_1.webp?t=1772095797",p:599},
-29:{s:"Befree",t:"Шарф пушистый с шерстью, голубой",u:"https://befree.ru/zhenskaya/product/BF2645341042/42",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2645341042/BF2645341042_42_1.jpg"}
+"use strict";
+/* ===== Встроенный клиент (формат файла клиента Style DNA, версия 1) ===== */
+const BUILTIN={
+v:1,id:"client-main",name:"Основной разбор",
+title:"Мягкая природа, собранная линия",
+lead:"Нежная натуральная внешность с невысоким контрастом и стройной вертикальной фигурой. Лучше всего работают спокойные приглушённые цвета, полуструктурные формы, вещи по фигуре и одна деликатная романтичная или графичная деталь.",
+dna:[["soft natural",0],["relaxed minimalism",0],["soft structure",0],["delicate romantic",1],["quiet edge",1]],
+palette:["#E9E2D6","#B8AFA3","#9DAA8F","#7A7D5E","#9AB0C2","#6B5547","#4A4C50"],
+note:"Разбор сделан по шести домашним фото. Камера стояла выше талии и близко к телу, поэтому ноги на снимках выглядят короче, чем в жизни. Свет смешанный, поэтому цветотип определён с запасом. Рост на фото не виден.",
+analysis:[
+ {h:"Фигура и пропорции",rows:[["Сложение","Стройное, лёгкий костяк, тонкие руки и запястья"],["Плечи, талия, бёдра","Плечи узкие или средние, примерно на одной линии с бёдрами. Талия обозначена мягко. Ближе всего к типу «прямоугольник» (H) с лёгкой округлостью бёдер в профиль"],["Ноги и торс","По фото баланс с небольшим перевесом в сторону торса. С поправкой на ракурс пропорции, скорее всего, близки к средним. Высокая посадка гарантированно удлинит ноги"],["Вертикаль","Ровная и узкая. Фигура легко держит длинные линии: макси, миди, брюки в пол"],["Осанка","Плечи слегка подаются вперёд. Одежда компенсирует это: лёгкое плечо, V-вырезы, открытая шея"]]},
+ {h:"Лицо",rows:[["Форма","Овал, слегка удлинённый, с высоким лбом и мягкой линией челюсти. Подбородок скруглённый"],["Масштаб черт","Средний. Нос прямой со скруглённым кончиком, губы средней полноты с мягким контуром"],["Мягкость и графичность","Примерно 70% мягкости и 30% графики. Прямые брови и ровная линия лба добавляют чёткости"],["Характер","Юная, естественная, спокойная внешность. Тату с цветами и тонкими линиями добавляют личную, слегка дерзкую ноту"]]},
+ {h:"Колорит и контраст",rows:[["Волосы","Средне-русые с пепельным, прохладным оттенком"],["Глаза","Зелёно-оливковые с золотистым ореолом у зрачка. Главный цветовой акцент внешности"],["Кожа","Светлая, с розоватостью. На щеках заметны покраснения"],["Подтон","Нейтральный, с уклоном в прохладу и тёплыми нотами в глазах"],["Контраст","Низкий или средний"],["Варианты","Мягкое лето (по коже и волосам) или мягкая осень (по глазам). Рабочая зона: приглушённые, слегка сероватые цвета на стыке двух палитр"]]}
+],
+emph:["Шею и ключицы: открытые вырезы","Тонкие запястья и предплечья с тату: рукав 3/4 или подвёрнутый","Вертикаль: длинные линии, тон в тон","Талию: заправка, пояс, укороченный верх"],
+balance:["Мягкую линию талии: создавать её кроем, а не облеганием","Узкие, слегка округлые плечи: чёткая плечевая линия, лодочка, квадратный вырез","Длину ног: высокая посадка и длина брюк до пола или щиколотки"],
+directions:"Естественно работают soft natural и скандинавский минимализм (лён, трикотаж, деним, тон в тон), французский casual (заправленный верх, прямые джинсы, тренч, лоферы) и мягкий романтизм в деталях (мелкий цветочный принт, тонкие украшения, матовый сатин). С осторожностью стоит подходить к жёсткому глэму, строгому корпоративному стилю, спорт-шику с массивными объёмами и контрастному гранжу в чёрном: они перекрывают нежность лица.",
+traits:[["Soft natural","Живые ткани, мягкие линии, никакой упакованности. Образ выглядит лёгким, а не продуманным до мелочей."],["Relaxed minimalism","Мало деталей, чистые формы, 2–3 цвета в комплекте. Это поддерживает невысокий контраст внешности."],["Soft structure","Лёгкий каркас там, где нужна линия: плечо, талия, стрелка на брюках. Структура полужёсткая."],["Delicate romantic","Одна нежная деталь на образ: мелкий цветочный принт, вырез-каре, матовый сатин, тонкая цепочка."],["Quiet edge","Тату уже задают графичную ноту. Её стоит показывать: подвёрнутые рукава, кожаный ремень, замша, лоферы."]],
+params:[["Структурность",45,"мягкие формы","жёсткий каркас"],["Объём",40,"облегание","оверсайз"],["Масштаб деталей и принтов",30,"мелкий","крупный"],["Контраст в образе",32,"тон в тон","чёрно-белый"],["Собранность",55,"небрежно","безупречно"],["Мягкость и графичность",35,"мягко","графично"]],
+formula:"Полуприлегающий верх, низ свободнее; одна зона объёма на образ; детали мелкие и средние; контраст между вещами мягкий, в пределах одной-двух ступеней светлоты.",
+figs:[
+ {ok:1,t:"Заправка на талии и высокие прямые брюки до пола. Ноги начинаются от талии.",s:[["p","40,40 80,40 76,96 44,96","#9DAA8F"],["r",44,94,32,4,"#6B5547"],["p","44,98 76,98 84,226 64,226 60,132 56,226 36,226","#8C7F73"]]},
+ {ok:1,t:"Короткий верх до талии и миди до середины икры. Создаёт талию у прямого силуэта.",s:[["p","38,40 82,40 78,98 42,98","#B8AFA3"],["p","44,98 76,98 86,184 34,184","#7A7D5E"],["r",50,184,6,38,"ink"],["r",64,184,6,38,"ink"]]},
+ {ok:0,t:"Длинный верх и брюки до середины икры. Две горизонтали съедают длину ног.",s:[["p","38,40 82,40 84,140 36,140","#B8AFA3"],["p","40,140 80,140 80,194 64,194 60,152 56,194 40,194","#E9E2D6"],["r",48,194,6,30,"ink"],["r",66,194,6,30,"ink"],["l",22,194,98,194,"#A04B45"]]},
+ {ok:0,t:"Объём сверху и снизу одновременно. Хрупкая фигура теряется в ткани.",s:[["p","28,40 92,40 98,132 22,132","#4A4C50"],["p","26,132 94,132 100,226 20,226","#5E6064"]]}
+],
+cuts:[
+ {h:"Верх",items:["Футболки полуприлегающие, с плечевым швом на своём месте, длиной до косточки бедра. Носить с французской заправкой","Свитеры тонкие и средней толщины, до талии или чуть ниже","Рубашки relaxed fit, нараспашку поверх футболки или узлом на талии","Рукав 3/4 или подвёрнутый: открывает запястья и тату"]},
+ {h:"Вырезы и воротники",items:["Да: мягкий V, вырез-каре, лодочка, неглубокий круглый, отложной воротник","Осторожно: высокое горло, только тонкая водолазка в мягком цвете","Нет: массивные воротники-хомуты, огромные рюши у лица"]},
+ {h:"Брюки и джинсы",items:["Посадка высокая: пояс на талии или на 1–2 см ниже","Фасоны: прямые, wide leg, палаццо, брюки с защипами","Длина: у прямых до косточки, у широких до пола с обувью","Избегать низкой посадки, длины 7/8 и капри"]},
+ {h:"Юбки и платья",items:["Миди до середины икры: слип-юбка по косой, А-силуэт, прямая трикотажная","Платья с выраженной талией: рубашка с поясом, на запах, трикотажное миди с поясом","Мини только с плотными колготками и закрытым верхом"]},
+ {h:"Верхняя одежда",items:["Короткая: до талии или косточки бедра","Длинная: прямая до середины икры","Жакет relaxed fit с лёгким плечом, до середины бедра","Избегать длины до середины бедра в паре с объёмным низом"]},
+ {h:"Талия",items:["Пояс 2–3 см, тонкий кожаный ремень","Заправка, топ до талии, кардиган на одну пуговицу","Защипы на поясе брюк и юбок","Широкий корсетный пояс слишком тяжёл для хрупкого костяка"]}
+],
+textures:{yes:["Хлопковый трикотаж, футер, мягкий рубчик","Мерино, кашемир, смесовая шерсть средней толщины","Лён, вискоза с льном, хлопок-поплин","Замша и нубук, матовая мягкая кожа","Деним средней и светлой стирки","Матовый сатин, купро, вискоза с мягким блеском"],no:["Глянцевый атлас и блестящая синтетика: добавляют объём и подчёркивают покраснения кожи","Лакированная и жёсткая толстая кожа","Грубая крупная вязка: съедает хрупкий костяк","Жёсткий неопрен, стёганые объёмы","Пайетки и люрекс крупного масштаба"],note:"Принты: мелкий цветочный, тонкая полоска, мелкая клетка, гусиная лапка в приглушённых цветах. Избегать крупной контрастной геометрии, анималистики, логомании."},
+colors:{
+ base:[["Молочный / овсяный","#E9E2D6","вместо белого"],["Грейдж","#B8AFA3","низ и трикотаж"],["Таупе","#8C7F73","брюки, сумки"],["Мокко","#6B5547","вместо чёрного"],["Графит","#4A4C50","жакет, водолазка"],["Мягкий нэви","#3E4A5E","вместо чёрного"],["Деним средний","#6F86A0","джинсы, рубашки"]],
+ acc:[["Шалфей","#9DAA8F","у лица, к глазам"],["Олива серая","#7A7D5E","юбки, куртки"],["Пыльно-голубой","#9AB0C2","блузы, шарфы"],["Морская волна приглушённая","#6E9089","трикотаж у лица"],["Пыльная роза","#B99A9A","только в мелочах"],["Карамель мягкая","#B08A68","замша, обувь"]],
+ bad:[["Чёрный у лица","#111111","контраст, бледность"],["Оптический белый","#FFFFFF","резкий"],["Фуксия","#D81F84","усиливает покраснения"],["Ярко-красный","#D3171E","усиливает покраснения"],["Коралл","#FF7A45","спорит с подтоном"],["Неоновый лайм","#C6F000","перекрывает лицо"]],
+ combos:["Овсяный + шалфей + мокко","Грейдж + пыльно-голубой + деним","Графит + таупе + молочный","Олива + мокко + овсяный","Мягкий нэви + пыльная роза + грейдж","Тон в тон: таупе, грейдж и овсяный в разных фактурах"],
+ rules:["Зелёные оттенки у лица усиливают цвет глаз и визуально гасят покраснения кожи","Чёрный заменять графитом, мокко и мягким нэви","Белый заменять молочным, овсяным, слоновой костью","Розовые и красные у лица только пыльные и сероватые","Контраст мягкий: светлый + средний или средний + тёмный"],
+ metal:["Розовое и мягкое жёлтое золото","Матовое, сатинированное, тонкое","Матовое серебро допустимо в мелочах","Избегать яркого жёлтого блеска и массивных цепей"]},
+details:[
+ {h:"Обувь",items:["Лоферы на тонкой подошве, балетки и мэри джейн","Минималистичные кеды молочного или серо-бежевого цвета","Ботильоны с миндалевидным носом и каблуком 4–5 см","Зимой сапоги-трубы до колена из матовой кожи или замши"]},
+ {h:"Сумки и ремни",items:["Мягкая сумка через плечо среднего размера, хобо, кросс-боди","Матовая кожа или замша в коричневом, таупе, оливковом","Для прогулок с ребёнком: вместительный кросс-боди или мягкий рюкзак в цвет палитры"]},
+ {h:"Украшения и очки",items:["Тонкие цепочки, маленькие кольца-серьги 1,5–2 см","Одно украшение-акцент среднего масштаба","Очки мягкой формы, черепаховая или прозрачная оправа"]},
+ {h:"Волосы",items:["Высокий лоб смягчат шторка или пряди у лица","Длинные мягкие слои, волны без укладки","Пепельный оттенок освежают медово-бежевые блики"]}
+],
+stop:[["Брюки 7/8 и капри","Горизонталь на середине икры укорачивает ногу."],["Низкая посадка","Удлиняет торс, который и так визуально длиннее ног."],["Оверсайз сверху и снизу","Лёгкий костяк теряется. Объём только в одной зоне."],["Облегание с головы до ног","У прямого силуэта бодикон подчёркивает отсутствие талии."],["Чёрный и оптический белый у лица","Слишком высокий контраст: лицо бледнее, покраснения заметнее."],["Яркие красные, фуксия, коралл","Отражаются на коже и усиливают розоватость щёк."],["Глянцевый блеск","Добавляет объём и спорит с матовой фактурой внешности."],["Крупные принты и массивные аксессуары","Детали крупнее черт лица перекрикивают его."]],
+capsule:[
+ {cat:"Верх",items:[
+  {n:1,name:"Футболка хлопковая полуприлегающая, молочная",why:"Светлый слой у лица без резкости белого",tier:"база",mn:900,mx:2000,pr:1,q:"футболка женская хлопок молочная базовая",hex:"#E9E2D6",type:"top",vol:"fit",occ:["work","city","kid","weekend","evening","travel"],season:["w","m","c"],P:{s:"SELA",t:"Футболка из мерсеризованного хлопка, молочная",u:"https://www.sela.ru/eshop/women/futbolki/SL6810010231_2/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/36/12/221236/images/989335/989335.970x0.jpg",p:2299}},
+  {n:2,name:"Футболка хлопковая, шалфей",why:"Усиливает зелёный цвет глаз",tier:"база",mn:900,mx:2000,pr:1,q:"футболка женская хлопок шалфей",hex:"#9DAA8F",type:"top",vol:"fit",occ:["city","kid","weekend","travel"],season:["w","m"],P:{s:"SELA",t:"Базовая футболка slim fit, хаки-олива",u:"https://www.sela.ru/eshop/women/futbolki/4805010242_13/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/10/27/152710/images/984442/984442.970x0.jpg",p:399}},
+  {n:3,name:"Лонгслив в рубчик, серо-бежевый",why:"Под заправку, для слоёв",tier:"база",mn:1000,mx:2500,pr:1,q:"лонгслив женский рубчик бежевый",hex:"#B8AFA3",type:"top",vol:"fit",occ:["work","city","kid","weekend","travel"],season:["m","c"],P:{s:"SELA",t:"Базовый лонгслив в рубчик, бежевый меланж",u:"https://www.sela.ru/eshop/women/futbolki/longsleeve/5801010210_64/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/14/24/172414/images/783867/783867.970x0.jpg",p:799}},
+  {n:4,name:"Топ с квадратным вырезом, трикотаж, мокко",why:"Открывает ключицы, расширяет плечо",tier:"база",mn:1200,mx:2500,pr:2,q:"топ женский квадратный вырез трикотаж коричневый",hex:"#6B5547",type:"top",vol:"fit",occ:["work","city","weekend","evening"],season:["w","m","c"],P:{s:"SELA",t:"Топ с V-вырезом в рубчик, коричневый",u:"https://www.sela.ru/eshop/women/tops/SL6803010223_20/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/88/97/209788/images/914974/914974.970x0.jpg",p:999}},
+  {n:5,name:"Водолазка тонкая, графит",why:"Замена чёрной водолазке",tier:"база",mn:1500,mx:3000,pr:1,q:"водолазка женская тонкая графит",hex:"#4A4C50",type:"top",vol:"fit",occ:["work","city","kid","weekend","evening"],season:["m","c"],P:{s:"Befree",t:"Водолазка тонкой вязки с шерстью и альпака",u:"https://befree.ru/zhenskaya/product/BF2531526030/39",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2531526030/BF2531526030_39_1.jpg"}},
+  {n:6,name:"Джемпер мериносовый с V-вырезом, таупе",why:"Ключевой трикотаж; V удлиняет шею",tier:"ключевая",mn:3500,mx:8000,pr:1,q:"джемпер женский мерино v вырез бежевый",hex:"#8C7F73",type:"top",vol:"rel",occ:["work","city","kid","weekend","travel"],season:["m","c"],P:{s:"Befree",t:"Джемпер из 100% шерсти мериноса, бежевый",u:"https://befree.ru/zhenskaya/product/2431526014/36",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2431526014/2431526014_36_1.jpg"}},
+  {n:7,name:"Кардиган укороченный на пуговицах, шалфей",why:"Создаёт талию у прямого силуэта",tier:"база",mn:2500,mx:5000,pr:2,q:"кардиган женский укороченный на пуговицах зеленый шалфей",hex:"#9DAA8F",type:"layer",vol:"fit",occ:["work","city","kid","weekend"],season:["m","c"],P:{s:"Befree",t:"Кардиган укороченный на пуговицах, зелёный",u:"https://befree.ru/zhenskaya/product/2311400832/151",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2311400832/2311400832_151_4.jpg"}},
+  {n:8,name:"Рубашка из поплина relaxed fit, голубая",why:"Слой поверх футболки, рукав подворачивается",tier:"база",mn:2000,mx:4500,pr:2,q:"рубашка женская поплин голубая свободная",hex:"#9AB0C2",type:"layer",vol:"rel",occ:["work","city","weekend","travel"],season:["w","m"],P:{s:"Befree",t:"Рубашка оверсайз из хлопка в тонкую полоску, голубая",u:"https://befree.ru/zhenskaya/product/BF2521418014/42",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2521418014/BF2521418014_42_1.jpg"}},
+  {n:9,name:"Блуза из вискозы, пыльно-голубая",why:"Мягкий блеск без глянца",tier:"база",mn:2500,mx:5000,pr:3,q:"блуза женская вискоза голубая",hex:"#9AB0C2",type:"top",vol:"rel",occ:["work","evening","city"],season:["w","m"],P:{s:"Zarina",t:"Блуза из вискозы с укороченным рукавом",u:"https://zarina.ru/catalog/product/zr2604012008-41/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2604012008_41_1.webp?t=1772189697",p:2199}}
+ ]},
+ {cat:"Низ",items:[
+  {n:10,name:"Джинсы прямые, высокая посадка, средне-голубые",why:"Главная вещь капсулы",tier:"ключевая",mn:3000,mx:7000,pr:1,q:"джинсы женские прямые высокая посадка голубые",hex:"#6F86A0",type:"bottom",vol:"rel",occ:["city","kid","weekend","travel"],season:["w","m","c"],P:{s:"Zarina",t:"Прямые джинсы с высокой посадкой (подборка модели)",u:"https://zarina.ru/catalog/zhenskie-priamie-golubye-dzhinsy/",i:"https://imgcdn.zarina.ru/upload/images/zr261/thumb/900_9999/zr2610092328_102_1.webp?t=1786448044",p:2999}},
+  {n:11,name:"Джинсы wide leg, тёмный деним",why:"Удлиняют ноги при длине в пол",tier:"база",mn:3000,mx:6500,pr:2,q:"джинсы женские широкие высокая посадка темно синие",hex:"#3E4A5E",type:"bottom",vol:"wide",occ:["city","weekend","work"],season:["w","m","c"],P:{s:"ТВОЕ",t:"Джинсы wide leg со стрелками, тёмно-серые",u:"https://tvoe.ru/product/dzhinsy-shirokie-wide-leg-so-strelkami-temno-seryy-b8402/",i:"https://tvoe.ru/img/3420al2/product/900/1200/8/4610606146086-02.jpg"}},
+  {n:12,name:"Брюки широкие с защипами, таупе",why:"Работа и город, держат вертикаль",tier:"ключевая",mn:3500,mx:8000,pr:1,q:"брюки женские широкие с защипами высокая посадка бежевые",hex:"#8C7F73",type:"bottom",vol:"wide",occ:["work","city","evening"],season:["m","c"],P:{s:"Befree",t:"Брюки широкие костюмные с защипами, серые",u:"https://befree.ru/zhenskaya/product/2431308011/38",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2431308011/2431308011_38_2.jpg"}},
+  {n:13,name:"Брюки прямые из льна, молочные",why:"Лето, поездки",tier:"база",mn:2500,mx:5000,pr:3,q:"брюки женские лен прямые молочные высокая посадка",hex:"#E9E2D6",type:"bottom",vol:"rel",occ:["travel","weekend","city"],season:["w"],P:{s:"Zarina",t:"Льняные брюки прямого кроя",u:"https://zarina.ru/catalog/product/zr2605012108-2/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2605012108_2_1.webp?t=1776759595"}},
+  {n:14,name:"Юбка миди слип из матового сатина, олива",why:"Деликатный романтизм",tier:"база",mn:2000,mx:4500,pr:2,q:"юбка миди сатин женская оливковая",hex:"#7A7D5E",type:"bottom",vol:"rel",occ:["weekend","evening","city"],season:["w","m"],P:{s:"Zarina",t:"Сатиновая юбка миди с поясом на кулиске",u:"https://zarina.ru/catalog/product/zr2504013505-13/",i:"https://imgcdn.zarina.ru/upload/images/zr250/thumb/900_9999/zr2504013505_13_1.webp?t=1737556890",p:1099}},
+  {n:15,name:"Юбка миди трикотажная, грейдж",why:"Мягкий комфорт на каждый день",tier:"база",mn:2000,mx:4500,pr:3,q:"юбка миди трикотажная женская бежевая",hex:"#B8AFA3",type:"bottom",vol:"fit",occ:["work","weekend","city"],season:["m","c"],P:{s:"LIMÉ",t:"Юбка миди из трикотажа с ангорой, светло-бежевый меланж",u:"https://lime-shop.com/ru_ru/product/14254_0413_219-svetlo_bezevyi_melanz",i:"https://a.cdn.lime-shine.com/p/7478492721cda7b23516511ee9dce00155d011401.jpeg"}},
+  {n:16,name:"Платье миди трикотажное с поясом, мокко",why:"Вечер, свидание",tier:"ключевая",mn:3000,mx:6500,pr:2,q:"платье миди трикотажное с поясом коричневое",hex:"#6B5547",type:"dress",vol:"fit",occ:["evening","weekend","work"],season:["m","c"],P:{s:"ТВОЕ",t:"Трикотажное платье миди, коричневый меланж",u:"https://tvoe.ru/product/trikotazhnoe-plate-midi-s-dlinnym-rukavom-korichnevyy-melanzh-104895/",i:"https://tvoe.ru/img/3t1i5gv/product/900/1200/8/4660303687351.jpg"}}
+ ]},
+ {cat:"Верхняя одежда",items:[
+  {n:17,name:"Жакет relaxed fit с лёгким плечом, графит",why:"Структура там, где нужна",tier:"ключевая",mn:5000,mx:12000,pr:2,q:"жакет женский свободный серый пиджак",hex:"#4A4C50",type:"outer",vol:"rel",occ:["work","evening","city"],season:["w","m"],P:{s:"Befree",t:"Двубортный жакет, серый",u:"https://befree.ru/zhenskaya/product/2121370634/35",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2121370634/2121370634_35_1.jpg"}},
+  {n:18,name:"Тренч классический, серо-бежевый",why:"Вертикаль и французский casual",tier:"ключевая",mn:7000,mx:15000,pr:3,q:"тренч женский бежевый классический",hex:"#B8AFA3",type:"outer",vol:"rel",occ:["city","work","weekend","travel"],season:["m"],P:{s:"LIMÉ",t:"Тренч с поясом, светло-бежевый",u:"https://lime-shop.com/ru_ru/product/20689_4917_296-svetlo_bezevyi",i:"https://a.cdn.lime-shine.com/p/792585517babfb14f6d7b41ed876b801a5ba02c45.jpeg"}},
+  {n:19,name:"Пальто прямое шерстяное миди, грейдж",why:"Главная вещь на холодный сезон",tier:"ключевая",mn:12000,mx:30000,pr:1,q:"пальто женское прямое шерсть миди бежевое",hex:"#B8AFA3",type:"outer",vol:"rel",occ:["work","city","evening","weekend"],season:["c"],P:{s:"SELA",t:"Пальто из смесовой шерсти (50% шерсть), бежевое",u:"https://www.sela.ru/eshop/women/verkhnyaya-odezhda/palto/4809011208_189/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/42/05/160542/images/737279/737279.970x0.jpg"}},
+  {n:20,name:"Куртка из замши укороченная, карамель",why:"Тихая дерзость и фактура",tier:"ключевая",mn:5000,mx:15000,pr:3,q:"куртка женская замшевая укороченная коричневая",hex:"#B08A68",type:"outer",vol:"fit",occ:["city","weekend","evening"],season:["m"],P:{s:"Befree",t:"Куртка из искусственной замши с ремешком",u:"https://befree.ru/zhenskaya/product/BF2631601029/22",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2631601029/BF2631601029_22_1.jpg"}},
+  {n:21,name:"Пуховик до середины бедра, матовый, серая олива",why:"Зима и прогулки с ребёнком",tier:"ключевая",mn:10000,mx:25000,pr:1,q:"пуховик женский матовый оливковый",hex:"#7A7D5E",type:"outer",vol:"rel",occ:["kid","city","weekend","travel"],season:["c"],P:{s:"SELA",t:"Стёганая куртка с вязаным капюшоном, тёмный хаки (демисезон; на зиму нужен пуховик того же цвета)",u:"https://www.sela.ru/eshop/women/verkhnyaya-odezhda/jackets/4809011135_328/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/73/03/160373/images/749797/749797.970x0.jpg",p:1999}}
+ ]},
+ {cat:"Обувь",items:[
+  {n:22,name:"Лоферы на тонкой подошве, коричневые",why:"Офис и город",tier:"ключевая",mn:4000,mx:10000,pr:2,q:"лоферы женские кожаные коричневые",hex:"#6B5547",type:"shoes",vol:"fit",occ:["work","city","weekend","travel"],season:["w","m"],P:{s:"SELA",t:"Лоферы из натуральной замши, коричневые",u:"https://www.sela.ru/eshop/women/obuv/baletki/SL6807205601_191/",i:"https://cdn01.sela.ru/wa-data/public/shop/products/53/49/214953/images/959424/959424.970x0.jpg",p:6999}},
+  {n:23,name:"Кеды минималистичные, молочные",why:"Каждый день и прогулки",tier:"база",mn:3000,mx:8000,pr:1,q:"кеды женские кожаные молочные минималистичные",hex:"#E9E2D6",type:"shoes",vol:"fit",occ:["city","kid","weekend","travel"],season:["w","m"],P:{s:"Befree",t:"Кеды из фактурной искусственной кожи, белые",u:"https://befree.ru/zhenskaya/product/2426680001/1",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/2426680001/2426680001_1_6.jpg"}},
+  {n:24,name:"Ботильоны, замша, миндалевидный нос, каблук 4–5 см",why:"Осень, удлиняют ногу под брюками",tier:"ключевая",mn:6000,mx:15000,pr:1,q:"ботильоны женские замша миндалевидный нос каблук",hex:"#6B5547",type:"shoes",vol:"fit",occ:["work","city","weekend","evening","kid"],season:["m","c"],P:{s:"Befree",t:"Ботильоны на каблуке из натуральной замши",u:"https://befree.ru/zhenskaya/product/BF2636687005/20",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2636687005/BF2636687005_20_1.jpg"}},
+  {n:25,name:"Балетки или мэри джейн, мокко",why:"Деликатный романтизм",tier:"база",mn:2500,mx:6000,pr:3,q:"мэри джейн женские туфли коричневые",hex:"#6B5547",type:"shoes",vol:"fit",occ:["evening","work","weekend"],season:["w","m"],P:{s:"ТВОЕ",t:"Балетки мэри джейн замшевые, коричневые",u:"https://tvoe.ru/product/baletki-meri-dzheyn-zamshevye-korichnevyy-b8558/",p:1599}}
+ ]},
+ {cat:"Аксессуары",items:[
+  {n:26,name:"Сумка через плечо мягкая, коричневая",why:"Ключевой аксессуар",tier:"ключевая",mn:4000,mx:12000,pr:2,q:"сумка женская кожаная мягкая через плечо коричневая",hex:"#6B5547",type:"bag",vol:"fit",occ:["work","city","kid","weekend","evening","travel"],season:["w","m","c"],P:{s:"Befree",t:"Сумка-багет на плечо, коричневая",u:"https://befree.ru/zhenskaya/product/BF2635457036/20",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2635457036/BF2635457036_20_12.jpg",p:3299}},
+  {n:27,name:"Ремень тонкий кожаный 2–3 см",why:"Талия и quiet edge",tier:"база",mn:1000,mx:3000,pr:1,q:"ремень женский кожаный тонкий золотая пряжка",hex:"#6B5547",type:"belt",vol:"fit",occ:["work","city","kid","weekend","evening","travel"],season:["w","m","c"],P:{s:"Zarina",t:"Ремень тонкий плетёный, коричневый",u:"https://zarina.ru/catalog/product/zr2604061401-20/",i:"https://imgcdn.zarina.ru/upload/images/zr260/thumb/900_9999/zr2604061401_20_1.webp?t=1772095797",p:599}},
+  {n:28,name:"Серьги-кольца и тонкая цепочка, позолота",why:"Мелкий масштаб, тёплый металл",tier:"база",mn:1000,mx:4000,pr:2,q:"серьги кольца маленькие позолота тонкие",hex:"#C9A86A",type:"jewel",vol:"fit",occ:["work","city","kid","weekend","evening","travel"],season:["w","m","c"]},
+  {n:29,name:"Шарф или палантин из шерсти, пыльно-голубой",why:"Цвет у лица зимой",tier:"база",mn:1500,mx:4000,pr:1,q:"шарф женский шерсть голубой пыльный",hex:"#9AB0C2",type:"scarf",vol:"fit",occ:["work","city","kid","weekend","evening","travel"],season:["m","c"],P:{s:"Befree",t:"Шарф пушистый с шерстью, голубой",u:"https://befree.ru/zhenskaya/product/BF2645341042/42",i:"https://imgcdn.befree.ru/rest/V1/images/1024/product/images/BF2645341042/BF2645341042_42_1.jpg"}}
+ ]}
+],
+looks:[
+ ["Работа","Жакет графит, топ с квадратным вырезом, широкие брюки таупе, лоферы, тонкий ремень, сумка через плечо",[17,4,12,22,27,26]],
+ ["Город, будни","Тренч, джемпер с V-вырезом с французской заправкой, прямые джинсы, кеды, серьги-кольца",[18,6,10,23,28]],
+ ["Прогулка с ребёнком","Лонгслив в рубчик, кардиган шалфей, прямые джинсы, кеды, сумка; зимой пуховик и шарф. Всё стирается и не мнётся",[3,7,10,23,26,21,29]],
+ ["Выходные, кафе","Слип-юбка олива, футболка шалфей, кардиган, ботильоны, тонкая цепочка",[14,2,7,24,28]],
+ ["Вечер, свидание","Трикотажное платье мокко с поясом, жакет на плечи, мэри джейн, золотые серьги",[16,17,25,28]],
+ ["Поездка","Льняные брюки, футболка шалфей, рубашка-слой, кеды, мягкая сумка",[13,2,8,23,26]],
+ ["Холодный сезон","Пальто миди, водолазка графит, широкие брюки, ботильоны, шерстяной шарф",[19,5,12,24,29]]
+],
+rules:["Пояс на талии: высокая посадка всегда","Одна зона объёма на образ, остальное ближе к телу","Брюки до косточки или до пола, никаких 7/8","У лица приглушённые цвета; зелёные оттенки усиливают глаза","Вместо чёрного графит, мокко или нэви; вместо белого молочный","Шею и запястья открывать: V, каре, подвёрнутый рукав","Ткани матовые и живые: хлопок, шерсть, лён, замша","Одна нежная деталь на образ: принт, сатин или украшение","Металл тёплый и тонкий: розовое или мягкое жёлтое золото","Контраст мягкий: тон в тон или соседние оттенки"],
+footnote:"Чтобы уточнить длины и размеры, пригодятся рост и обычный размер одежды."
 };
-function noImg(a){const s=document.createElement("span");s.className="noimg";s.textContent="фото на сайте";a.innerHTML="";a.appendChild(s)}
-let shown=0;
-Object.keys(ITEMS).forEach(k=>{
-  const n=+k,cell=document.getElementById("ph"+n),p=P[n];
-  if(!p){cell.innerHTML='<div class="load">подходящего фото нет — смотрите поиск справа</div>';return}
-  const a=document.createElement("a");a.className="thumb";a.href=p.u;a.target="_blank";a.rel="noopener";a.title=p.t;
-  if(p.i){const img=new Image();img.alt=p.t;img.loading="lazy";img.referrerPolicy="no-referrer";img.onerror=()=>noImg(a);img.src=p.i;a.appendChild(img);shown++}else{noImg(a)}
-  cell.innerHTML="";cell.appendChild(a);
-  const cap=document.createElement("div");cap.className="tcap";cap.textContent=p.s+(p.p?" · "+fmt(p.p)+" ₽":"");cell.appendChild(cap);
-  const b=document.createElement("a");b.className="buy";b.href=p.u;b.target="_blank";b.rel="noopener";b.textContent="Купить";cell.appendChild(b);
-  const nm=document.getElementById("nm"+n);if(nm){nm.textContent="В магазине: "+p.t}
-});
-document.getElementById("wbstat").textContent=`Фото и ссылки на ${Object.keys(P).length} из 29 вещей подобраны 21 октября 2026 в магазинах SELA, Befree, Zarina, LIMÉ и ТВОЕ. Если товар закончился, пользуйтесь поиском WB, Ozon и Lamoda справа.`;
-document.getElementById("wbdot").className="dot ok";
 
-const looks=[
-["Работа","Жакет графит, топ с квадратным вырезом, широкие брюки таупе, лоферы, тонкий ремень, сумка через плечо",["#4A4C50","#6B5547","#8C7F73"],[17,4,12,22,27,26]],
-["Город, будни","Тренч, джемпер с V-вырезом с французской заправкой, прямые джинсы, кеды, серьги-кольца",["#B8AFA3","#8C7F73","#6F86A0"],[18,6,10,23,28]],
-["Прогулка с ребёнком","Лонгслив в рубчик, кардиган шалфей, прямые джинсы, кеды, кросс-боди; зимой пуховик и шарф. Всё стирается и не мнётся",["#B8AFA3","#9DAA8F","#6F86A0"],[3,7,10,23,21,29]],
-["Выходные, кафе","Слип-юбка олива, укороченный кардиган или футболка шалфей, ботильоны, тонкая цепочка",["#7A7D5E","#9DAA8F","#B08A68"],[14,7,2,24,28]],
-["Вечер, свидание","Трикотажное платье мокко с поясом, жакет на плечи, мэри джейн, золотые серьги",["#6B5547","#4A4C50","#B99A9A"],[16,17,25,28]],
-["Поездка","Льняные брюки, футболка шалфей, рубашка-слой, кеды, мягкая сумка",["#E9E2D6","#9DAA8F","#9AB0C2"],[13,2,8,23,26]],
-["Холодный сезон","Пальто миди, водолазка графит, широкие брюки, ботильоны, шерстяной шарф пыльно-голубой",["#B8AFA3","#4A4C50","#9AB0C2"],[19,5,12,24,29]]
-];
-document.getElementById("looks").innerHTML=looks.map(([t,d,cols,ids])=>`<div class="panel look"><div class="dots">${cols.map(c=>`<span style="background:${c}"></span>`).join("")}</div><h3>${t}</h3><p>${d}</p><p class="note">Вещи №${ids.join(", №")}</p></div>`).join("");
+/* ===== Утилиты ===== */
+const $=s=>document.querySelector(s);
+const esc=v=>String(v==null?"":v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const okUrl=u=>typeof u==="string"&&/^https:\/\//i.test(u)?u:"";
+const okHex=h=>typeof h==="string"&&/^#[0-9a-f]{3,8}$/i.test(h)?h:"#999999";
+const fmt=n=>Math.round(+n||0).toLocaleString("ru-RU");
+const arr=a=>Array.isArray(a)?a:[];
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+const ic=id=>`<svg class="ic"><use href="#i-${id}"/></svg>`;
+const OCC=[["work","Работа"],["city","Город"],["kid","С ребёнком"],["weekend","Выходные"],["evening","Вечер"],["travel","Поездка"]];
+const SEASON=[["w","Тепло"],["m","Прохладно"],["c","Холод"]];
+
+/* ===== Пароль ===== */
+const HASH="52ad8c577b21ac6f7aad69b5d2fdc401827d2ee4d3bed493a8d02dec8de21fb6";
+async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function authed(){if(/(^|\.)sharable\.link$/i.test(location.hostname))return true;try{if(sessionStorage.getItem("sdb-auth")===HASH)return true}catch(e){}return LS.get("sdb-auth","")===HASH}
+function openApp(){$("#gate").hidden=true;$("#app").hidden=false;boot()}
+
+/* ===== Клиенты ===== */
+let clients=[],C=null,ALL=[],BYN={};
+function validClient(o){return !!(o&&typeof o==="object"&&typeof o.name==="string"&&o.name.trim()&&Array.isArray(o.capsule))}
+function loadClients(){const imp=arr(LS.get("sdb-clients",[])).filter(validClient);const b=JSON.parse(JSON.stringify(BUILTIN));const nm=LS.get("sdb-name-"+b.id,"");if(nm)b.name=nm;clients=[b,...imp]}
+function saveImported(){return LS.set("sdb-clients",clients.filter(c=>c.id!==BUILTIN.id))}
+function setClient(id){C=clients.find(c=>c.id===id)||clients[0];LS.set("sdb-current",C.id);ALL=[];BYN={};arr(C.capsule).forEach(g=>arr(g&&g.items).forEach(it=>{if(it&&it.n!=null){ALL.push(it);BYN[it.n]=it}}));renderAll()}
+const initial=n=>esc((String(n||"").trim()[0]||"С").toUpperCase());
+function renderClients(){
+  $("#clientSel").innerHTML=clients.map(c=>`<option value="${esc(c.id)}"${c.id===C.id?" selected":""}>${esc(c.name)}</option>`).join("");
+  $("#avatar").innerHTML=initial(C.name);$("#renameInp").value=C.name;
+  $("#clientList").innerHTML=clients.map(c=>`<li class="${c.id===C.id?"cur":""}"><span class="avatar" aria-hidden="true">${initial(c.name)}</span><span class="nm">${esc(c.name)}</span>${c.id===C.id?'<span class="small muted">открыт</span>':`<button class="btn sm" data-open="${esc(c.id)}" type="button">Открыть</button>`}${c.id===BUILTIN.id?"":`<button class="btn sm danger iconbtn" data-del="${esc(c.id)}" type="button" aria-label="Удалить ${esc(c.name)}">${ic("trash")}</button>`}</li>`).join("");
+}
+function clientMsg(t,ok){const m=$("#clientMsg");m.textContent=t;m.className="msg "+(ok?"ok":"bad")}
+
+/* ===== Рендер ===== */
+function figSvg(f){const fill=c=>c==="ink"?"currentColor":okHex(c);const sh=arr(f.s).map(s=>{
+  if(s[0]==="p")return `<polygon points="${String(s[1]).replace(/[^0-9., ]/g,"")}" fill="${fill(s[2])}"/>`;
+  if(s[0]==="r")return `<rect x="${+s[1]||0}" y="${+s[2]||0}" width="${+s[3]||0}" height="${+s[4]||0}" fill="${fill(s[5])}"${s[5]==="ink"?' opacity=".6"':""}/>`;
+  if(s[0]==="l")return `<line x1="${+s[1]||0}" y1="${+s[2]||0}" x2="${+s[3]||0}" y2="${+s[4]||0}" stroke="${fill(s[5])}" stroke-width="1.5" stroke-dasharray="3 3"/>`;return ""}).join("");
+  return `<svg viewBox="0 0 120 240" role="img" aria-label="${esc(f.t)}"><circle cx="60" cy="20" r="11" fill="currentColor" opacity=".85"/><rect x="56" y="30" width="8" height="10" fill="currentColor" opacity=".85"/>${sh}</svg>`}
+const listHtml=a=>`<ul class="list">${arr(a).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+const sw=(a,bad)=>`<div class="sw-row">${arr(a).map(x=>`<div class="sw${bad?" bad":""}"><div style="background:${okHex(x[1])}"></div><span>${esc(x[0])}</span><small>${esc(x[2])}</small></div>`).join("")}</div>`;
+function photo(it){const p=it&&it.P;const img=p&&okUrl(p.i);
+  return img?`<img src="${esc(img)}" alt="${esc((p&&p.t)||it.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'noimg',textContent:'фото на сайте'}))">`:`<span class="noimg" style="background:${okHex(it.hex)}"></span>`}
+const searchLinks=q=>{const e=encodeURIComponent(q||"");return `<a class="lnk" href="https://www.wildberries.ru/catalog/0/search.aspx?search=${e}" target="_blank" rel="noopener">WB</a><a class="lnk" href="https://www.ozon.ru/search/?text=${e}" target="_blank" rel="noopener">Ozon</a><a class="lnk" href="https://www.lamoda.ru/catalogsearch/result/?q=${e}" target="_blank" rel="noopener">Lamoda</a>`};
+const sec=(title,body,aside)=>`<section class="block"><header><h2>${title}</h2>${aside||""}</header>${body}</section>`;
+
+function renderHero(){
+  $("#hTitle").textContent=C.title||C.name;$("#hLead").textContent=C.lead||"";
+  $("#hDna").innerHTML=arr(C.dna).map(d=>`<span class="chip${d[1]?" alt":""}">${esc(d[0])}</span>`).join("");
+  $("#hStrip").innerHTML=arr(C.palette).map(h=>`<span style="background:${okHex(h)}"></span>`).join("");
+  $("#hNote").textContent=C.note||"";document.title=(C.name?C.name+" · ":"")+"Style DNA Board";
+}
+function renderRazbor(){
+  $("#v-razbor").innerHTML=
+   sec("Что видно на фотографиях",`<div class="cols">${arr(C.analysis).map(s=>`<div><h3 style="margin-bottom:6px">${esc(s.h)}</h3><dl class="kv">${arr(s.rows).map(r=>`<dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl></div>`).join("")}</div>`)+
+   sec("Что подчёркивать и что балансировать",`<div class="yn"><div class="y"><h3>Подчёркивать</h3>${listHtml(C.emph)}</div><div class="n"><h3>Балансировать</h3>${listHtml(C.balance)}</div></div>`)+
+   (C.directions?sec("Направления, которые поддерживают внешность",`<p>${esc(C.directions)}</p>`):"");
+}
+function renderStil(){
+  const c=C.colors||{},t=C.textures;
+  $("#v-stil").innerHTML=
+   sec("Style DNA",`<div class="traits">${arr(C.traits).map(x=>`<div><h3>${esc(x[0])}</h3><p class="small">${esc(x[1])}</p></div>`).join("")}</div>`)+
+   sec("Идеальные параметры",`<div>${arr(C.params).map(p=>`<div class="scale"><b>${esc(p[0])}</b><div class="track" role="img" aria-label="${esc(p[0])}: ${+p[1]||0} из 100"><i style="left:${Math.max(0,Math.min(100,+p[1]||0))}%"></i></div><div class="ends"><span>${esc(p[2])}</span><span>${esc(p[3])}</span></div></div>`).join("")}</div>${C.formula?`<p class="small muted">${esc(C.formula)}</p>`:""}`)+
+   (arr(C.figs).length?sec("Где проводить линии",`<div class="sil">${arr(C.figs).map(f=>`<div class="fig">${figSvg(f)}<span class="tag ${f.ok?"y":"n"}">${f.ok?"Да":"Нет"}</span><p>${esc(f.t)}</p></div>`).join("")}</div>`):"")+
+   sec("Силуэты, посадки, длины",`<div class="cols">${arr(C.cuts).map(s=>`<div><h3 style="margin-bottom:8px">${esc(s.h)}</h3>${listHtml(s.items)}</div>`).join("")}</div>`)+
+   (t?sec("Фактуры и материалы",`<div class="yn"><div class="y"><h3>Поддерживают</h3>${listHtml(t.yes)}</div><div class="n"><h3>Спорят с внешностью</h3>${listHtml(t.no)}</div></div>${t.note?`<p class="small muted">${esc(t.note)}</p>`:""}`):"")+
+   sec("Цвет",`<h3>База</h3>${sw(c.base)}<h3>Акценты</h3>${sw(c.acc)}<h3>Не у лица</h3>${sw(c.bad,1)}<div class="cols"><div><h3 style="margin-bottom:8px">Сочетания</h3>${listHtml(c.combos)}</div><div><h3 style="margin-bottom:8px">Правила цвета</h3>${listHtml(c.rules)}</div><div><h3 style="margin-bottom:8px">Металл и фурнитура</h3>${listHtml(c.metal)}</div></div>`)+
+   sec("Детали и аксессуары",`<div class="cols">${arr(C.details).map(s=>`<div><h3 style="margin-bottom:8px">${esc(s.h)}</h3>${listHtml(s.items)}</div>`).join("")}</div>`)+
+   sec("Что не работает",`<div class="stop">${arr(C.stop).map(s=>`<div><h3>${esc(s[0])}</h3><p class="small">${esc(s[1])}</p></div>`).join("")}</div>`)+
+   sec("Правила стиля",`<ol class="rules">${arr(C.rules).map(r=>`<li>${esc(r)}</li>`).join("")}</ol>${C.footnote?`<p class="small muted">${esc(C.footnote)}</p>`:""}`);
+}
+function renderKapsula(){
+  let tMin=0,tMax=0,pMin=0,pMax=0,withPhoto=0;
+  ALL.forEach(it=>{tMin+=+it.mn||0;tMax+=+it.mx||0;if(+it.pr===1){pMin+=+it.mn||0;pMax+=+it.mx||0}if(it.P&&okUrl(it.P.i))withPhoto++});
+  const body=`<div class="totals"><div class="total"><span class="small muted">Вся капсула</span><b>${fmt(tMin)}–${fmt(tMax)} ₽</b></div><div class="total"><span class="small muted">Очередь 1, минимум на сезон</span><b>${fmt(pMin)}–${fmt(pMax)} ₽</b></div></div>
+    <p class="small muted">Фото и «Купить» ведут на конкретный товар в магазине бренда. Если он закончился, ищите похожий через WB, Ozon или Lamoda. Перед покупкой проверяйте состав и фото на модели в полный рост. Очередь: 1 сейчас, 2 в течение 1–2 месяцев, 3 к весне.</p>
+    ${arr(C.capsule).map(g=>`<div class="cat-h">${esc(g.cat)}</div><ul class="items">${arr(g.items).map(it=>{const p=it.P||{};const u=okUrl(p.u);const pr=[1,2,3].includes(+it.pr)?+it.pr:3;
+      return `<li class="item"><a class="ph" ${u?`href="${esc(u)}" target="_blank" rel="noopener"`:""} aria-label="${esc(it.name)}">${photo(it)}</a>
+      <div><div class="top"><h3>${esc(it.name)}</h3><span class="num">№${esc(it.n)}</span></div>
+      ${p.t?`<div class="shop">${esc(p.s||"")}: ${esc(p.t)}</div>`:""}
+      <p class="why">${esc(it.why)}</p>
+      <div class="meta"><span class="pill p${pr}">Очередь ${pr}</span><span>${esc(it.tier)}</span><span>ориентир ${fmt(it.mn)}–${fmt(it.mx)} ₽</span>${p.p?`<span class="price">${esc(p.s)}: ${fmt(p.p)} ₽</span>`:""}</div>
+      <div class="links">${u?`<a class="lnk buy" href="${esc(u)}" target="_blank" rel="noopener">Купить ${ic("ext")}</a>`:""}${searchLinks(it.q)}</div></div></li>`}).join("")}</ul>`).join("")}`;
+  $("#v-kapsula").innerHTML=sec(`Капсула: ${ALL.length} вещей`,body,`<span class="small muted">Фото есть у ${withPhoto} из ${ALL.length}</span>`);
+}
+
+/* ===== Образы ===== */
+const lookKey=()=>"sdb-looks-"+C.id;
+let current=null;
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+function pool(types,occ,s,strict){const t=ALL.filter(i=>types.includes(i.type));let p=t.filter(i=>arr(i.occ).includes(occ)&&arr(i.season).includes(s));if(strict||p.length)return p;p=t.filter(i=>arr(i.season).includes(s));return p.length?p:t}
+function generate(occ,s){
+  const out=[];const dresses=pool(["dress"],occ,s,true);
+  if(dresses.length&&Math.random()<.35){out.push(rnd(dresses))}else{
+    const bottoms=pool(["bottom"],occ,s);const bottom=bottoms.length?rnd(bottoms):null;let tops=pool(["top"],occ,s);
+    if(bottom&&bottom.vol==="wide"){const f=tops.filter(x=>x.vol==="fit");if(f.length)tops=f}
+    const top=tops.length?rnd(tops):null;if(top)out.push(top);if(bottom)out.push(bottom);
+    const layers=pool(["layer"],occ,s,true);if(top&&top.vol==="fit"&&layers.length&&Math.random()<(s==="w"?.3:.6))out.push(rnd(layers));
+  }
+  const outer=pool(["outer"],occ,s,true);
+  if(s!=="w"){if(outer.length)out.push(rnd(outer))}else if(outer.length&&(occ==="work"||occ==="evening")&&Math.random()<.5)out.push(rnd(outer));
+  ["shoes","bag"].forEach(t=>{const p=pool([t],occ,s);if(p.length)out.push(rnd(p))});
+  const acc=pool(["belt","jewel"],occ,s);if(acc.length)out.push(rnd(acc));
+  if(s==="c"){const sc=pool(["scarf"],occ,s);if(sc.length)out.push(rnd(sc))}
+  const seen=new Set();return out.filter(i=>i&&!seen.has(i.n)&&seen.add(i.n)).map(i=>i.n);
+}
+const nameOf=(list,k)=>(list.find(o=>o[0]===k)||["",""])[1];
+function lookCard(l,opts){const items=arr(l.ids).map(n=>BYN[n]).filter(Boolean);
+  return `<article class="look${opts.fresh?" fresh":""}"><div class="head"><div><h3>${esc(l.t)}</h3>${l.d?`<p class="small muted" style="margin-top:4px">${esc(l.d)}</p>`:""}</div><div class="dots" aria-hidden="true">${items.slice(0,4).map(i=>`<span style="background:${okHex(i.hex)}"></span>`).join("")}</div></div>
+  <div class="strip-items">${items.map(i=>{const u=i.P&&okUrl(i.P.u);return `<a class="mini" ${u?`href="${esc(u)}" target="_blank" rel="noopener"`:""}><span class="ph">${photo(i)}</span><span>№${esc(i.n)} ${esc(i.name)}</span></a>`}).join("")}</div>
+  ${opts.actions||""}</article>`}
+function renderObrazy(){
+  const saved=arr(LS.get(lookKey(),[]));const m=new Date().getMonth();const defS=(m>=10||m<=2)?2:(m>=5&&m<=7?0:1);
+  $("#v-obrazy").innerHTML=`
+  <section class="gen" id="gen" aria-label="Генератор образа">
+    <h2>Новый образ</h2>
+    <div class="seg" role="radiogroup" aria-label="Повод">${OCC.map((o,i)=>`<input type="radio" name="occ" id="occ-${o[0]}" value="${o[0]}"${i===1?" checked":""}><label for="occ-${o[0]}">${o[1]}</label>`).join("")}</div>
+    <div class="seg" role="radiogroup" aria-label="Погода">${SEASON.map((o,i)=>`<input type="radio" name="season" id="s-${o[0]}" value="${o[0]}"${i===defS?" checked":""}><label for="s-${o[0]}">${o[1]}</label>`).join("")}</div>
+    <div class="row"><button class="btn primary" id="genBtn" type="button">${ic("spark")}Собрать образ</button></div>
+    <div id="genOut"><div class="empty">Выберите повод и погоду и нажмите «Собрать образ». Генератор берёт вещи из капсулы и следует правилам стиля: одна зона объёма, высокая посадка, приглушённая палитра.</div></div>
+  </section>
+  <details class="builder" id="builder"><summary>${ic("chev")}Собрать образ вручную</summary>
+    <div class="picker">${ALL.map(i=>`<div class="pick"><input type="checkbox" id="pk-${esc(i.n)}" value="${esc(i.n)}"><label for="pk-${esc(i.n)}"><span class="ph">${photo(i)}</span><span>№${esc(i.n)} ${esc(i.name)}</span></label></div>`).join("")}</div>
+    <div class="foot"><div class="field"><label for="lookName" class="small muted">Название образа</label><input type="text" id="lookName" maxlength="60" placeholder="Например, «Ужин у друзей»"></div>
+    <button class="btn primary" id="saveManual" type="button" disabled>${ic("save")}Сохранить образ</button></div>
+    <div class="msg" id="manualMsg" role="status" style="padding-bottom:14px">Отметьте минимум две вещи.</div>
+  </details>
+  ${sec("Сохранённые образы",saved.length?`<div class="looks">${saved.map(l=>lookCard(l,{actions:`<div class="row"><button class="btn sm danger" type="button" data-dellook="${esc(l.id)}">${ic("trash")}<span>Удалить</span></button></div>`})).join("")}</div>`:`<div class="empty">Здесь появятся образы, которые вы сохраните из генератора или соберёте вручную.</div>`,saved.length?`<span class="small muted">${saved.length} шт.</span>`:"")}
+  ${sec("Базовые образы стилиста",`<div class="looks">${arr(C.looks).map(l=>lookCard({t:l[0],d:l[1],ids:l[2]},{})).join("")}</div>`)}`;
+  bindObrazy();
+}
+function saveLook(l,msgEl){const list=arr(LS.get(lookKey(),[]));list.unshift(l);if(LS.set(lookKey(),list)){renderObrazy();return true}msgEl.textContent="Не удалось сохранить: браузер запретил хранение данных.";msgEl.className="msg bad";return false}
+function showGenerated(){const occ=(document.querySelector('input[name=occ]:checked')||{}).value||"city";const s=(document.querySelector('input[name=season]:checked')||{}).value||"m";
+  current={id:"l"+Date.now(),t:`${nameOf(OCC,occ)} · ${nameOf(SEASON,s).toLowerCase()}`,ids:generate(occ,s)};
+  $("#genOut").innerHTML=lookCard(current,{fresh:1,actions:`<div class="row"><button class="btn" type="button" id="againBtn">${ic("redo")}Другой вариант</button><button class="btn primary" type="button" id="saveGen">${ic("save")}Сохранить</button></div><div class="msg" id="genMsg" role="status"></div>`});
+  $("#againBtn").onclick=showGenerated;
+  $("#saveGen").onclick=()=>saveLook(current,$("#genMsg"));
+}
+function bindObrazy(){
+  $("#genBtn").onclick=showGenerated;
+  const box=$("#builder"),btn=$("#saveManual"),msg=$("#manualMsg");
+  const upd=()=>{const k=box.querySelectorAll(".pick input:checked").length;btn.disabled=k<2;msg.className="msg";msg.textContent=k<2?"Отметьте минимум две вещи.":`Выбрано вещей: ${k}`};
+  box.querySelectorAll(".pick input").forEach(i=>i.addEventListener("change",upd));
+  btn.onclick=()=>{const ids=[...box.querySelectorAll(".pick input:checked")].map(i=>+i.value);saveLook({id:"l"+Date.now(),t:$("#lookName").value.trim()||"Мой образ",ids},msg)};
+  document.querySelectorAll("[data-dellook]").forEach(b=>b.onclick=()=>{if(b.dataset.confirm!=="1"){b.dataset.confirm="1";b.querySelector("span").textContent="Точно удалить?";return}
+    LS.set(lookKey(),arr(LS.get(lookKey(),[])).filter(l=>l.id!==b.dataset.dellook));renderObrazy()});
+}
+
+/* ===== Вкладки и запуск ===== */
+const TABS=["razbor","stil","kapsula","obrazy"];
+function showTab(t){if(!TABS.includes(t))t="razbor";document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t?"true":"false"));TABS.forEach(x=>{$("#v-"+x).hidden=x!==t});$("#heroWrap").hidden=t!=="razbor";try{history.replaceState(null,"","#"+t)}catch(e){}}
+function renderAll(){renderClients();renderHero();renderRazbor();renderStil();renderKapsula();renderObrazy()}
+let booted=false;
+function boot(){if(booted)return;booted=true;
+  loadClients();setClient(LS.get("sdb-current",BUILTIN.id));showTab((location.hash||"").slice(1));
+  document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{showTab(b.dataset.tab);window.scrollTo({top:0})});
+  $("#clientSel").onchange=e=>setClient(e.target.value);
+  $("#btnClients").onclick=()=>{const p=$("#clients");p.hidden=!p.hidden;$("#btnClients").setAttribute("aria-expanded",String(!p.hidden));if(!p.hidden){$("#clientMsg").textContent="";window.scrollTo({top:0})}};
+  $("#btnNewLook").onclick=()=>{showTab("obrazy");showGenerated();$("#gen").scrollIntoView({block:"start"})};
+  $("#clientList").onclick=e=>{const o=e.target.closest("[data-open]"),d=e.target.closest("[data-del]");
+    if(o){setClient(o.dataset.open);clientMsg("",1)}
+    if(d){if(d.dataset.confirm!=="1"){d.dataset.confirm="1";d.textContent="Точно?";d.classList.remove("iconbtn");return}
+      const id=d.dataset.del;clients=clients.filter(c=>c.id!==id);saveImported();LS.del("sdb-looks-"+id);setClient(C.id===id?BUILTIN.id:C.id);clientMsg("Клиент удалён.",1)}};
+  $("#renameBtn").onclick=()=>{const v=$("#renameInp").value.trim();if(!v){clientMsg("Введите имя.",0);return}C.name=v;if(C.id===BUILTIN.id)LS.set("sdb-name-"+C.id,v);else saveImported();renderClients();renderHero();clientMsg("Имя сохранено.",1)};
+  $("#importBtn").onclick=()=>$("#fileInp").click();
+  $("#fileInp").onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const r=new FileReader();
+    r.onload=()=>{let o;try{o=JSON.parse(r.result)}catch(x){clientMsg("Не удалось прочитать файл: это не JSON. Попросите Claude прислать файл клиента ещё раз.",0);return}
+      if(!validClient(o)){clientMsg("Файл не похож на файл клиента: нет имени или капсулы.",0);return}
+      o.id=(typeof o.id==="string"&&o.id&&o.id!==BUILTIN.id&&!clients.some(c=>c.id===o.id))?o.id:"c"+Date.now();
+      clients.push(o);const ok=saveImported();setClient(o.id);
+      clientMsg(ok?`Клиент «${o.name}» добавлен.`:"Клиент открыт, но не сохранён: браузер запретил хранение данных.",ok);e.target.value=""};
+    r.onerror=()=>clientMsg("Не удалось открыть файл.",0);r.readAsText(f)};
+  $("#exportBtn").onclick=()=>{const blob=new Blob([JSON.stringify(C,null,1)],{type:"application/json"});const a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);a.download=(C.name||"client").replace(/[\\/:*?"<>|]+/g,"_")+".json";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);clientMsg("Файл клиента сохранён в загрузки.",1)};
+}
+if(authed()){openApp()}else{
+  $("#gate").hidden=false;setTimeout(()=>$("#gatePass").focus(),50);
+  $("#gateForm").addEventListener("submit",async e=>{e.preventDefault();const err=$("#gateErr");
+    if(!(window.crypto&&crypto.subtle)){err.textContent="Браузер не поддерживает проверку пароля. Откройте страницу по адресу https.";return}
+    const h=await sha("sdb:"+$("#gatePass").value.trim());
+    if(h===HASH){try{sessionStorage.setItem("sdb-auth",h)}catch(x){} if($("#gateRemember").checked)LS.set("sdb-auth",h);openApp()}
+    else{err.textContent="Неверный пароль. Попробуйте ещё раз.";$("#gatePass").select();const g=$("#gate");g.classList.remove("shake");void g.offsetWidth;g.classList.add("shake")}
+  });
+}
 </script>
 </body>
 </html>
