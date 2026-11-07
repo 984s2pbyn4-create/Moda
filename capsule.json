@@ -1,0 +1,1287 @@
+{
+  "meta": {
+    "title": "MY STYLE STUDIO",
+    "season": "Осень–зима 2026",
+    "source": "КАПСУЛА для АННЫ ОСЕНЬ-ЗИМА26.pdf",
+    "pages": 83,
+    "currency": "RUB",
+    "notice": "Цены не подтверждены; ссылки извлечены из PDF и могут устареть."
+  },
+  "items": [
+    {
+      "id": "item-1",
+      "name": "Футболка",
+      "category": "Верх",
+      "sourcePage": 3,
+      "image": "assets/products/p03-1.webp",
+      "url": "https://www.sela.ru/eshop/women/futbolki/SL6811010202_60/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-2",
+      "name": "Лонгслив",
+      "category": "Верх",
+      "sourcePage": 3,
+      "image": "assets/products/p03-2.webp",
+      "url": "https://www.sela.ru/eshop/women/futbolki/longsleeve/SL6811010213_60/?store%5B0%5D=4608",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-3",
+      "name": "Топ",
+      "category": "Верх",
+      "sourcePage": 4,
+      "image": "assets/products/p04-1.webp",
+      "url": "https://limestore.com/ru_ru/product/24329_3402_134-3402_134_251_temno_bezevyi",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-4",
+      "name": "Топ",
+      "category": "Верх",
+      "sourcePage": 4,
+      "image": "assets/products/p04-2.webp",
+      "url": "https://limestore.com/ru_ru/product/24329_3402_134-belyi",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-5",
+      "name": "Рубашка",
+      "category": "Верх",
+      "sourcePage": 5,
+      "image": "assets/products/p05-1.webp",
+      "url": "https://www.wildberries.ru/catalog/455562854/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-6",
+      "name": "Жакет",
+      "category": "Верх",
+      "sourcePage": 5,
+      "image": "assets/products/p05-2.webp",
+      "url": "https://www.wildberries.ru/catalog/1002852323/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-7",
+      "name": "Блуза",
+      "category": "Верх",
+      "sourcePage": 6,
+      "image": "assets/products/p06-1.webp",
+      "url": "https://ostin.com/product/odnobortnyj-zhaket-s-poyasom/40180760299?category-id=12485740299&availability=disabled&sku-id=87402670299&display=availability",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-8",
+      "name": "Лонгслив",
+      "category": "Верх",
+      "sourcePage": 6,
+      "image": "assets/products/p06-2.webp",
+      "url": "https://www.wildberries.ru/catalog/1181010077/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-9",
+      "name": "Джемпер",
+      "category": "Верх",
+      "sourcePage": 7,
+      "image": "assets/products/p07-1.webp",
+      "url": "https://www.sela.ru/eshop/women/dzhempery-i-kardigany/SL6810010642_27/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-10",
+      "name": "Юбка",
+      "category": "Низ",
+      "sourcePage": 7,
+      "image": "assets/products/p07-2.webp",
+      "url": "https://www.sela.ru/eshop/women/pants/SL6811011501_39/?sku=605527&store%5B0%5D=4608",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-11",
+      "name": "Трикотажный комплект",
+      "category": "Верх",
+      "sourcePage": 8,
+      "image": "assets/products/p08-1.webp",
+      "url": "https://www.sela.ru/eshop/women/dzhempery-i-kardigany/SL6809010657_66/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-12",
+      "name": "Комплект",
+      "category": "Верх",
+      "sourcePage": 8,
+      "image": "assets/products/p08-2.webp",
+      "url": "https://www.sela.ru/eshop/women/pants/SL6809011510_66/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-13",
+      "name": "Кардиган",
+      "category": "Верх",
+      "sourcePage": 9,
+      "image": "assets/products/p09-1.webp",
+      "url": "https://www.wildberries.ru/catalog/1510149305/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-14",
+      "name": "Джинсы",
+      "category": "Низ",
+      "sourcePage": 9,
+      "image": "assets/products/p09-2.webp",
+      "url": "https://www.wildberries.ru/catalog/1263359922/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-15",
+      "name": "Платье",
+      "category": "Платья",
+      "sourcePage": 10,
+      "image": "assets/products/p10-1.webp",
+      "url": "https://limestore.com/ru_ru/product/34178-5425_470_201_temno_koricnevyi",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-16",
+      "name": "Джемпер",
+      "category": "Платья",
+      "sourcePage": 10,
+      "image": "assets/products/p10-2.webp",
+      "url": "https://www.sela.ru/eshop/women/dzhinsy/SL6811011407_27/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-17",
+      "name": "Платье",
+      "category": "Платья",
+      "sourcePage": 11,
+      "image": "assets/products/p11-1.webp",
+      "url": "https://limestore.com/ru_ru/product/28381_7867_257-vintaznyi_sinii",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-18",
+      "name": "Юбка",
+      "category": "Платья",
+      "sourcePage": 11,
+      "image": "assets/products/p11-2.webp",
+      "url": "https://limestore.com/ru_ru/product/20754_5771_062-vintaznyi_sinii",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-19",
+      "name": "Платье",
+      "category": "Платья",
+      "sourcePage": 12,
+      "image": "assets/products/p12-1.webp",
+      "url": "https://zarina.ru/catalog/product/zr2610023501-66/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-20",
+      "name": "Платье",
+      "category": "Платья",
+      "sourcePage": 12,
+      "image": "assets/products/p12-2.webp",
+      "url": "https://loverepublic.ru/catalog/odezhda/yubki/327344/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-21",
+      "name": "Платье",
+      "category": "Платья",
+      "sourcePage": 13,
+      "image": "assets/products/p13-1.webp",
+      "url": "https://www.wildberries.ru/catalog/1022178734/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-22",
+      "name": "Платье",
+      "category": "Платья",
+      "sourcePage": 13,
+      "image": "assets/products/p13-2.webp",
+      "url": "https://ostin.com/product/vyazanoe-plate-mini/40496600299?category-id=12485750299&availability=disabled",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-23",
+      "name": "Платье",
+      "category": "Платья",
+      "sourcePage": 14,
+      "image": "assets/products/p14-1.webp",
+      "url": "https://www.wildberries.ru/catalog/1301610332/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-24",
+      "name": "Платье",
+      "category": "Платья",
+      "sourcePage": 14,
+      "image": "assets/products/p14-2.webp",
+      "url": "https://www.wildberries.ru/catalog/1568729388/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-25",
+      "name": "Пальто",
+      "category": "Верхняя одежда",
+      "sourcePage": 15,
+      "image": "assets/products/p15-1.webp",
+      "url": "https://www.wildberries.ru/catalog/540008224/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-26",
+      "name": "Пальто",
+      "category": "Верхняя одежда",
+      "sourcePage": 15,
+      "image": "assets/products/p15-2.webp",
+      "url": "https://loverepublic.ru/catalog/odezhda/verhnyaya-odezhda/kurtki/339906/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-27",
+      "name": "Пиджак",
+      "category": "Верхняя одежда",
+      "sourcePage": 16,
+      "image": "assets/products/p16-1.webp",
+      "url": "https://www.wildberries.ru/catalog/1485825192/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-28",
+      "name": "Пальто",
+      "category": "Верхняя одежда",
+      "sourcePage": 16,
+      "image": "assets/products/p16-2.webp",
+      "url": "https://www.wildberries.ru/catalog/1350072193/detail.aspx?targetUrl=MI",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-29",
+      "name": "Куртка",
+      "category": "Верхняя одежда",
+      "sourcePage": 17,
+      "image": "assets/products/p17-1.webp",
+      "url": "https://www.wildberries.ru/catalog/677693499/detail.aspx?targetUrl=MI",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-30",
+      "name": "Куртка",
+      "category": "Верхняя одежда",
+      "sourcePage": 17,
+      "image": "assets/products/p17-2.webp",
+      "url": "https://www.wildberries.ru/catalog/757807151/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-31",
+      "name": "Куртка",
+      "category": "Верхняя одежда",
+      "sourcePage": 18,
+      "image": "assets/products/p18-1.webp",
+      "url": "https://www.wildberries.ru/catalog/687236796/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-32",
+      "name": "Ремень",
+      "category": "Аксессуары",
+      "sourcePage": 18,
+      "image": "assets/products/p18-2.webp",
+      "url": "https://www.wildberries.ru/catalog/1147280587/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-33",
+      "name": "Сумка",
+      "category": "Аксессуары",
+      "sourcePage": 19,
+      "image": "assets/products/p19-1.webp",
+      "url": "https://www.lamoda.ru/p/mp002xw03tyz/clothes-calzedonia-kolgotki/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-34",
+      "name": "Колготки",
+      "category": "Аксессуары",
+      "sourcePage": 19,
+      "image": "assets/products/p19-2.webp",
+      "url": "https://www.lamoda.ru/p/mp002xw1218b/clothes-calzedonia-kolgotki/",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-35",
+      "name": "Колготки",
+      "category": "Аксессуары",
+      "sourcePage": 20,
+      "image": "assets/products/p20-1.webp",
+      "url": "https://www.wildberries.ru/catalog/1846610591/detail.aspx?size=3199934013",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-36",
+      "name": "Сапоги",
+      "category": "Обувь",
+      "sourcePage": 20,
+      "image": "assets/products/p20-2.webp",
+      "url": "https://www.wildberries.ru/catalog/1013048157/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-37",
+      "name": "Ботинки",
+      "category": "Обувь",
+      "sourcePage": 21,
+      "image": "assets/products/p21-1.webp",
+      "url": "https://www.wildberries.ru/catalog/1179908723/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-38",
+      "name": "Ботинки",
+      "category": "Обувь",
+      "sourcePage": 21,
+      "image": "assets/products/p21-2.webp",
+      "url": "https://limestore.com/ru_ru/product/38753-0278_414_210_koricnevyi",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-39",
+      "name": "Сапоги",
+      "category": "Обувь",
+      "sourcePage": 22,
+      "image": "assets/products/p22-1.webp",
+      "url": "https://www.wildberries.ru/catalog/1291191296/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    },
+    {
+      "id": "item-40",
+      "name": "Обувь",
+      "category": "Обувь",
+      "sourcePage": 22,
+      "image": "assets/products/p22-2.webp",
+      "url": "https://www.wildberries.ru/catalog/1009077888/detail.aspx",
+      "price": null,
+      "currency": "RUB",
+      "owned": false,
+      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+    }
+  ],
+  "looks": [
+    {
+      "id": "look-23",
+      "name": "Образ из капсулы № 1",
+      "image": "assets/looks/look-23.webp",
+      "sourcePage": 23,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-24",
+      "name": "Образ из капсулы № 2",
+      "image": "assets/looks/look-24.webp",
+      "sourcePage": 24,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-25",
+      "name": "Образ из капсулы № 3",
+      "image": "assets/looks/look-25.webp",
+      "sourcePage": 25,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-26",
+      "name": "Образ из капсулы № 4",
+      "image": "assets/looks/look-26.webp",
+      "sourcePage": 26,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-27",
+      "name": "Образ из капсулы № 5",
+      "image": "assets/looks/look-27.webp",
+      "sourcePage": 27,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-28",
+      "name": "Образ из капсулы № 6",
+      "image": "assets/looks/look-28.webp",
+      "sourcePage": 28,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-29",
+      "name": "Образ из капсулы № 7",
+      "image": "assets/looks/look-29.webp",
+      "sourcePage": 29,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-30",
+      "name": "Образ из капсулы № 8",
+      "image": "assets/looks/look-30.webp",
+      "sourcePage": 30,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-31",
+      "name": "Образ из капсулы № 9",
+      "image": "assets/looks/look-31.webp",
+      "sourcePage": 31,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-32",
+      "name": "Образ из капсулы № 10",
+      "image": "assets/looks/look-32.webp",
+      "sourcePage": 32,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-33",
+      "name": "Образ из капсулы № 11",
+      "image": "assets/looks/look-33.webp",
+      "sourcePage": 33,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-34",
+      "name": "Образ из капсулы № 12",
+      "image": "assets/looks/look-34.webp",
+      "sourcePage": 34,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-35",
+      "name": "Образ из капсулы № 13",
+      "image": "assets/looks/look-35.webp",
+      "sourcePage": 35,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-36",
+      "name": "Образ из капсулы № 14",
+      "image": "assets/looks/look-36.webp",
+      "sourcePage": 36,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-37",
+      "name": "Образ из капсулы № 15",
+      "image": "assets/looks/look-37.webp",
+      "sourcePage": 37,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-38",
+      "name": "Образ из капсулы № 16",
+      "image": "assets/looks/look-38.webp",
+      "sourcePage": 38,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-39",
+      "name": "Образ из капсулы № 17",
+      "image": "assets/looks/look-39.webp",
+      "sourcePage": 39,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-40",
+      "name": "Образ из капсулы № 18",
+      "image": "assets/looks/look-40.webp",
+      "sourcePage": 40,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-41",
+      "name": "Образ из капсулы № 19",
+      "image": "assets/looks/look-41.webp",
+      "sourcePage": 41,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-42",
+      "name": "Образ из капсулы № 20",
+      "image": "assets/looks/look-42.webp",
+      "sourcePage": 42,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-43",
+      "name": "Образ из капсулы № 21",
+      "image": "assets/looks/look-43.webp",
+      "sourcePage": 43,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-44",
+      "name": "Образ из капсулы № 22",
+      "image": "assets/looks/look-44.webp",
+      "sourcePage": 44,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-45",
+      "name": "Образ из капсулы № 23",
+      "image": "assets/looks/look-45.webp",
+      "sourcePage": 45,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-46",
+      "name": "Образ из капсулы № 24",
+      "image": "assets/looks/look-46.webp",
+      "sourcePage": 46,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-47",
+      "name": "Образ из капсулы № 25",
+      "image": "assets/looks/look-47.webp",
+      "sourcePage": 47,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-48",
+      "name": "Образ из капсулы № 26",
+      "image": "assets/looks/look-48.webp",
+      "sourcePage": 48,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-49",
+      "name": "Образ из капсулы № 27",
+      "image": "assets/looks/look-49.webp",
+      "sourcePage": 49,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-50",
+      "name": "Образ из капсулы № 28",
+      "image": "assets/looks/look-50.webp",
+      "sourcePage": 50,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-51",
+      "name": "Образ из капсулы № 29",
+      "image": "assets/looks/look-51.webp",
+      "sourcePage": 51,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-52",
+      "name": "Образ из капсулы № 30",
+      "image": "assets/looks/look-52.webp",
+      "sourcePage": 52,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-53",
+      "name": "Образ из капсулы № 31",
+      "image": "assets/looks/look-53.webp",
+      "sourcePage": 53,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-54",
+      "name": "Образ из капсулы № 32",
+      "image": "assets/looks/look-54.webp",
+      "sourcePage": 54,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-55",
+      "name": "Образ из капсулы № 33",
+      "image": "assets/looks/look-55.webp",
+      "sourcePage": 55,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-56",
+      "name": "Образ из капсулы № 34",
+      "image": "assets/looks/look-56.webp",
+      "sourcePage": 56,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-57",
+      "name": "Образ из капсулы № 35",
+      "image": "assets/looks/look-57.webp",
+      "sourcePage": 57,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-58",
+      "name": "Образ из капсулы № 36",
+      "image": "assets/looks/look-58.webp",
+      "sourcePage": 58,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-59",
+      "name": "Образ из капсулы № 37",
+      "image": "assets/looks/look-59.webp",
+      "sourcePage": 59,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-60",
+      "name": "Образ из капсулы № 38",
+      "image": "assets/looks/look-60.webp",
+      "sourcePage": 60,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-61",
+      "name": "Образ из капсулы № 39",
+      "image": "assets/looks/look-61.webp",
+      "sourcePage": 61,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-62",
+      "name": "Образ из капсулы № 40",
+      "image": "assets/looks/look-62.webp",
+      "sourcePage": 62,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-63",
+      "name": "Образ из капсулы № 41",
+      "image": "assets/looks/look-63.webp",
+      "sourcePage": 63,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-64",
+      "name": "Образ из капсулы № 42",
+      "image": "assets/looks/look-64.webp",
+      "sourcePage": 64,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-65",
+      "name": "Образ из капсулы № 43",
+      "image": "assets/looks/look-65.webp",
+      "sourcePage": 65,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-66",
+      "name": "Образ из капсулы № 44",
+      "image": "assets/looks/look-66.webp",
+      "sourcePage": 66,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-67",
+      "name": "Образ из капсулы № 45",
+      "image": "assets/looks/look-67.webp",
+      "sourcePage": 67,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-68",
+      "name": "Образ из капсулы № 46",
+      "image": "assets/looks/look-68.webp",
+      "sourcePage": 68,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-69",
+      "name": "Образ из капсулы № 47",
+      "image": "assets/looks/look-69.webp",
+      "sourcePage": 69,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-70",
+      "name": "Образ из капсулы № 48",
+      "image": "assets/looks/look-70.webp",
+      "sourcePage": 70,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-71",
+      "name": "Образ из капсулы № 49",
+      "image": "assets/looks/look-71.webp",
+      "sourcePage": 71,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-72",
+      "name": "Образ из капсулы № 50",
+      "image": "assets/looks/look-72.webp",
+      "sourcePage": 72,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-73",
+      "name": "Образ из капсулы № 51",
+      "image": "assets/looks/look-73.webp",
+      "sourcePage": 73,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-74",
+      "name": "Образ из капсулы № 52",
+      "image": "assets/looks/look-74.webp",
+      "sourcePage": 74,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-75",
+      "name": "Образ из капсулы № 53",
+      "image": "assets/looks/look-75.webp",
+      "sourcePage": 75,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-76",
+      "name": "Образ из капсулы № 54",
+      "image": "assets/looks/look-76.webp",
+      "sourcePage": 76,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-77",
+      "name": "Образ из капсулы № 55",
+      "image": "assets/looks/look-77.webp",
+      "sourcePage": 77,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-78",
+      "name": "Образ из капсулы № 56",
+      "image": "assets/looks/look-78.webp",
+      "sourcePage": 78,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-79",
+      "name": "Образ из капсулы № 57",
+      "image": "assets/looks/look-79.webp",
+      "sourcePage": 79,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-80",
+      "name": "Образ из капсулы № 58",
+      "image": "assets/looks/look-80.webp",
+      "sourcePage": 80,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-81",
+      "name": "Образ из капсулы № 59",
+      "image": "assets/looks/look-81.webp",
+      "sourcePage": 81,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-82",
+      "name": "Образ из капсулы № 60",
+      "image": "assets/looks/look-82.webp",
+      "sourcePage": 82,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    },
+    {
+      "id": "look-83",
+      "name": "Образ из капсулы № 61",
+      "image": "assets/looks/look-83.webp",
+      "sourcePage": 83,
+      "description": "Оригинальное сочетание из PDF стилиста",
+      "tags": [
+        "Осень–зима"
+      ],
+      "items": [],
+      "makeup": "Мягкие коричневые тени, натуральный румянец, нюдовая помада",
+      "hair": "Естественная укладка или мягкие волны"
+    }
+  ]
+}
