@@ -1,142 +1,250 @@
 [
   {
     "number": 1,
-    "title": "Образ № 1",
+    "title": "Белая рубашка и шоколадные брюки",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-01-collage.jpg",
+    "photos": [
+      "assets/approved/look-01-photo-1.jpg",
+      "assets/approved/look-01-photo-2.jpg",
+      "assets/approved/look-01-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 2,
-    "title": "Образ № 2",
+    "title": "Шоколадная классика",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-02-collage.jpg",
+    "photos": [
+      "assets/approved/look-02-photo-1.jpg",
+      "assets/approved/look-02-photo-2.jpg",
+      "assets/approved/look-02-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 3,
-    "title": "Образ № 3",
+    "title": "Уютный минимализм",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-03-collage.jpg",
+    "photos": [
+      "assets/approved/look-03-photo-1.jpg",
+      "assets/approved/look-03-photo-2.jpg",
+      "assets/approved/look-03-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 4,
-    "title": "Образ № 4",
+    "title": "Современная классика",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-04-collage.jpg",
+    "photos": [
+      "assets/approved/look-04-photo-1.jpg",
+      "assets/approved/look-04-photo-2.jpg",
+      "assets/approved/look-04-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 5,
-    "title": "Образ № 5",
+    "title": "Расслабленная элегантность",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-05-collage.jpg",
+    "photos": [
+      "assets/approved/look-05-photo-1.jpg",
+      "assets/approved/look-05-photo-2.jpg",
+      "assets/approved/look-05-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 6,
     "title": "Образ № 6",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-06-collage.jpg",
+    "photos": [
+      "assets/approved/look-06-photo-1.jpg",
+      "assets/approved/look-06-photo-2.jpg",
+      "assets/approved/look-06-photo-3.jpg"
+    ],
+    "photoOrigin": "Отдельные исходные кадры."
   },
   {
     "number": 7,
     "title": "Образ № 7",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-07-collage.jpg",
+    "photos": [
+      "assets/approved/look-07-photo-1.jpg",
+      "assets/approved/look-07-photo-2.jpg",
+      "assets/approved/look-07-photo-3.jpg"
+    ],
+    "photoOrigin": "Отдельные исходные кадры."
   },
   {
     "number": 8,
     "title": "Образ № 8",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-08-collage.jpg",
+    "photos": [
+      "assets/approved/look-08-photo-1.jpg",
+      "assets/approved/look-08-photo-2.jpg",
+      "assets/approved/look-08-photo-3.jpg"
+    ],
+    "photoOrigin": "Отдельные исходные кадры."
   },
   {
     "number": 9,
-    "title": "Образ № 9",
+    "title": "Кожаная куртка и светлые брюки",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-09-collage.jpg",
+    "photos": [
+      "assets/approved/look-09-photo-1.jpg",
+      "assets/approved/look-09-photo-2.jpg",
+      "assets/approved/look-09-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 10,
-    "title": "Образ № 10",
+    "title": "Шоколадный монохром",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-10-collage.jpg",
+    "photos": [
+      "assets/approved/look-10-photo-1.jpg",
+      "assets/approved/look-10-photo-2.jpg",
+      "assets/approved/look-10-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 11,
-    "title": "Образ № 11",
+    "title": "Городской шик",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-11-collage.jpg",
+    "photos": [
+      "assets/approved/look-11-photo-1.jpg",
+      "assets/approved/look-11-photo-2.jpg",
+      "assets/approved/look-11-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 12,
-    "title": "Уютный шик",
+    "title": "Кардиган и коричневые брюки",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-12-collage.jpg",
+    "photos": [
+      "assets/approved/look-12-photo-1.jpg",
+      "assets/approved/look-12-photo-2.jpg",
+      "assets/approved/look-12-photo-3.jpg"
+    ],
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 13,
     "title": "Уютный трикотаж",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-13-collage.jpg",
+    "photos": [
+      "assets/approved/look-13-photo-1.jpg",
+      "assets/approved/look-13-photo-2.jpg",
+      "assets/approved/look-13-photo-3.jpg"
+    ],
+    "sourceStatus": "preview",
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 14,
     "title": "Спортивный шик",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-14-collage.jpg",
+    "photos": [
+      "assets/approved/look-14-photo-1.jpg",
+      "assets/approved/look-14-photo-2.jpg",
+      "assets/approved/look-14-photo-3.jpg"
+    ],
+    "sourceStatus": "preview",
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 15,
     "title": "Стритстайл",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-15-collage.jpg",
+    "photos": [
+      "assets/approved/look-15-photo-1.jpg",
+      "assets/approved/look-15-photo-2.jpg",
+      "assets/approved/look-15-photo-3.jpg"
+    ],
+    "sourceStatus": "preview",
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 16,
     "title": "Уютный город",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-16-collage.jpg",
+    "photos": [
+      "assets/approved/look-16-photo-1.jpg",
+      "assets/approved/look-16-photo-2.jpg",
+      "assets/approved/look-16-photo-3.jpg"
+    ],
+    "sourceStatus": "preview",
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 17,
     "title": "Лёгкая классика",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-17-collage.jpg",
+    "photos": [
+      "assets/approved/look-17-photo-1.jpg",
+      "assets/approved/look-17-photo-2.jpg",
+      "assets/approved/look-17-photo-3.jpg"
+    ],
+    "sourceStatus": "preview",
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 18,
     "title": "Курортный стиль",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-18-collage.jpg",
+    "photos": [
+      "assets/approved/look-18-photo-1.jpg",
+      "assets/approved/look-18-photo-2.jpg",
+      "assets/approved/look-18-photo-3.jpg"
+    ],
+    "sourceStatus": "preview",
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 19,
     "title": "В ритме города",
     "approved": true,
-    "collage": null,
-    "photos": []
+    "collage": "assets/approved/look-19-collage.jpg",
+    "photos": [
+      "assets/approved/look-19-photo-1.jpg",
+      "assets/approved/look-19-photo-2.jpg",
+      "assets/approved/look-19-photo-3.jpg"
+    ],
+    "sourceStatus": "preview",
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   },
   {
     "number": 20,
     "title": "Вечерняя элегантность",
     "approved": true,
-    "collage": "assets/approved/look-20-collage.png",
-    "photos": []
+    "collage": "assets/approved/look-20-collage.jpg",
+    "photos": [
+      "assets/approved/look-20-photo-1.jpg",
+      "assets/approved/look-20-photo-2.jpg",
+      "assets/approved/look-20-photo-3.jpg"
+    ],
+    "sourceStatus": "preview",
+    "photoOrigin": "Кадры вырезаны из утверждённого коллажа; не отдельные оригинальные файлы."
   }
 ]

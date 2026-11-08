@@ -5,7 +5,7 @@
     "source": "КАПСУЛА для АННЫ ОСЕНЬ-ЗИМА26.pdf",
     "pages": 83,
     "currency": "RUB",
-    "notice": "Цены не подтверждены; ссылки извлечены из PDF и могут устареть."
+    "notice": "Цены перенесены из скриншотов магазинов в PDF; это исторические суммы, актуальность не проверялась."
   },
   "items": [
     {
@@ -15,10 +15,11 @@
       "sourcePage": 3,
       "image": "assets/products/p03-1.webp",
       "url": "https://www.sela.ru/eshop/women/futbolki/SL6811010202_60/",
-      "price": null,
+      "price": 2299,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 3"
     },
     {
       "id": "item-2",
@@ -27,10 +28,11 @@
       "sourcePage": 3,
       "image": "assets/products/p03-2.webp",
       "url": "https://www.sela.ru/eshop/women/futbolki/longsleeve/SL6811010213_60/?store%5B0%5D=4608",
-      "price": null,
+      "price": 1799,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 3"
     },
     {
       "id": "item-3",
@@ -39,10 +41,11 @@
       "sourcePage": 4,
       "image": "assets/products/p04-1.webp",
       "url": "https://limestore.com/ru_ru/product/24329_3402_134-3402_134_251_temno_bezevyi",
-      "price": null,
+      "price": 1399,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 4"
     },
     {
       "id": "item-4",
@@ -51,10 +54,11 @@
       "sourcePage": 4,
       "image": "assets/products/p04-2.webp",
       "url": "https://limestore.com/ru_ru/product/24329_3402_134-belyi",
-      "price": null,
+      "price": 1399,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 4"
     },
     {
       "id": "item-5",
@@ -63,10 +67,11 @@
       "sourcePage": 5,
       "image": "assets/products/p05-1.webp",
       "url": "https://www.wildberries.ru/catalog/455562854/detail.aspx",
-      "price": null,
+      "price": 1853,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 5"
     },
     {
       "id": "item-6",
@@ -75,10 +80,11 @@
       "sourcePage": 5,
       "image": "assets/products/p05-2.webp",
       "url": "https://www.wildberries.ru/catalog/1002852323/detail.aspx",
-      "price": null,
+      "price": 1767,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 5"
     },
     {
       "id": "item-7",
@@ -87,10 +93,11 @@
       "sourcePage": 6,
       "image": "assets/products/p06-1.webp",
       "url": "https://ostin.com/product/odnobortnyj-zhaket-s-poyasom/40180760299?category-id=12485740299&availability=disabled&sku-id=87402670299&display=availability",
-      "price": null,
+      "price": 5999,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 6"
     },
     {
       "id": "item-8",
@@ -99,10 +106,11 @@
       "sourcePage": 6,
       "image": "assets/products/p06-2.webp",
       "url": "https://www.wildberries.ru/catalog/1181010077/detail.aspx",
-      "price": null,
+      "price": 4791,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 6"
     },
     {
       "id": "item-9",
@@ -111,10 +119,11 @@
       "sourcePage": 7,
       "image": "assets/products/p07-1.webp",
       "url": "https://www.sela.ru/eshop/women/dzhempery-i-kardigany/SL6810010642_27/",
-      "price": null,
+      "price": 2999,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 7"
     },
     {
       "id": "item-10",
@@ -123,10 +132,11 @@
       "sourcePage": 7,
       "image": "assets/products/p07-2.webp",
       "url": "https://www.sela.ru/eshop/women/pants/SL6811011501_39/?sku=605527&store%5B0%5D=4608",
-      "price": null,
+      "price": 6599,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 7"
     },
     {
       "id": "item-11",
@@ -135,10 +145,11 @@
       "sourcePage": 8,
       "image": "assets/products/p08-1.webp",
       "url": "https://www.sela.ru/eshop/women/dzhempery-i-kardigany/SL6809010657_66/",
-      "price": null,
+      "price": 7999,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 8"
     },
     {
       "id": "item-12",
@@ -147,10 +158,11 @@
       "sourcePage": 8,
       "image": "assets/products/p08-2.webp",
       "url": "https://www.sela.ru/eshop/women/pants/SL6809011510_66/",
-      "price": null,
+      "price": 7999,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 8"
     },
     {
       "id": "item-13",
@@ -159,10 +171,11 @@
       "sourcePage": 9,
       "image": "assets/products/p09-1.webp",
       "url": "https://www.wildberries.ru/catalog/1510149305/detail.aspx",
-      "price": null,
+      "price": 4513,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 9"
     },
     {
       "id": "item-14",
@@ -171,10 +184,11 @@
       "sourcePage": 9,
       "image": "assets/products/p09-2.webp",
       "url": "https://www.wildberries.ru/catalog/1263359922/detail.aspx",
-      "price": null,
+      "price": 3814,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 9"
     },
     {
       "id": "item-15",
@@ -183,10 +197,11 @@
       "sourcePage": 10,
       "image": "assets/products/p10-1.webp",
       "url": "https://limestore.com/ru_ru/product/34178-5425_470_201_temno_koricnevyi",
-      "price": null,
+      "price": 5599,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 10"
     },
     {
       "id": "item-16",
@@ -195,10 +210,11 @@
       "sourcePage": 10,
       "image": "assets/products/p10-2.webp",
       "url": "https://www.sela.ru/eshop/women/dzhinsy/SL6811011407_27/",
-      "price": null,
+      "price": 6599,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 10"
     },
     {
       "id": "item-17",
@@ -207,10 +223,11 @@
       "sourcePage": 11,
       "image": "assets/products/p11-1.webp",
       "url": "https://limestore.com/ru_ru/product/28381_7867_257-vintaznyi_sinii",
-      "price": null,
+      "price": 5599,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 11"
     },
     {
       "id": "item-18",
@@ -219,10 +236,11 @@
       "sourcePage": 11,
       "image": "assets/products/p11-2.webp",
       "url": "https://limestore.com/ru_ru/product/20754_5771_062-vintaznyi_sinii",
-      "price": null,
+      "price": 5599,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 11"
     },
     {
       "id": "item-19",
@@ -234,7 +252,8 @@
       "price": null,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "На скриншоте исходного PDF цена отсутствует.",
+      "priceSource": "На скриншоте PDF цена не показана"
     },
     {
       "id": "item-20",
@@ -243,10 +262,11 @@
       "sourcePage": 12,
       "image": "assets/products/p12-2.webp",
       "url": "https://loverepublic.ru/catalog/odezhda/yubki/327344/",
-      "price": null,
+      "price": 3599,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 12"
     },
     {
       "id": "item-21",
@@ -255,10 +275,11 @@
       "sourcePage": 13,
       "image": "assets/products/p13-1.webp",
       "url": "https://www.wildberries.ru/catalog/1022178734/detail.aspx",
-      "price": null,
+      "price": 2084,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 13"
     },
     {
       "id": "item-22",
@@ -267,10 +288,11 @@
       "sourcePage": 13,
       "image": "assets/products/p13-2.webp",
       "url": "https://ostin.com/product/vyazanoe-plate-mini/40496600299?category-id=12485750299&availability=disabled",
-      "price": null,
+      "price": 3999,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 13"
     },
     {
       "id": "item-23",
@@ -279,10 +301,11 @@
       "sourcePage": 14,
       "image": "assets/products/p14-1.webp",
       "url": "https://www.wildberries.ru/catalog/1301610332/detail.aspx",
-      "price": null,
+      "price": 13890,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 14"
     },
     {
       "id": "item-24",
@@ -291,10 +314,11 @@
       "sourcePage": 14,
       "image": "assets/products/p14-2.webp",
       "url": "https://www.wildberries.ru/catalog/1568729388/detail.aspx",
-      "price": null,
+      "price": 9442,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 14"
     },
     {
       "id": "item-25",
@@ -303,10 +327,11 @@
       "sourcePage": 15,
       "image": "assets/products/p15-1.webp",
       "url": "https://www.wildberries.ru/catalog/540008224/detail.aspx",
-      "price": null,
+      "price": 14084,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 15"
     },
     {
       "id": "item-26",
@@ -315,10 +340,11 @@
       "sourcePage": 15,
       "image": "assets/products/p15-2.webp",
       "url": "https://loverepublic.ru/catalog/odezhda/verhnyaya-odezhda/kurtki/339906/",
-      "price": null,
+      "price": 17999,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 15"
     },
     {
       "id": "item-27",
@@ -327,10 +353,11 @@
       "sourcePage": 16,
       "image": "assets/products/p16-1.webp",
       "url": "https://www.wildberries.ru/catalog/1485825192/detail.aspx",
-      "price": null,
+      "price": 2586,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 16"
     },
     {
       "id": "item-28",
@@ -339,10 +366,11 @@
       "sourcePage": 16,
       "image": "assets/products/p16-2.webp",
       "url": "https://www.wildberries.ru/catalog/1350072193/detail.aspx?targetUrl=MI",
-      "price": null,
+      "price": 1656,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 16"
     },
     {
       "id": "item-29",
@@ -351,10 +379,11 @@
       "sourcePage": 17,
       "image": "assets/products/p17-1.webp",
       "url": "https://www.wildberries.ru/catalog/677693499/detail.aspx?targetUrl=MI",
-      "price": null,
+      "price": 1923,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 17"
     },
     {
       "id": "item-30",
@@ -363,10 +392,11 @@
       "sourcePage": 17,
       "image": "assets/products/p17-2.webp",
       "url": "https://www.wildberries.ru/catalog/757807151/detail.aspx",
-      "price": null,
+      "price": 2140,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 17"
     },
     {
       "id": "item-31",
@@ -375,10 +405,11 @@
       "sourcePage": 18,
       "image": "assets/products/p18-1.webp",
       "url": "https://www.wildberries.ru/catalog/687236796/detail.aspx",
-      "price": null,
+      "price": 2820,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 18"
     },
     {
       "id": "item-32",
@@ -387,10 +418,11 @@
       "sourcePage": 18,
       "image": "assets/products/p18-2.webp",
       "url": "https://www.wildberries.ru/catalog/1147280587/detail.aspx",
-      "price": null,
+      "price": 5561,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 18"
     },
     {
       "id": "item-33",
@@ -399,10 +431,11 @@
       "sourcePage": 19,
       "image": "assets/products/p19-1.webp",
       "url": "https://www.lamoda.ru/p/mp002xw03tyz/clothes-calzedonia-kolgotki/",
-      "price": null,
+      "price": 2299,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 19"
     },
     {
       "id": "item-34",
@@ -411,10 +444,11 @@
       "sourcePage": 19,
       "image": "assets/products/p19-2.webp",
       "url": "https://www.lamoda.ru/p/mp002xw1218b/clothes-calzedonia-kolgotki/",
-      "price": null,
+      "price": 2199,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 19"
     },
     {
       "id": "item-35",
@@ -423,10 +457,11 @@
       "sourcePage": 20,
       "image": "assets/products/p20-1.webp",
       "url": "https://www.wildberries.ru/catalog/1846610591/detail.aspx?size=3199934013",
-      "price": null,
+      "price": 695,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 20"
     },
     {
       "id": "item-36",
@@ -435,10 +470,11 @@
       "sourcePage": 20,
       "image": "assets/products/p20-2.webp",
       "url": "https://www.wildberries.ru/catalog/1013048157/detail.aspx",
-      "price": null,
+      "price": 3839,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 20"
     },
     {
       "id": "item-37",
@@ -447,10 +483,11 @@
       "sourcePage": 21,
       "image": "assets/products/p21-1.webp",
       "url": "https://www.wildberries.ru/catalog/1179908723/detail.aspx",
-      "price": null,
+      "price": 4849,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 21"
     },
     {
       "id": "item-38",
@@ -459,10 +496,11 @@
       "sourcePage": 21,
       "image": "assets/products/p21-2.webp",
       "url": "https://limestore.com/ru_ru/product/38753-0278_414_210_koricnevyi",
-      "price": null,
+      "price": 13999,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 21"
     },
     {
       "id": "item-39",
@@ -471,10 +509,11 @@
       "sourcePage": 22,
       "image": "assets/products/p22-1.webp",
       "url": "https://www.wildberries.ru/catalog/1291191296/detail.aspx",
-      "price": null,
+      "price": 7801,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 22"
     },
     {
       "id": "item-40",
@@ -483,10 +522,11 @@
       "sourcePage": 22,
       "image": "assets/products/p22-2.webp",
       "url": "https://www.wildberries.ru/catalog/1009077888/detail.aspx",
-      "price": null,
+      "price": 6521,
       "currency": "RUB",
       "owned": false,
-      "notes": "Из оригинальной капсулы стилиста. Цена требует проверки."
+      "notes": "Цена из капсулы (скриншот на момент составления PDF); не проверялась на актуальность.",
+      "priceSource": "Скриншот магазина в PDF, стр. 22"
     }
   ],
   "looks": [
