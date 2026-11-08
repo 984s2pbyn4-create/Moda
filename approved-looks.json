@@ -1,0 +1,142 @@
+[
+  {
+    "number": 1,
+    "title": "Образ № 1",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 2,
+    "title": "Образ № 2",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 3,
+    "title": "Образ № 3",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 4,
+    "title": "Образ № 4",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 5,
+    "title": "Образ № 5",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 6,
+    "title": "Образ № 6",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 7,
+    "title": "Образ № 7",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 8,
+    "title": "Образ № 8",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 9,
+    "title": "Образ № 9",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 10,
+    "title": "Образ № 10",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 11,
+    "title": "Образ № 11",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 12,
+    "title": "Уютный шик",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 13,
+    "title": "Уютный трикотаж",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 14,
+    "title": "Спортивный шик",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 15,
+    "title": "Стритстайл",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 16,
+    "title": "Уютный город",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 17,
+    "title": "Лёгкая классика",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 18,
+    "title": "Курортный стиль",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 19,
+    "title": "В ритме города",
+    "approved": true,
+    "collage": null,
+    "photos": []
+  },
+  {
+    "number": 20,
+    "title": "Вечерняя элегантность",
+    "approved": true,
+    "collage": "assets/approved/look-20-collage.png",
+    "photos": []
+  }
+]

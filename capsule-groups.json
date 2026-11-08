@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Чёрные брюки",
+    "startPage": 23,
+    "endPage": 35,
+    "count": 13,
+    "photoSession": "not_generated"
+  },
+  {
+    "name": "Синие джинсы",
+    "startPage": 36,
+    "endPage": 49,
+    "count": 14,
+    "photoSession": "not_generated"
+  },
+  {
+    "name": "Коричневые брюки",
+    "startPage": 50,
+    "endPage": 59,
+    "count": 10,
+    "photoSession": "not_generated"
+  },
+  {
+    "name": "Светлые брюки",
+    "startPage": 60,
+    "endPage": 69,
+    "count": 10,
+    "photoSession": "not_generated"
+  },
+  {
+    "name": "Коричневая мини-юбка",
+    "startPage": 70,
+    "endPage": 80,
+    "count": 11,
+    "photoSession": "not_generated"
+  },
+  {
+    "name": "Чёрное платье",
+    "startPage": 81,
+    "endPage": 83,
+    "count": 3,
+    "photoSession": "not_generated"
+  }
+]

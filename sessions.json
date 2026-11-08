@@ -1,0 +1,80 @@
+[
+  {
+    "number": 1,
+    "title": "Чёрные брюки",
+    "combinations": 13,
+    "pages": [
+      23,
+      35
+    ],
+    "collage": "assets/sessions/group-1.webp",
+    "approved": true,
+    "photo_type": "combined_collage",
+    "separate_originals": false
+  },
+  {
+    "number": 2,
+    "title": "Джинсы",
+    "combinations": 14,
+    "pages": [
+      36,
+      49
+    ],
+    "collage": "assets/sessions/group-2.webp",
+    "approved": true,
+    "photo_type": "combined_collage",
+    "separate_originals": false
+  },
+  {
+    "number": 3,
+    "title": "Коричневые брюки",
+    "combinations": 10,
+    "pages": [
+      50,
+      59
+    ],
+    "collage": "assets/sessions/group-3.webp",
+    "approved": true,
+    "photo_type": "combined_collage",
+    "separate_originals": false
+  },
+  {
+    "number": 4,
+    "title": "Светлые брюки",
+    "combinations": 10,
+    "pages": [
+      60,
+      69
+    ],
+    "collage": "assets/sessions/group-4.webp",
+    "approved": true,
+    "photo_type": "combined_collage",
+    "separate_originals": false
+  },
+  {
+    "number": 5,
+    "title": "Мини-юбка",
+    "combinations": 11,
+    "pages": [
+      70,
+      80
+    ],
+    "collage": "assets/sessions/group-5.webp",
+    "approved": true,
+    "photo_type": "combined_collage",
+    "separate_originals": false
+  },
+  {
+    "number": 6,
+    "title": "Чёрное платье",
+    "combinations": 3,
+    "pages": [
+      81,
+      83
+    ],
+    "collage": "assets/sessions/group-6.webp",
+    "approved": true,
+    "photo_type": "combined_collage",
+    "separate_originals": false
+  }
+]
